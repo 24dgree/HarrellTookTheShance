@@ -118,8 +118,26 @@ function renderControls(){
   out+=`<div class="section"><h3>MINIFIGURE POSE</h3><div class="grid">${poses.map(x=>card(x,state.pose===x)).join('')}</div></div>`;
  
   } else if(tab==='props'){
-  out+=`<div class="section"><h3>PROPS</h3><div class="grid">${['#HarrellTookTheShance','#London','#Bali'].map(x=>card(x,state.props.includes(x))).join('')}</div><small class="hint">Choose up to three wordings to display beneath your minifigure.</small></div>`;
+  const propOptions=[
+   '#London',
+   '#261226',
+   '#HappyWeekend',
+   '#Bali',
+   '#080127',
+   '#TGIF'
+  ];
 
+  out+=`<div class="section">
+   <h3>PROPS · PICK UP TO 3</h3>
+   <div class="grid">
+    ${propOptions.map(x=>card(x,state.props.includes(x))).join('')}
+   </div>
+   <small class="hint">
+    Choose up to three wordings. Tap again to remove one.
+   </small>
+  </div>`;
+
+ 
  } else if(tab==='tie'){
   if(state.gender==='male'){
    out+=`<div class="section"><h3>NECKWEAR</h3><div class="grid">${options.tie.map(x=>card(x,state.tie===x)).join('')}</div></div>`;
