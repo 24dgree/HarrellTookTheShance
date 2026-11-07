@@ -206,10 +206,12 @@ function renderControls(){
   out+=`<div class="section"><h3>${state.gender==='male'?'FORMAL MENSWEAR':'FORMAL DRESSES'}</h3><div class="grid">${options.outfit[state.gender].map(x=>card(x,state.outfit===x)).join('')}</div></div>`;
   
   
-  if(state.outfit!=='Reserved for Harrell'){
- out+=`<div class="section"><h3>OUTFIT COLOUR</h3><div class="swatches">${palettes[state.gender].map(([n,c])=>`<button class="swatch ${state.color===n.toLowerCase()?'selected':''}" title="${n}" data-color="${n.toLowerCase()}" style="background:${c}"></button>`).join('')}</div></div>`;
+  if(
+ state.outfit!=='Reserved for Harrell' &&
+ state.outfit!=='Reserved for Shannika'
+){
+  out+=`<div class="section"><h3>OUTFIT COLOUR</h3><div class="swatches">${palettes[state.gender].map(([n,c])=>`<button class="swatch ${state.color===n.toLowerCase()?'selected':''}" title="${n}" data-color="${n.toLowerCase()}" style="background:${c}"></button>`).join('')}</div></div>`;
   }
-
  
  } else if(tab==='pose'){
   const poses=['Classic stance','One hand waving','Hands on hips','Hands together'];
