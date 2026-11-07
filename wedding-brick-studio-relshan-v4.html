@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#dcecff">
+<title>RelShan — #HarrellTookTheShance Brick Studio</title>
+<style>
+:root{--ink:#172b48;--muted:#71819a;--blue:#a9c9ee;--pale:#eef5ff;--line:#dce6f2;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(145deg,#f5f9ff,#e8f1fc 55%,#f8fbff);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:var(--ink);min-height:100vh}
+.wrap{max-width:1080px;margin:auto;padding:24px 18px 42px}
+header{text-align:center;padding:10px 0 20px}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#6986aa;font-weight:800}
+h1{font-family:Georgia,serif;font-weight:500;letter-spacing:1px;font-size:clamp(28px,5vw,46px);margin:8px 0 5px}
+.sub{color:#6e7f98;font-size:13px}
+.layout{display:grid;grid-template-columns:minmax(280px,1fr) minmax(320px,1.12fr);gap:18px;align-items:start}
+.preview,.editor{background:rgba(255,255,255,.88);border:1px solid #e0e9f5;border-radius:24px;box-shadow:0 14px 40px #8da8c51c}
+.preview{padding:18px;position:sticky;top:14px}
+.previewtop{display:flex;justify-content:space-between;align-items:center}
+.label{font-size:10px;letter-spacing:2px;font-weight:800;color:#8294ad}
+.pill{font-size:10px;color:#58769d;background:#edf4fd;padding:7px 10px;border-radius:30px;font-weight:700}
+.stage{margin:12px auto 10px;background:radial-gradient(ellipse at 50% 42%,#fff 0%,#f8fbff 56%,#eaf2fc 100%);border:1px solid #e5edf7;border-radius:20px;min-height:380px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#figure{width:min(100%,310px);height:370px;display:block}
+.namebox{text-align:center;margin:0 0 12px}
+.namebox input{border:0;border-bottom:1px solid #d8e3f0;background:transparent;text-align:center;font:600 15px inherit;color:var(--ink);width:70%;padding:8px;outline:none}
+.actions{display:flex;gap:9px}
+button{font:inherit;cursor:pointer}
+.primary,.secondary{border:0;border-radius:13px;padding:12px 15px;font-weight:800;font-size:12px}
+.primary{background:#243e63;color:white;flex:1;box-shadow:0 5px 14px #243e6326}
+.secondary{background:#edf4fc;color:#385474}
+.editor{padding:18px}
+.switch{display:flex;background:#eff4fa;padding:5px;border-radius:14px;gap:5px;margin-bottom:16px}
+.switch button{flex:1;border:0;background:transparent;color:#72839a;padding:11px 8px;border-radius:10px;font-weight:800;font-size:12px}
+.switch button.active{background:white;color:#203b60;box-shadow:0 2px 8px #19385c12}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:13px}
+.tab{border:1px solid #dce6f2;background:white;border-radius:30px;padding:8px 12px;color:#667b97;font-size:11px;font-weight:800}
+.tab.active{background:#e8f1fc;border-color:#b9d0ec;color:#25466f}
+.section{padding-top:16px}
+.section h3{font-size:12px;margin:0 0 11px;letter-spacing:.4px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.choice{border:1px solid #e0e8f2;background:#fff;border-radius:13px;padding:11px 8px;text-align:left;min-height:62px;color:#334d6e}
+.choice strong{display:block;font-size:11px;line-height:1.25}
+.choice small{display:block;color:#8796aa;font-size:9px;margin-top:4px}
+.choice.selected{border:1.5px solid #739bc9;background:#f0f6ff;box-shadow:0 0 0 2px #dceafa}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatch{width:36px;height:36px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1px #d5dfeb;position:relative}
+.swatch.selected{box-shadow:0 0 0 2px #668dbb}
+.swatch.selected:after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:white;font-size:13px;text-shadow:0 1px 3px #333}
+.hint{display:block;color:#8796aa;font-size:10px;line-height:1.5;margin-top:7px}.note{margin-top:16px;padding:12px 13px;border-radius:13px;background:#f4f8fd;color:#7789a2;font-size:10px;line-height:1.5}
+footer{text-align:center;color:#9aa9bb;font-size:10px;margin-top:18px;letter-spacing:1px}
+@media(max-width:760px){.wrap{padding:16px 12px 28px}.layout{grid-template-columns:1fr}.preview{position:relative;top:auto}.stage{min-height:320px}#figure{height:320px}.editor{padding:15px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="eyebrow">A little piece of our day</div><h1>RelShan Brick Studio</h1><div class="sub">Build your own little wedding guest</div></header>
+<main class="layout">
+<section class="preview">
+ <div class="previewtop"><span class="label">YOUR MINIFIGURE</span><span class="pill">#HarrellTookTheShance</span></div>
+ <div class="stage"><svg id="figure" viewBox="0 0 300 370" role="img" aria-label="Your custom wedding minifigure"></svg></div>
+ <div class="namebox"><input id="guestName" maxlength="24" placeholder="Give your minifigure a name"></div>
+ <div class="actions"><button class="primary" id="download">DOWNLOAD PNG</button><button class="secondary" id="random">SURPRISE ME</button></div>
+ <div class="note">Your design is created in this browser. Nothing is uploaded or stored on a server.</div>
+</section>
+<section class="editor">
+ <div class="switch"><button class="active" data-gender="male">GENTLEMAN</button><button data-gender="female">LADY</button></div>
+ <div class="tabs" id="tabs">
+  <button class="tab active" data-tab="hair">Hair</button><button class="tab" data-tab="face">Expression</button><button class="tab" data-tab="outfit">Outfit</button><button class="tab" data-tab="tie">Tie & details</button><button class="tab" data-tab="pose">Pose</button><button class="tab" data-tab="props">Props</button>
+ </div>
+ <div id="controls"></div>
+</section>
+</main>
+<footer>MADE WITH LOVE · WEDDING GUEST EDITION</footer>
+</div>
+<script>
+const state={gender:'male',hair:'Side part',babyHair:false,face:'Smile',outfit:'Full suit',color:'navy',tie:'Necktie',hairColor:'#3b2a23',skin:'#f2c49b',accessories:[],accessoryColor:'#ffffff',glassesStyle:'Original',watchStyle:'Brown leather · black oval-square',giftStyle:0,pinColor:'#ffffff',purseColor:'#e8b9c2',earringColor:'#ffffff',fanColor:'#ffffff',pose:'Classic stance',props:[]};
+const palettes={male:[['Navy','#182c4d'],['Black','#20232b'],['White','#f4f4f1'],['Blue','#a9c9e9']],female:[['White','#f8f7f2'],['Cream','#e9dfcc'],['Black','#20232b'],['Baby blue','#b9d5f0'],['Blush pink','#e8b9c2'],['Soft olive','#cbd3a5']]};
+const options={
+ hair:{male:['Side part','Middle part','Textured short','Wavy','Slick back','Classic short'],female:['Smooth full-front waves','Loose curls','Low chignon','Elegant updo','Elegant centre-part waves','Long sleek straight','Soft Hollywood waves','Half-up waves']},
+ face:['Smile','Playful tongue','Neutral','Wink','Blush','Mustache'],
+ outfit:{male:['Full suit','Suit + necktie','Suit + bowtie','Fitted vest + shirt','Vest + necktie','Vest + bowtie'],female:['Blouse + A-line skirt','Sweetheart strapless gown','Sheer cape gown','Off-shoulder fitted gown','A-line satin gown','Mermaid gown','One-shoulder gown','Tulle ball gown','Long-sleeve fitted gown']},
+ tie:['Necktie','Bowtie','No tie'],
+ accessories:['Glasses','Watch','Gift box','Balinese paper parasol','Boutonniere','Round pin','Hair clip','Earrings','Open fan','Bouquet'],
+ hairColors:[['Espresso','#3b2a23'],['Black','#17191e'],['Chestnut','#805037'],['Blonde','#d7b36c'],['Auburn','#9b4932'],['Silver','#b8bdc7']],
+ skins:[['Warm','#f2c49b'],['Light','#f7d7bd'],['Tan','#c98e65'],['Deep','#8d5944']]
+};
+let tab='hair';
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function card(label,selected,sub=''){return `<button class="choice ${selected?'selected':''}" data-choice="${esc(label)}"><strong>${esc(label)}</strong>${sub?`<small>${sub}</small>`:''}</button>`}
+function renderControls(){
+ const root=document.getElementById('controls');let out='';
+ if(tab==='hair'){
+  const mainHair=options.hair[state.gender];
+  out+=`<div class="section"><h3>HAIRSTYLE</h3><div class="grid">${mainHair.map(x=>card(x,state.hair===x)).join('')}</div></div>`;
+  out+=`<div class="section"><h3>HAIR DETAIL</h3><div class="grid">${card('Baby hair',state.babyHair)}</div><small class="hint">Baby hair mengikuti lengkung rambut di mahkota, menyatu dengan helaian rambut dan tidak menyentuh dahi.</small></div>`;
+  out+=`<div class="section"><h3>HAIR COLOUR</h3><div class="swatches">${options.hairColors.map(([n,c])=>`<button class="swatch ${state.hairColor===c?'selected':''}" title="${n}" data-haircolor="${c}" style="background:${c}"></button>`).join('')}</div></div>`;
+ } else if(tab==='face'){
+  out+=`<div class="section"><h3>FACIAL EXPRESSION</h3><div class="grid">${options.face.map(x=>card(x,state.face===x)).join('')}</div></div>`;
+  out+=`<div class="section"><h3>SKIN TONE</h3><div class="swatches">${options.skins.map(([n,c])=>`<button class="swatch ${state.skin===c?'selected':''}" title="${n}" data-skin="${c}" style="background:${c}"></button>`).join('')}</div></div>`;
+ } else if(tab==='outfit'){
+  out+=`<div class="section"><h3>${state.gender==='male'?'FORMAL MENSWEAR':'FORMAL DRESSES'}</h3><div class="grid">${options.outfit[state.gender].map(x=>card(x,state.outfit===x)).join('')}</div></div>`;
+  out+=`<div class="section"><h3>OUTFIT COLOUR</h3><div class="swatches">${palettes[state.gender].map(([n,c])=>`<button class="swatch ${state.color===n.toLowerCase()?'selected':''}" title="${n}" data-color="${n.toLowerCase()}" style="background:${c}"></button>`).join('')}</div></div>`;
+ } else if(tab==='pose'){
+  const poses=['Classic stance','One hand waving','Hands on hips','Hands together'];
+  out+=`<div class="section"><h3>MINIFIGURE POSE</h3><div class="grid">${poses.map(x=>card(x,state.pose===x)).join('')}</div></div>`;
+ } else if(tab==='props'){
+  out+=`<div class="section"><h3>PROPS</h3><div class="grid">${['#HarrellTookTheShance','#London','#Bali'].map(x=>card(x,state.props.includes(x))).join('')}</div><small class="hint">Choose one or more wedding hashtags to display beneath your minifigure.</small></div>`;
+ } else {
+  if(state.gender==='male')out+=`<div class="section"><h3>NECKWEAR</h3><div class="grid">${options.tie.map(x=>card(x,state.tie===x)).join('')}</div></div>`;
+  const accessoryOptions=state.gender==='male'?['Glasses','Watch','Gift box','Balinese paper parasol','Boutonniere','Round pin']:['Glasses','Gift box','Balinese paper parasol','Open fan','Hair clip','Earrings','Bouquet'];
+  out+=`<div class="section"><h3>ACCESSORIES · PICK UP TO 3</h3><div class="grid">${accessoryOptions.map(x=>card(x,state.accessories.includes(x))).join('')}</div><small class="hint">Choose up to three accessories. Tap again to remove one.</small></div>`;
+  if(state.accessories.includes('Glasses'))out+=`<div class="section"><h3>GLASSES STYLE</h3><div class="grid">${['Original','White heart · dark lenses','Long rectangle · dark lenses','Olive oval · clear lenses'].map((x,i)=>card(x,state.glassesStyle===x)).join('')}</div></div>`;
+  if(state.gender==='male'&&state.accessories.includes('Watch'))out+=`<div class="section"><h3>WATCH STYLE</h3><div class="grid">${['Brown leather · black oval-square','Black leather · round'].map(x=>card(x,state.watchStyle===x)).join('')}</div></div>`;
+  if(state.accessories.includes('Gift box'))out+=`<div class="section"><h3>GIFT BOX COLOUR</h3><div class="grid">${['White box · baby blue ribbon','Black box · cream ribbon','Blue box · white ribbon'].map((x,i)=>card(x,state.giftStyle===i)).join('')}</div></div>`;
+  if(state.gender==='male'&&state.accessories.includes('Round pin'))out+=`<div class="section"><h3>PIN COLOUR</h3><div class="swatches"><button class="swatch ${state.pinColor==='#ffffff'?'selected':''}" title="White" data-pin="#ffffff" style="background:#fff"></button><button class="swatch ${state.pinColor==='#b9d5f0'?'selected':''}" title="Baby blue" data-pin="#b9d5f0" style="background:#b9d5f0"></button></div></div>`;
+  if(state.gender==='female'&&state.accessories.includes('Open fan'))out+=`<div class="section"><h3>FAN COLOUR</h3><div class="swatches">${[['Brown','#805037'],['Baby blue','#b9d5f0'],['White','#f8f7f2']].map(([n,c])=>`<button class="swatch ${state.fanColor===c?'selected':''}" title="${n}" data-fan="${c}" style="background:${c}"></button>`).join('')}</div></div>`;
+  if(state.gender==='female'&&state.accessories.includes('Earrings'))out+=`<div class="section"><h3>EARRING COLOUR</h3><div class="swatches"><button class="swatch ${state.earringColor==='#ffffff'?'selected':''}" title="Pearl white" data-earring="#ffffff" style="background:#fff"></button><button class="swatch ${state.earringColor==='#d6b36c'?'selected':''}" title="Gold" data-earring="#d6b36c" style="background:#d6b36c"></button></div></div>`;
+  if(state.accessories.includes('Hair clip'))out+=`<div class="section"><h3>HAIR CLIP COLOUR</h3><div class="swatches"><button class="swatch ${state.accessoryColor==='#ffffff'?'selected':''}" title="White" data-acccolor="#ffffff" style="background:#fff"></button><button class="swatch ${state.accessoryColor==='#17191e'?'selected':''}" title="Black" data-acccolor="#17191e" style="background:#17191e"></button></div></div>`;
+ }
+ root.innerHTML=out;
+ root.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{let v=b.dataset.choice;if(tab==='hair'){if(v==='Baby hair')state.babyHair=!state.babyHair;else state.hair=v;}else if(tab==='face')state.face=v;else if(tab==='outfit'){state.outfit=v;if(v.toLowerCase().includes('bowtie'))state.tie='Bowtie';else if(v.toLowerCase().includes('necktie'))state.tie='Necktie';}else if(v==='Necktie'||v==='Bowtie'||v==='No tie')state.tie=v;else if(['Original','White heart · dark lenses','Long rectangle · dark lenses','Olive oval · clear lenses'].includes(v))state.glassesStyle=v;else if(['Brown leather · black oval-square','Black leather · round'].includes(v))state.watchStyle=v;else if(['White box · baby blue ribbon','Black box · cream ribbon','Blue box · white ribbon'].includes(v))state.giftStyle=['White box · baby blue ribbon','Black box · cream ribbon','Blue box · white ribbon'].indexOf(v);else if(['Classic stance','One hand waving','Hands on hips','Hands together'].includes(v))state.pose=v;else if(['#HarrellTookTheShance','#London','#Bali'].includes(v)){state.props=state.props.includes(v)?state.props.filter(x=>x!==v):[...state.props,v];}else{if(state.accessories.includes(v))state.accessories=state.accessories.filter(x=>x!==v);else if(state.accessories.length<3)state.accessories.push(v);}renderControls();draw();});
+ root.querySelectorAll('[data-color]').forEach(b=>b.onclick=()=>{state.color=b.dataset.color;renderControls();draw()});
+ root.querySelectorAll('[data-haircolor]').forEach(b=>b.onclick=()=>{state.hairColor=b.dataset.haircolor;renderControls();draw()});
+ root.querySelectorAll('[data-skin]').forEach(b=>b.onclick=()=>{state.skin=b.dataset.skin;renderControls();draw()});
+ root.querySelectorAll('[data-acccolor]').forEach(b=>b.onclick=()=>{state.accessoryColor=b.dataset.acccolor;renderControls();draw()});
+ root.querySelectorAll('[data-pin]').forEach(b=>b.onclick=()=>{state.pinColor=b.dataset.pin;renderControls();draw()});
+ root.querySelectorAll('[data-purse]').forEach(b=>b.onclick=()=>{state.purseColor=b.dataset.purse;renderControls();draw()});
+ root.querySelectorAll('[data-fan]').forEach(b=>b.onclick=()=>{state.fanColor=b.dataset.fan;renderControls();draw()});
+ root.querySelectorAll('[data-earring]').forEach(b=>b.onclick=()=>{state.earringColor=b.dataset.earring;renderControls();draw()});
+}
+function draw(){
+ const male=state.gender==='male', skin=state.skin, hair=state.hairColor;
+ const colorMap={navy:'#182c4d',black:'#20232b',white:'#f4f4f1',blue:'#a9c9e9','baby blue':'#b9d5f0','blush pink':'#e8b9c2','soft olive':'#cbd3a5',cream:'#e9dfcc'};
+ const c=colorMap[state.color]||'#182c4d';
+ const outline='#263750';
+ let torso='',legs='',arms='',tie='',extra='';
+ if(male){
+  const vest=state.outfit.startsWith('Fitted vest')||state.outfit.startsWith('Vest');
+  const jacket=!vest;
+  const sleeveColor=jacket?c:'#f7f7f4';
+  // Arms are drawn behind the torso. Shirt/jacket sleeves follow the shoulder line and end at the wrist.
+  arms=`<g stroke-linecap="round" stroke-linejoin="round">
+   <path d="M105 169 Q96 174 91 190 L84 232" fill="none" stroke="${outline}" stroke-width="25"/>
+   <path d="M105 169 Q96 174 91 190 L84 232" fill="none" stroke="${sleeveColor}" stroke-width="19"/>
+   <path d="M195 169 Q204 174 209 190 L216 232" fill="none" stroke="${outline}" stroke-width="25"/>
+   <path d="M195 169 Q204 174 209 190 L216 232" fill="none" stroke="${sleeveColor}" stroke-width="19"/>
+   <path d="M84 232 L82 248 M216 232 L218 248" fill="none" stroke="${outline}" stroke-width="22"/>
+   <path d="M84 233 L82 247 M216 233 L218 247" fill="none" stroke="${skin}" stroke-width="15"/>
+  </g>`;
+  legs=`<path d="M105 255 H150 V333 H112 Q105 333 105 325Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M150 255 H195 V325 Q195 333 188 333 H150Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M106 320 H150 M150 320 H194" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>`;
+  if(jacket){
+   torso=`<path d="M105 155 L137 155 L150 178 L163 155 L195 155 Q207 161 210 180 L197 258 H103 L90 180 Q93 161 105 155Z" fill="${c}" stroke="${outline}" stroke-width="3"/>
+    <path d="M137 155 L150 178 L139 216 L116 163Z" fill="#fff" stroke="#cbd3df" stroke-width="1.2"/><path d="M163 155 L150 178 L161 216 L184 163Z" fill="#fff" stroke="#cbd3df" stroke-width="1.2"/>
+    <path d="M150 179 V252" stroke="#d8dfeb" stroke-width="1.5"/><circle cx="160" cy="226" r="2" fill="#d8dfeb"/><path d="M177 169 L190 169 L184 181Z" fill="#fff"/>`;
+  }else{
+   // A fitted waistcoat sits inside the torso silhouette; it narrows at the waist instead of floating over it.
+   torso=`<path d="M105 155 L137 155 L150 176 L163 155 L195 155 Q207 161 210 180 L197 258 H103 L90 180 Q93 161 105 155Z" fill="#f7f7f4" stroke="${outline}" stroke-width="3"/>
+    <path d="M116 158 L145 171 L150 250 L107 250 L101 181Z" fill="${c}" stroke="${outline}" stroke-width="2.2"/><path d="M184 158 L155 171 L150 250 L193 250 L199 181Z" fill="${c}" stroke="${outline}" stroke-width="2.2"/>
+    <path d="M116 158 L145 171 L150 188 L136 180Z M184 158 L155 171 L150 188 L164 180Z" fill="${c}" stroke="${outline}" stroke-width="1.5"/>
+    <path d="M150 190 V242" stroke="#d7dce4" stroke-width="1.2"/>${[202,216,230].map(y=>`<circle cx="158" cy="${y}" r="1.8" fill="#e8edf4"/>`).join('')}`;
+  }
+  if(state.tie==='Bowtie')tie=`<path d="M145 165 L132 158 L132 174 L145 169Z M155 165 L168 158 L168 174 L155 169Z" fill="#263c5b" stroke="${outline}" stroke-width="1.2"/><circle cx="150" cy="166" r="3" fill="#d8e0eb"/>`;
+  else if(state.tie==='Necktie')tie=`<path d="M144 164 L150 171 L156 164 L154 188 L150 195 L146 188Z" fill="#263c5b" stroke="#172b48" stroke-width="1"/><path d="M150 195 L146 188 L150 184 L154 188Z" fill="#526985"/>`;
+ }else{
+  const longSleeve=state.outfit==='Long-sleeve gown';
+  const shoulderSleeve=longSleeve;
+  const sleeveColor=shoulderSleeve?c:skin;
+  arms=`<g stroke-linecap="round" stroke-linejoin="round">
+   <path d="M106 169 Q97 178 93 194 L86 232" fill="none" stroke="${outline}" stroke-width="23"/><path d="M106 169 Q97 178 93 194 L86 232" fill="none" stroke="${sleeveColor}" stroke-width="17"/>
+   <path d="M194 169 Q203 178 207 194 L214 232" fill="none" stroke="${outline}" stroke-width="23"/><path d="M194 169 Q203 178 207 194 L214 232" fill="none" stroke="${sleeveColor}" stroke-width="17"/>
+   <path d="M86 232 L84 248 M214 232 L216 248" fill="none" stroke="${outline}" stroke-width="21"/><path d="M86 233 L84 247 M214 233 L216 247" fill="none" stroke="${skin}" stroke-width="14"/>
+  </g>`;
+  if(state.outfit==='Blouse + A-line skirt'){
+   torso=`<path d="M112 214 Q150 224 188 214 Q211 258 225 329 Q150 346 75 329 Q89 258 112 214Z" fill="#20232b" stroke="${outline}" stroke-width="3"/><path d="M119 157 L181 157 L190 213 Q150 226 110 213Z" fill="${c}" stroke="${outline}" stroke-width="2.5"/><path d="M150 171 V214" stroke="#ffffff" stroke-opacity=".24" stroke-width="1.5"/>`;
+   legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="#20232b" stroke="${outline}" stroke-width="2"/>`;
+  } else {
+  const neckline=state.outfit==='Off-shoulder fitted gown'?`<path d="M111 173 Q150 193 189 173" fill="none" stroke="${c}" stroke-width="11" stroke-linecap="round"/>`:state.outfit==='One-shoulder gown'?`<path d="M115 158 L183 158 L190 177 Q157 194 113 177Z" fill="${c}"/>`:'';
+  const skirtStart=state.outfit==='Mermaid gown'?`<path d="M111 215 Q150 224 189 215 L190 286 Q205 309 220 329 Q150 345 80 329 Q95 309 110 286Z"`:state.outfit==='Tulle ball gown'?`<path d="M112 214 Q150 225 188 214 Q215 252 239 329 Q150 348 61 329 Q85 252 112 214Z`:`<path d="M112 214 Q150 225 188 214 Q210 254 225 329 Q150 346 75 329 Q90 254 112 214Z`;
+  const cape=state.outfit==='Sheer cape gown'?`<path d="M112 164 Q150 177 188 164 L211 318 Q150 334 89 318Z" fill="#ffffff" fill-opacity=".10" stroke="#d9dce2" stroke-opacity=".55" stroke-width="1.2"/>`:'';
+  const bodice=`<path d="M119 157 Q132 165 150 159 Q168 165 181 157 L190 213 Q150 228 110 213Z" fill="${c}" stroke="${outline}" stroke-width="2.5"/><path d="M119 158 Q132 174 150 169 Q168 174 181 158" fill="none" stroke="${c}" stroke-opacity=".82" stroke-width="2"/><path d="M150 174 L150 214" stroke="#ffffff" stroke-opacity=".28" stroke-width="1.5"/>`;
+  torso=`${skirtStart} fill="${c}" stroke="${outline}" stroke-width="3"/>${cape}${bodice}${neckline}
+   ${['A-line satin gown','Sweetheart strapless gown','Sheer cape gown'].includes(state.outfit)?`<path d="M150 224 Q150 274 150 329 M105 267 Q150 280 195 267" stroke="#ffffff" stroke-opacity=".36" stroke-width="2" fill="none"/>`:''}
+   ${state.outfit==='Mermaid gown'?`<path d="M109 278 Q150 291 191 278 M91 310 Q150 327 209 310" stroke="#ffffff" stroke-opacity=".38" stroke-width="2" fill="none"/>`:''}
+   ${state.outfit==='Tulle ball gown'?`<path d="M94 255 Q150 275 206 255 M78 294 Q150 316 222 294" stroke="#ffffff" stroke-opacity=".32" stroke-width="2" fill="none"/>`:''}`;
+  legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="${c}" stroke="${outline}" stroke-width="2"/>`;
+  }
+ }
+ let hairShape='';
+ const h=state.hair;
+ if(male){
+  // All short male styles share the same open-forehead hairline as the approved side-part reference.
+  // Only the crown texture/part changes; no style drops a fringe over the brows.
+  let maleHair='';
+  const capBase=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q185 91 174 86 Q150 79 126 86 Q114 91 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`;
+  if(h==='Slick back') maleHair=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q184 88 170 81 Q145 66 119 84 Q111 89 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M117 78 Q143 56 176 76" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2.2"/>`;
+  else if(h==='Middle part') maleHair=capBase+`<path d="M150 44 Q149 59 150 82" stroke="#211b19" stroke-opacity=".55" stroke-width="2" fill="none"/><path d="M146 47 Q137 58 130 72 M154 47 Q163 58 170 72" stroke="#ffffff" stroke-opacity=".12" stroke-width="1.5" fill="none"/>`;
+  else if(h==='Wavy') maleHair=`<path d="M103 99 Q99 75 109 60 Q117 42 132 48 Q146 34 158 44 Q175 36 185 54 Q201 67 198 99 Q185 90 174 86 Q150 79 126 86 Q114 91 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`;
+  else if(h==='Textured short') maleHair=`<path d="M103 99 Q100 72 108 58 Q113 46 125 50 Q130 39 140 45 Q151 36 160 45 Q173 39 178 50 Q191 47 195 65 Q201 79 198 99 Q185 90 174 86 Q150 79 126 86 Q114 91 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`;
+  else if(h==='Classic short') maleHair=`<path d="M103 99 Q100 68 113 52 Q127 41 150 42 Q177 40 190 57 Q201 73 198 99 Q185 90 174 86 Q150 79 126 86 Q114 91 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`;
+  else if(h==='Side part') maleHair=`<path d="M103 101 Q98 43 150 41 Q196 39 198 99 L184 111 Q178 92 165 82 Q146 67 126 77 Q113 83 103 101Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M113 82 Q135 61 160 73 Q170 78 178 89" fill="none" stroke="#ffffff" stroke-opacity=".15" stroke-width="2.2"/>`;
+  else maleHair=capBase;
+  const babyHair=state.babyHair?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M150 46 Q140 58 130 76 Q125 82 119 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 46 Q160 58 170 76 Q175 82 181 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 46 Q147 51 145 56 M150 46 Q153 51 155 56" stroke="${hair}" stroke-width="3.2"/></g>`:'';
+  hairShape=maleHair+babyHair;
+ }else{
+  const updo=['Low chignon','Elegant updo'].includes(h);
+  const long=['Elegant centre-part waves','Long sleek straight','Soft Hollywood waves','Loose curls','Half-up waves'].includes(h);
+  let back='';
+  if(h==='Long sleek straight')back=`<path d="M104 86 Q97 115 105 171 L122 174 L124 91Z M196 86 Q203 115 195 171 L178 174 L176 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
+  if(h==='Elegant centre-part waves'||h==='Soft Hollywood waves'||h==='Half-up waves')back=`<path d="M105 87 Q94 112 108 130 Q96 148 112 170 L126 166 L122 91Z M195 87 Q206 112 192 130 Q204 148 188 170 L174 166 L178 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
+  if(h==='Loose curls')back=`<g fill="${hair}" stroke="#202b3c" stroke-width="2"><circle cx="108" cy="112" r="12"/><circle cx="110" cy="137" r="12"/><circle cx="113" cy="160" r="12"/><circle cx="192" cy="112" r="12"/><circle cx="190" cy="137" r="12"/><circle cx="187" cy="160" r="12"/><path d="M103 89 Q150 25 197 89 L190 115 Q150 83 110 115Z"/></g>`;
+  const crown=h==='Smooth full-front waves'?`<path d="M102 99 Q97 42 150 41 Q203 42 198 99 Q184 84 169 78 Q150 70 132 77 Q116 83 102 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`:h==='Elegant centre-part waves'?`<path d="M102 99 Q97 42 150 41 Q203 42 198 99 Q181 79 164 76 Q150 72 136 76 Q119 80 102 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M150 44 Q149 58 150 69" fill="none" stroke="#30221e" stroke-opacity=".55" stroke-width="1.5"/>`:h==='Low chignon'?`<path d="M102 99 Q97 42 150 41 Q203 42 198 99 Q184 81 166 76 Q150 72 134 76 Q116 82 102 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`:`<path d="M102 99 Q97 42 150 41 Q203 42 198 99 Q185 82 169 76 Q150 68 130 76 Q115 83 102 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M150 44 Q150 57 150 67" fill="none" stroke="#30221e" stroke-opacity=".5" stroke-width="1.4"/>`;
+  const bunShape=h==='Low chignon'?`<ellipse cx="150" cy="88" rx="21" ry="14" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`:h==='Elegant updo'?`<ellipse cx="150" cy="34" rx="22" ry="19" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M136 32 Q150 18 164 32" fill="none" stroke="#ffffff" stroke-opacity=".16" stroke-width="2"/>`:'';
+  const halfUp=h==='Half-up waves'?`<path d="M119 72 Q150 91 181 72" fill="none" stroke="#d6b36c" stroke-width="4"/>`:'';
+  const fringe='';
+  const babyHair=state.babyHair?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M150 45 Q139 58 129 76 Q124 82 118 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q161 58 171 76 Q176 82 182 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q147 50 145 55 M150 45 Q153 50 155 55" stroke="${hair}" stroke-width="3.2"/></g>`:'';
+  const faceFraming=['Smooth full-front waves','Elegant centre-part waves','Soft Hollywood waves','Long sleek straight','Half-up waves'].includes(h)?`<g fill="${hair}" stroke="#202b3c" stroke-width="2"><path d="M108 76 Q96 96 102 119 Q108 137 96 153 Q91 168 103 177 Q116 181 121 164 Q113 149 120 133 Q127 112 120 91Z"/><path d="M192 76 Q204 96 198 119 Q192 137 204 153 Q209 168 197 177 Q184 181 179 164 Q187 149 180 133 Q173 112 180 91Z"/></g><g fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2"><path d="M108 93 Q102 116 111 136 M192 93 Q198 116 189 136"/></g>`:'';
+  hairShape=back+bunShape+crown+halfUp+fringe+babyHair+faceFraming;
+ }
+ let face='';
+ if(state.face==='Smile')face=`<path d="M132 113 Q150 130 168 113" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
+ if(state.face==='Playful tongue')face=`<path d="M130 124 Q150 146 170 124" fill="none" stroke="#563b34" stroke-width="4" stroke-linecap="round"/><path d="M154 140 Q166 135 169 128 Q174 132 170 140 Q165 147 157 145Z" fill="#e97886" stroke="#8e4d58" stroke-width="1.2"/><path d="M159 141 Q164 138 168 133" fill="none" stroke="#f6b3ba" stroke-width="1.2"/>`;
+ if(state.face==='Neutral')face=`<path d="M137 119 H163" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
+ if(state.face==='Wink')face=`<path d="M140 124 Q151 135 163 124" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
+ if(state.face==='Blush')face=`<path d="M133 116 Q150 130 167 116" fill="none" stroke="#563b34" stroke-width="3"/><ellipse cx="121" cy="119" rx="8" ry="4" fill="#e99c91" opacity=".65"/><ellipse cx="179" cy="119" rx="8" ry="4" fill="#e99c91" opacity=".65"/>`;
+ if(state.face==='Mustache')face=`<path d="M150 119 Q143 111 135 116 Q129 120 132 125 Q140 128 150 121 Q160 128 168 125 Q171 120 165 116 Q157 111 150 119Z" fill="${hair}" stroke="#2b211d" stroke-width="1.2"/><path d="M137 125 Q150 132 163 125" fill="none" stroke="#563b34" stroke-width="2" stroke-linecap="round"/>`;
+ const has=name=>state.accessories.includes(name);
+ let glasses='';
+ if(has('Glasses')){
+  if(state.glassesStyle==='White heart · dark lenses')glasses=`<g stroke="#ffffff" stroke-width="2.8" stroke-linejoin="round"><path d="M118 105 C112 95 126 93 132 102 C138 93 152 95 146 106 L132 120Z" fill="#17191e"/><path d="M154 105 C148 95 162 93 168 102 C174 93 188 95 182 106 L168 120Z" fill="#17191e"/><path d="M146 106 H154" fill="none"/></g>`;
+  else if(state.glassesStyle==='Long rectangle · dark lenses')glasses=`<g stroke="#ffffff" stroke-width="2.8" fill="#17191e"><rect x="116" y="100" width="31" height="17" rx="3"/><rect x="153" y="100" width="31" height="17" rx="3"/><path d="M147 106 H153" fill="none"/></g>`;
+  else if(state.glassesStyle==='Olive oval · clear lenses')glasses=`<g stroke="#8b9362" stroke-width="2.8" fill="#b8c28b" fill-opacity=".18"><ellipse cx="132" cy="108" rx="14" ry="10"/><ellipse cx="168" cy="108" rx="14" ry="10"/><path d="M146 106 Q150 103 154 106 M118 105 L111 102 M182 105 L189 102" fill="none"/></g>`;
+  else glasses=`<g fill="#17191e" fill-opacity=".88" stroke="#27384d" stroke-width="3"><rect x="119" y="99" width="25" height="19" rx="5"/><rect x="156" y="99" width="25" height="19" rx="5"/><path d="M144 107 H156 M119 105 L111 102 M181 105 L189 102" fill="none"/></g>`;
+ }
+ if(has('Boutonniere')&&male)extra+=`<circle cx="181" cy="190" r="5" fill="#f5f1e9" stroke="#78906b" stroke-width="2"/><path d="M181 195 L177 204" stroke="#78906b" stroke-width="2"/>`;
+ if(has('Bouquet')&&!male)extra+=`<g transform="translate(205 228)"><path d="M0 0 L-5 35" stroke="#4f765d" stroke-width="4"/><circle cx="-8" cy="-4" r="8" fill="#e8b9c2"/><circle cx="4" cy="-8" r="8" fill="#fff"/><circle cx="7" cy="4" r="7" fill="#b9d5f0"/></g>`;
+ if(has('Earrings')&&!male)extra+=`<circle cx="105" cy="124" r="4.5" fill="${state.earringColor}" stroke="#8b929d" stroke-width="1"/><circle cx="195" cy="124" r="4.5" fill="${state.earringColor}" stroke="#8b929d" stroke-width="1"/>`;
+ if(has('Hair clip')&&!male)extra+=`<g stroke="${state.accessoryColor}" stroke-width="4" stroke-linecap="round"><path d="M176 78 L190 85"/><path d="M179 73 L193 80" stroke-width="2"/></g>`;
+ if(has('Watch')&&male){const black=state.watchStyle==='Black leather · round';extra+=black?`<g><path d="M72 243 H96" stroke="#17191e" stroke-width="5" stroke-linecap="round"/><circle cx="84" cy="243" r="7.5" fill="#17191e" stroke="#c5a56d" stroke-width="2"/><circle cx="84" cy="243" r="3.8" fill="#f7f3e9"/></g>`:`<g><path d="M72 243 H96" stroke="#805037" stroke-width="4" stroke-linecap="round"/><rect x="77" y="237" width="14" height="12" rx="3" fill="#17191e" stroke="#c5a56d" stroke-width="1.8"/><rect x="80" y="240" width="8" height="6" rx="1.5" fill="#f7f3e9"/></g>`;}
+ if(has('Gift box')){const box=[['#ffffff','#b9d5f0'],['#20232b','#e9dfcc'],['#8fb4dc','#ffffff']][state.giftStyle];extra+=`<g transform="${male?'':'translate(-150 0)'}"><path d="M210 231 L242 231 L246 260 L206 260Z" fill="${box[0]}" stroke="#263750" stroke-width="2.5"/><path d="M226 231 V260 M206 241 H245" stroke="${box[1]}" stroke-width="4"/><path d="M226 232 Q212 215 208 228 Q210 237 226 232 Q242 215 246 228 Q243 237 226 232Z" fill="none" stroke="${box[1]}" stroke-width="3"/></g>`;}
+
+ if(has('Round pin')&&male)extra+=`<g><circle cx="179" cy="190" r="8" fill="${state.pinColor}" stroke="#263750" stroke-width="2"/><path d="M184 184 Q197 178 193 193 Q190 199 183 197" fill="none" stroke="#9aa4b2" stroke-width="1.8"/><circle cx="179" cy="190" r="2" fill="#d3dbe5"/></g>`;
+ if(has('Open fan')&&!male)extra+=`<g transform="translate(220 224)"><path d="M0 0 Q-31 -10 -28 -34 Q-15 -48 0 -50 Q15 -48 28 -34 Q31 -10 0 0Z" fill="${state.fanColor}" stroke="#263750" stroke-width="2.2"/><path d="M0 0 L-28 -34 M0 0 L-14 -46 M0 0 V-50 M0 0 L14 -46 M0 0 L28 -34" stroke="#9a8066" stroke-width="1.5" fill="none"/><circle cx="0" cy="0" r="3" fill="#9a8066"/><path d="M0 0 L-4 25" stroke="#9a8066" stroke-width="3" stroke-linecap="round"/></g>`;
+ const eyes=state.face==='Wink'?`<ellipse cx="132" cy="105" rx="4" ry="5" fill="#263750"/><path d="M160 106 Q168 100 174 106" fill="none" stroke="#263750" stroke-width="3" stroke-linecap="round"/>`:`<ellipse cx="132" cy="105" rx="4" ry="5" fill="#263750"/><ellipse cx="168" cy="105" rx="4" ry="5" fill="#263750"/>`;
+ // Pose arms are drawn in the arm layer (behind the torso), not stacked over the finished figure.
+ const parasolHeld=state.accessories.includes('Balinese paper parasol');
+ const poseName=parasolHeld?'Holding parasol':state.pose;
+ const sleeveTone=male?((state.outfit.startsWith('Fitted vest')||state.outfit.startsWith('Vest'))?'#f7f7f4':c):(state.outfit==='Long-sleeve gown'?c:skin);
+ const armPath=(d,hand=false)=>`<path d="${d}" fill="none" stroke="${outline}" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${sleeveTone}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>`;
+ const leftArm=armPath('M105 169 Q96 174 91 190 L84 232')+`<path d="M84 232 L82 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/><path d="M84 233 L82 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>`;
+ let rightArm='';
+ if(poseName==='One hand waving'){
+  rightArm=armPath('M195 169 Q212 158 218 140 L220 119')+`<path d="M220 119 L222 108" stroke="${outline}" stroke-width="19" stroke-linecap="round"/><ellipse cx="223" cy="104" rx="8" ry="10" fill="${skin}" stroke="${outline}" stroke-width="2.5"/>`;
+ }else if(poseName==='Hands on hips'){
+  rightArm=armPath('M195 169 Q211 183 204 199 L184 211')+`<ellipse cx="182" cy="212" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
+ }else if(poseName==='Hands together'){
+  rightArm=armPath('M195 169 Q190 194 166 211')+`<ellipse cx="163" cy="214" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
+ }else if(parasolHeld){
+  rightArm=armPath('M195 169 Q211 157 215 139 L214 122')+`<ellipse cx="214" cy="119" rx="8" ry="9" fill="${skin}" stroke="${outline}" stroke-width="2.4"/>`;
+ }else{
+  rightArm=armPath('M195 169 Q204 174 209 190 L216 232')+`<path d="M216 232 L218 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/><path d="M216 233 L218 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>`;
+ }
+ let leftPose=leftArm;
+ if(poseName==='Hands on hips')leftPose=armPath('M105 169 Q89 183 96 200 L116 211')+`<ellipse cx="118" cy="212" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
+ if(poseName==='Hands together')leftPose=armPath('M105 169 Q110 194 134 211')+`<ellipse cx="137" cy="214" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
+ arms=`<g stroke-linecap="round" stroke-linejoin="round">${leftPose}${rightArm}</g>`;
+ const parasolLayer=parasolHeld?`<g><path d="M66 111 Q69 27 140 14 Q150 11 160 14 Q231 27 234 111 Q214 93 194 101 Q173 88 150 101 Q127 88 106 101 Q86 93 66 111Z" fill="#f2eee3" stroke="#a99e89" stroke-width="2.5"/><path d="M66 111 Q150 77 234 111 M150 14 V110 M101 33 L127 102 M199 33 L173 102 M77 68 L116 100 M223 68 L184 100" fill="none" stroke="#c9c0ad" stroke-width="1.8"/><path d="M150 14 Q177 58 214 119" fill="none" stroke="#8b755a" stroke-width="3" stroke-linecap="round"/></g>`:'';
+ const propLayer=state.props.length?`<g>${state.props.map((tag,i)=>{const x=state.props.length===1?150:state.props.length===2?98+i*104:52+i*98;const w=tag==='#HarrellTookTheShance'?92:76;return `<g><rect x="${x-w/2}" y="286" width="${w}" height="24" rx="7" fill="#ffffff" stroke="#b9cde5" stroke-width="1.5"/><text x="${x}" y="301" text-anchor="middle" font-size="${tag==='#HarrellTookTheShance'?6.3:8}" font-weight="700" fill="#385474">${tag}</text></g>`}).join('')}</g>`:'';
+ const head=`<rect x="102" y="55" width="96" height="100" rx="30" fill="${skin}" stroke="#263750" stroke-width="3"/>${eyes}${face}${glasses}`;
+ document.getElementById('figure').innerHTML=`<ellipse cx="150" cy="347" rx="77" ry="10" fill="#dbe6f2"/>${parasolLayer}<g>${legs}${arms}${torso}${tie}<rect x="140" y="145" width="20" height="17" rx="5" fill="${skin}" stroke="#263750" stroke-width="2"/>${head}${hairShape}${extra}${propLayer}</g>`;
+}
+document.querySelectorAll('[data-gender]').forEach(b=>b.onclick=()=>{state.gender=b.dataset.gender;state.outfit=state.gender==='male'?'Full suit':'Blouse + A-line skirt';state.color=state.gender==='male'?'navy':'blush pink';state.hair=state.gender==='male'?'Side part':'Smooth full-front waves';state.babyHair=false;state.tie='Necktie';state.accessories=[];state.glassesStyle='Original';state.watchStyle='Brown leather · black oval-square';state.giftStyle=0;state.pose='Classic stance';state.props=[];document.querySelectorAll('[data-gender]').forEach(x=>x.classList.toggle('active',x===b));renderControls();draw();});
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));renderControls();});
+document.getElementById('random').onclick=()=>{let pick=a=>a[Math.floor(Math.random()*a.length)];state.hair=pick(options.hair[state.gender]);state.babyHair=Math.random()<.35;state.face=pick(options.face);state.outfit=pick(options.outfit[state.gender]);state.color=pick(palettes[state.gender])[0].toLowerCase();state.hairColor=pick(options.hairColors)[1];state.accessories=[];let pool=state.gender==='male'?['Glasses','Watch','Gift box','Balinese paper parasol','Boutonniere','Round pin']:['Glasses','Gift box','Balinese paper parasol','Open fan','Hair clip','Earrings','Bouquet'];while(state.accessories.length<2&&Math.random()<.9){let a=pick(pool);if(!state.accessories.includes(a))state.accessories.push(a);}state.tie=pick(options.tie);renderControls();draw();};
+document.getElementById('download').onclick=()=>{
+ const svg=document.getElementById('figure').cloneNode(true);svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
+ const source=new XMLSerializer().serializeToString(svg);const blob=new Blob([source],{type:'image/svg+xml;charset=utf-8'});const url=URL.createObjectURL(blob);const img=new Image();
+ img.onload=()=>{const canvas=document.createElement('canvas');canvas.width=900;canvas.height=1110;const ctx=canvas.getContext('2d');ctx.fillStyle='#f5f9ff';ctx.fillRect(0,0,900,1110);ctx.drawImage(img,0,0,900,1110);ctx.fillStyle='#243e63';ctx.textAlign='center';ctx.font='bold 34px Arial';const name=document.getElementById('guestName').value.trim();if(name)ctx.fillText(name,450,1060);ctx.font='18px Arial';ctx.fillStyle='#7890ad';ctx.fillText('#HarrellTookTheShance Brick Studio',450,1090);const a=document.createElement('a');a.download='my-wedding-minifigure.png';a.href=canvas.toDataURL('image/png');a.click();URL.revokeObjectURL(url);};
+ img.src=url;
+};
+renderControls();draw();
+</script>
+</body></html>
