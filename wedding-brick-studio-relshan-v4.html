@@ -443,7 +443,8 @@ function draw(){
     <path d="M116 158 L145 171 L150 250 L107 250 L101 181Z" fill="${c}" stroke="${outline}" stroke-width="2.2"/><path d="M184 158 L155 171 L150 250 L193 250 L199 181Z" fill="${c}" stroke="${outline}" stroke-width="2.2"/>
     <path d="M116 158 L145 171 L150 188 L136 180Z M184 158 L155 171 L150 188 L164 180Z" fill="${c}" stroke="${outline}" stroke-width="1.5"/>
     <path d="M150 190 V242" stroke="#d7dce4" stroke-width="1.2"/>${[202,216,230].map(y=>`<circle cx="158" cy="${y}" r="1.8" fill="#e8edf4"/>`).join('')}`;
-  }
+  
+ 
   if(state.tie==='Bowtie')tie=`<path d="M145 165 L132 158 L132 174 L145 169Z M155 165 L168 158 L168 174 L155 169Z" fill="#263c5b" stroke="${outline}" stroke-width="1.2"/><circle cx="150" cy="166" r="3" fill="#d8e0eb"/>`;
   
   else if(state.tie==='Necktie')tie=`<path d="M144 164 L150 171 L156 164 L154 188 L150 195 L146 188Z" fill="#263c5b" stroke="#172b48" stroke-width="1"/><path d="M150 195 L146 188 L150 184 L154 188Z" fill="#526985"/>`;
