@@ -209,7 +209,33 @@ function draw(){
   if(h==='Long sleek straight')back=`<path d="M104 86 Q97 115 105 171 L122 174 L124 91Z M196 86 Q203 115 195 171 L178 174 L176 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
   if(h==='Elegant centre-part waves'||h==='Soft Hollywood waves'||h==='Half-up waves')back=`<path d="M105 87 Q94 112 108 130 Q96 148 112 170 L126 166 L122 91Z M195 87 Q206 112 192 130 Q204 148 188 170 L174 166 L178 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
   if(h==='Loose curls')back=`<g fill="${hair}" stroke="#202b3c" stroke-width="2"><circle cx="108" cy="112" r="12"/><circle cx="110" cy="137" r="12"/><circle cx="113" cy="160" r="12"/><circle cx="192" cy="112" r="12"/><circle cx="190" cy="137" r="12"/><circle cx="187" cy="160" r="12"/><path d="M103 89 Q150 25 197 89 L190 115 Q150 83 110 115Z"/></g>`;
-  const crown=h==='Smooth full-front waves'?`<path d="M102 99 Q97 42 150 41 Q203 42 198 99 Q184 84 169 78 Q150 70 132 77 Q116 83 102 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`:h==='Elegant centre-part waves'?`<path d="M102 99 Q97 42 150 41 Q203 42 198 99 Q181 79 164 76 Q150 72 136 76 Q119 80 102 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M150 44 Q149 58 150 69" fill="none" stroke="#30221e" stroke-opacity=".55" stroke-width="1.5"/>`:h==='Low chignon'?`<path d="M102 99 Q97 42 150 41 Q203 42 198 99 Q184 81 166 76 Q150 72 134 76 Q116 82 102 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`:`<path d="M102 99 Q97 42 150 41 Q203 42 198 99 Q185 82 169 76 Q150 68 130 76 Q115 83 102 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M150 44 Q150 57 150 67" fill="none" stroke="#30221e" stroke-opacity=".5" stroke-width="1.4"/>`;
+
+  
+  const crown=[
+  'Smooth full-front waves',
+  'Elegant centre-part waves',
+  'Long sleek straight',
+  'Soft Hollywood waves',
+  'Half-up waves'
+].includes(h)?
+`<path
+d="M102 99 Q97 42 150 41 Q203 42 198 99 Q184 84 169 78 Q150 70 132 77 Q116 83 102 99Z"
+fill="${hair}"
+stroke="#202b3c"
+stroke-width="3"/>`
+:h==='Low chignon'?
+`<path
+d="M102 99 Q97 42 150 41 Q203 42 198 99 Q184 81 166 76 Q150 72 134 76 Q116 82 102 99Z"
+fill="${hair}"
+stroke="#202b3c"
+stroke-width="3"/>`
+:`<path
+d="M102 99 Q97 42 150 41 Q203 42 198 99 Q185 82 169 76 Q150 68 130 76 Q115 83 102 99Z"
+fill="${hair}"
+stroke="#202b3c"
+stroke-width="3"/>`;
+  
+  
   const bunShape=h==='Low chignon'?`<ellipse cx="150" cy="88" rx="21" ry="14" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`:h==='Elegant updo'?`<ellipse cx="150" cy="34" rx="22" ry="19" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M136 32 Q150 18 164 32" fill="none" stroke="#ffffff" stroke-opacity=".16" stroke-width="2"/>`:'';
   const halfUp=h==='Half-up waves'?`<path d="M119 72 Q150 91 181 72" fill="none" stroke="#d6b36c" stroke-width="4"/>`:'';
   const fringe='';
