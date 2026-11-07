@@ -471,26 +471,10 @@ function draw(){
   
   else if(state.tie==='Necktie')tie=`<path d="M144 164 L150 171 L156 164 L154 188 L150 195 L146 188Z" fill="#263c5b" stroke="#172b48" stroke-width="1"/><path d="M150 195 L146 188 L150 184 L154 188Z" fill="#526985"/>`;
 
-
-  if(male&&state.outfit==='Reserved for Harrell'){
- tie=`
- <!-- Blush pink sash emerging from inside the jacket -->
- <path
-  d="M108 240
-  Q103 245 111 251
-  L178 202
-  Q187 196 190 188
-  L183 181
-  Q179 177 174 182
-  L109 237Z"
-  fill="#e8b9c2"
-  stroke="#c99ba4"
-  stroke-width="1.5"
- />
- `;
-  }
-
- 
+if(male&&state.outfit==='Reserved for Harrell'){
+ tie='';
+}
+  
  
  }else{
   const longSleeve=state.outfit==='Long-sleeve gown';
