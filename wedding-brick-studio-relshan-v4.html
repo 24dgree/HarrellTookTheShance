@@ -382,6 +382,25 @@ function draw(){
   legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="${c}" stroke="${outline}" stroke-width="2"/>`;
   }
  }
+ if(!male){
+ const beltColor=c;
+
+ if(state.belt==='Plain'){
+  tie=`<path d="M111 211 Q150 218 189 211 L189 220 Q150 227 111 220Z"
+   fill="${beltColor}" stroke="${outline}" stroke-width="1.5"/>`;
+ }else if(state.belt==='Ribbon'){
+  tie=`<path d="M111 211 Q150 218 189 211 L189 220 Q150 227 111 220Z"
+   fill="${beltColor}" stroke="${outline}" stroke-width="1.5"/>
+   <path d="M150 217 Q137 204 132 215 Q133 223 150 220 Q167 223 168 215 Q163 204 150 217Z"
+   fill="${beltColor}" stroke="${outline}" stroke-width="1.5"/>`;
+ }else{
+  tie=`<path d="M111 211 Q150 218 189 211 L189 220 Q150 227 111 220Z"
+   fill="${beltColor}" stroke="${outline}" stroke-width="1.5"/>
+   <path d="M150 216 Q137 204 132 214 Q132 224 150 219 Q168 224 168 214 Q163 204 150 216Z"
+   fill="${beltColor}" stroke="${outline}" stroke-width="1.5"/>
+   <circle cx="150" cy="216" r="3" fill="${beltColor}" stroke="${outline}" stroke-width="1"/>`;
+ }
+}
  let hairShape='';
  const h=state.hair;
  if(male){
