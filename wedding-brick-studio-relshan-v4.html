@@ -437,6 +437,20 @@ function draw(){
   
    if(jacket){
     torso=`<path d="M105 155 L137 155 L150 178 L163 155 L195 155 Q207 161 210 180 L197 258 H103 L90 180 Q93 161 105 155Z" fill="${c}" stroke="${outline}" stroke-width="3"/>
+        ${state.outfit==='Reserved for Harrell'?`
+    <path
+     d="M108 240
+     Q103 245 111 251
+     L178 202
+     Q187 196 190 188
+     L183 181
+     Q179 177 174 182
+     L109 237Z"
+     fill="#e8b9c2"
+     stroke="#c99ba4"
+     stroke-width="1.5"
+    />`:''}
+    
     <path d="M137 155 L150 178 L139 216 L116 163Z" fill="#fff" stroke="#cbd3df" stroke-width="1.2"/>
     <path d="M163 155 L150 178 L161 216 L184 163Z" fill="#fff" stroke="#cbd3df" stroke-width="1.2"/>
     <path d="M150 179 V252" stroke="#d8dfeb" stroke-width="1.5"/>
