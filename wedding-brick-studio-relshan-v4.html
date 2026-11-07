@@ -536,8 +536,84 @@ arms=`
 
   
     if(state.outfit==='Reserved for Shannika'){
-    torso=`<path d="M112 214 Q150 224 188 214 Q211 258 225 329 Q150 346 75 329 Q89 258 112 214Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M119 157 L181 157 L190 213 Q150 226 110 213Z" fill="#20232b" stroke="${outline}" stroke-width="2.5"/><path d="M150 171 V214" stroke="#ffffff" stroke-opacity=".24" stroke-width="1.5"/>`;
-    legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="#20232b" stroke="${outline}" stroke-width="2"/>`;
+     
+    torso=`
+<!-- Blush pink A-line skirt -->
+<path
+ d="M112 214
+ Q150 224 188 214
+ Q211 258 225 329
+ Q150 346 75 329
+ Q89 258 112 214Z"
+ fill="${c}"
+ stroke="${outline}"
+ stroke-width="3"
+ />
+
+<!-- Black strapless double sweetheart bodice -->
+<path
+ d="M110 181
+ Q110 164 128 164
+ Q142 164 150 183
+ Q158 164 172 164
+ Q190 164 190 181
+ L190 207
+ Q150 220 110 207Z"
+ fill="#20232b"
+ stroke="${outline}"
+ stroke-width="2.5"
+ />
+
+<!-- Oversized blush pink bow -->
+<g stroke="#c99ba4" stroke-width="1.5" stroke-linejoin="round">
+
+ <!-- Left bow loop -->
+ <path
+  d="M145 249
+  C130 232 105 226 94 239
+  C82 254 100 275 145 267Z"
+  fill="${c}"
+ />
+
+ <!-- Right bow loop -->
+ <path
+  d="M155 249
+  C170 232 195 226 206 239
+  C218 254 200 275 155 267Z"
+  fill="${c}"
+ />
+
+ <!-- Left ribbon tail -->
+ <path
+  d="M140 256
+  C128 270 119 293 111 320
+  Q133 312 151 278
+  L151 255Z"
+  fill="${c}"
+ />
+
+ <!-- Right ribbon tail -->
+ <path
+  d="M160 256
+  C172 270 181 293 189 320
+  Q167 312 149 278
+  L149 255Z"
+  fill="${c}"
+ />
+
+ <!-- Center knot -->
+ <path
+  d="M137 245
+  Q150 235 163 245
+  L164 265
+  Q150 278 136 265Z"
+  fill="${c}"
+ />
+</g>
+`;
+    
+     
+     legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="#20232b" stroke="${outline}" stroke-width="2"/>`;
   
   
   } else {
