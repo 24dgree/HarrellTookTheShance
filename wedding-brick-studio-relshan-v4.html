@@ -448,10 +448,11 @@ function draw(){
   
   else if(state.tie==='Necktie')tie=`<path d="M144 164 L150 171 L156 164 L154 188 L150 195 L146 188Z" fill="#263c5b" stroke="#172b48" stroke-width="1"/><path d="M150 195 L146 188 L150 184 L154 188Z" fill="#526985"/>`;
 
-if(male&&state.outfit==='Reserved for Harrell'){
+
+  if(male&&state.outfit==='Reserved for Harrell'){
  tie=`
  <g>
-  <!-- Scarf around the neck -->
+  <!-- Scarf around neck -->
   <path
    d="M136 157
    Q143 151 150 157
@@ -463,42 +464,22 @@ if(male&&state.outfit==='Reserved for Harrell'){
    stroke="#c99ba4"
    stroke-width="1.5"
   />
-  
 
-  <!-- Front diagonal sash -->
-<path
- d="M109 239
- Q103 244 110 251
- L185 197
- Q195 191 189 183
- L182 176
- Q178 173 172 179
- Z"
- fill="#e8b9c2"
- stroke="#c99ba4"
- stroke-width="1.5"
-/>
-   
-
-  
-
-  <!-- Second hanging end -->
+  <!-- Diagonal front sash -->
   <path
-   d="M158 164
-   Q169 166 179 181
-   L195 211
-   Q199 219 199 231
-   L201 319
-   L185 319
-   L185 239
-   Q184 225 176 211
-   L158 181Z"
+   d="M109 239
+   Q103 244 110 251
+   L185 197
+   Q195 191 189 183
+   L182 176
+   Q178 173 172 179
+   Z"
    fill="#e8b9c2"
    stroke="#c99ba4"
    stroke-width="1.5"
   />
  </g>`;
-}
+  }
 
  
  
