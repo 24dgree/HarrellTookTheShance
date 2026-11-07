@@ -387,30 +387,30 @@ function draw(){
   const sleeveColor=jacket?c:'#f7f7f4';
   
   // Arms are drawn behind the torso. Shirt/jacket sleeves follow the shoulder line and end at the wrist.
-  
+
   arms=`
  ${state.outfit==='Reserved for Harrell'?`
  <path
-  d="M184 207
-  Q218 220 207 246
-  Q195 266 151 265
-  Q105 266 91 246
-  Q78 228 108 207"
+  d="M109 239
+  C91 246 88 255 101 261
+  C130 275 183 264 207 247
+  Q218 240 216 232"
   fill="none"
   stroke="#c99ba4"
-  stroke-width="10"
+  stroke-width="11"
   stroke-linecap="round"
+  stroke-linejoin="round"
  />
  <path
-  d="M184 207
-  Q218 220 207 246
-  Q195 266 151 265
-  Q105 266 91 246
-  Q78 228 108 207"
+  d="M109 239
+  C91 246 88 255 101 261
+  C130 275 183 264 207 247
+  Q218 240 216 232"
   fill="none"
   stroke="#e8b9c2"
-  stroke-width="7"
+  stroke-width="8"
   stroke-linecap="round"
+  stroke-linejoin="round"
  />`
  :''}
 
@@ -430,6 +430,7 @@ function draw(){
   <path d="M84 233 L82 247 M216 233 L218 247"
    fill="none" stroke="${skin}" stroke-width="15"/>
  </g>`;
+  
   
   legs=`<path d="M105 255 H150 V333 H112 Q105 333 105 325Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M150 255 H195 V325 Q195 333 188 333 H150Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M106 320 H150 M150 320 H194" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>`;
   if(jacket){
