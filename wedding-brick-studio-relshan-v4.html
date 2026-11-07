@@ -219,7 +219,15 @@ function draw(){
  }
  let face='';
  if(state.face==='Smile')face=`<path d="M132 113 Q150 130 168 113" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
- if(state.face==='Playful tongue')face=`<path d="M130 124 Q150 146 170 124" fill="none" stroke="#563b34" stroke-width="4" stroke-linecap="round"/><path d="M154 140 Q166 135 169 128 Q174 132 170 140 Q165 147 157 145Z" fill="#e97886" stroke="#8e4d58" stroke-width="1.2"/><path d="M159 141 Q164 138 168 133" fill="none" stroke="#f6b3ba" stroke-width="1.2"/>`;
+ 
+  if(state.face==='Playful tongue')face=`
+<path d="M130 124 Q150 146 170 124"
+fill="none" stroke="#563b34" stroke-width="4" stroke-linecap="round"/>
+<path d="M150 137 Q160 137 169 127 Q174 132 170 140 Q165 148 157 145 Q152 143 150 137Z"
+fill="#e97886" stroke="#8e4d58" stroke-width="1.2"/>
+<path d="M159 141 Q164 138 168 133"
+fill="none" stroke="#f6b3ba" stroke-width="1.2"/>`;
+ 
  if(state.face==='Neutral')face=`<path d="M137 119 H163" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
  if(state.face==='Wink')face=`<path d="M140 124 Q151 135 163 124" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
  if(state.face==='Blush')face=`<path d="M133 116 Q150 130 167 116" fill="none" stroke="#563b34" stroke-width="3"/><ellipse cx="121" cy="119" rx="8" ry="4" fill="#e99c91" opacity=".65"/><ellipse cx="179" cy="119" rx="8" ry="4" fill="#e99c91" opacity=".65"/>`;
