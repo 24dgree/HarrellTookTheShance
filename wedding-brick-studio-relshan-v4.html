@@ -463,13 +463,52 @@ if(male&&state.outfit==='Reserved for Harrell'){
  
  }else{
   const longSleeve=state.outfit==='Long-sleeve gown';
+  
+  
   const shoulderSleeve=longSleeve;
-  const sleeveColor=shoulderSleeve?c:skin;
-  arms=`<g stroke-linecap="round" stroke-linejoin="round">
-   <path d="M106 169 Q97 178 93 194 L86 232" fill="none" stroke="${outline}" stroke-width="23"/><path d="M106 169 Q97 178 93 194 L86 232" fill="none" stroke="${sleeveColor}" stroke-width="17"/>
-   <path d="M194 169 Q203 178 207 194 L214 232" fill="none" stroke="${outline}" stroke-width="23"/><path d="M194 169 Q203 178 207 194 L214 232" fill="none" stroke="${sleeveColor}" stroke-width="17"/>
-   <path d="M86 232 L84 248 M214 232 L216 248" fill="none" stroke="${outline}" stroke-width="21"/><path d="M86 233 L84 247 M214 233 L216 247" fill="none" stroke="${skin}" stroke-width="14"/>
-  </g>`;
+const sleeveColor=shoulderSleeve?c:skin;
+
+arms=`
+ <path
+  d="M119 181
+  Q105 215 119 239
+  Q150 259 181 239
+  Q195 215 181 181"
+  fill="none"
+  stroke="#c99ba4"
+  stroke-width="9"
+  stroke-linecap="round"
+ />
+
+ <path
+  d="M119 181
+  Q105 215 119 239
+  Q150 259 181 239
+  Q195 215 181 181"
+  fill="none"
+  stroke="#e8b9c2"
+  stroke-width="6"
+  stroke-linecap="round"
+ />
+
+ <g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M106 169 Q97 178 93 194 L86 232"
+   fill="none" stroke="${outline}" stroke-width="23"/>
+  <path d="M106 169 Q97 178 93 194 L86 232"
+   fill="none" stroke="${sleeveColor}" stroke-width="17"/>
+
+  <path d="M194 169 Q203 178 207 194 L214 232"
+   fill="none" stroke="${outline}" stroke-width="23"/>
+  <path d="M194 169 Q203 178 207 194 L214 232"
+   fill="none" stroke="${sleeveColor}" stroke-width="17"/>
+
+  <path d="M86 232 L84 248 M214 232 L216 248"
+   fill="none" stroke="${outline}" stroke-width="21"/>
+  <path d="M86 233 L84 247 M214 233 L216 247"
+   fill="none" stroke="${skin}" stroke-width="14"/>
+ </g>`;
+
+  
   if(state.outfit==='Blouse + A-line skirt'){
    torso=`<path d="M112 214 Q150 224 188 214 Q211 258 225 329 Q150 346 75 329 Q89 258 112 214Z" fill="#20232b" stroke="${outline}" stroke-width="3"/><path d="M119 157 L181 157 L190 213 Q150 226 110 213Z" fill="${c}" stroke="${outline}" stroke-width="2.5"/><path d="M150 171 V214" stroke="#ffffff" stroke-opacity=".24" stroke-width="1.5"/>`;
    legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="#20232b" stroke="${outline}" stroke-width="2"/>`;
