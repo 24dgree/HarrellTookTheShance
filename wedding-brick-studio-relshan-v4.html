@@ -408,14 +408,15 @@ function draw(){
   // Only the crown texture/part changes; no style drops a fringe over the brows.
   let maleHair='';
 
-  
   const capBase=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q184 87 170 82 Q150 75 130 82 Q116 87 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`;
 
 if(h==='Slick back'){
  maleHair=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q184 88 170 81 Q145 66 119 84 Q111 89 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>
  <path d="M117 78 Q143 56 176 76" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2.2"/>`;
 
-else if(h==='Middle part') maleHair=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q185 87 174 82 Q162 74 150 57 Q138 74 126 82 Q114 87 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M150 44 Q146 57 150 70 M145 59 Q133 65 125 82 M155 59 Q167 65 175 82" fill="none" stroke="#ffffff" stroke-opacity=".17" stroke-width="2"/>`;
+}else if(h==='Middle part'){
+ maleHair=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q185 87 174 82 Q162 74 150 57 Q138 74 126 82 Q114 87 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>
+ <path d="M150 44 Q146 57 150 70 M145 59 Q133 65 125 82 M155 59 Q167 65 175 82" fill="none" stroke="#ffffff" stroke-opacity=".17" stroke-width="2"/>`;
 
 }else if(h==='Wavy'){
  maleHair=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q186 88 178 84 Q169 77 161 82 Q153 87 147 80 Q137 74 128 83 Q115 87 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>
@@ -426,15 +427,19 @@ else if(h==='Middle part') maleHair=`<path d="M103 99 Q98 43 150 41 Q198 40 198 
  <path d="M119 76 L130 66 M143 72 L151 61 M164 73 L174 65" fill="none" stroke="#ffffff" stroke-opacity=".17" stroke-width="2"/>`;
 
 }else if(h==='Classic short'){
- maleHair=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q184 88 172 85 Q150 80 129 85 Q115 89 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>
- <path d="M119 77 Q143 67 165 76" fill="none" stroke="#ffffff" stroke-opacity=".15" stroke-width="2"/>`;
+ maleHair=`<path d="M103 99 Q98 57 111 48 Q122 36 139 43 Q151 32 166 42 Q184 38 193 56 Q201 73 198 99 Q185 88 174 84 Q158 77 146 80 Q135 83 126 88 Q114 91 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>
+ <path d="M111 76 Q120 57 139 55 Q151 50 160 57 Q170 61 176 73 Q164 66 155 68 Q143 70 137 82 Q130 91 124 87 Q118 83 111 89Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>
+ <path d="M119 70 Q132 54 149 56 Q164 57 174 74" fill="none" stroke="#ffffff" stroke-opacity=".2" stroke-width="2.2"/>
+ <path d="M137 82 Q145 73 157 72" fill="none" stroke="#202b3c" stroke-opacity=".65" stroke-width="1.8"/>`;
 
 }else if(h==='Side part'){
- maleHair=`<path d="M103 101 Q98 43 150 41 Q196 39 198 99 L184 111 Q178 92 165 82 Q146 67 126 77 Q113 83 103 101Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/><path d="M113 82 Q135 61 160 73 Q170 78 178 89" fill="none" stroke="#ffffff" stroke-opacity=".15" stroke-width="2.2"/>`;
+ maleHair=`<path d="M103 101 Q98 43 150 41 Q196 39 198 99 L184 111 Q178 92 165 82 Q146 67 126 77 Q113 83 103 101Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>
+ <path d="M113 82 Q135 61 160 73 Q170 78 178 89" fill="none" stroke="#ffffff" stroke-opacity=".15" stroke-width="2.2"/>`;
 
 }else{
  maleHair=capBase;
  }
+  
 
   
   const babyHair=state.babyHair?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M150 46 Q140 58 130 76 Q125 82 119 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 46 Q160 58 170 76 Q175 82 181 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 46 Q147 51 145 56 M150 46 Q153 51 155 56" stroke="${hair}" stroke-width="3.2"/></g>`:'';
