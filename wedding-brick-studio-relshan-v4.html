@@ -455,10 +455,13 @@ function draw(){
     <path d="M163 155 L150 178 L161 216 L184 163Z" fill="#fff" stroke="#cbd3df" stroke-width="1.2"/>
     
      <path d="M150 179 V252" stroke="${outline}" stroke-width="1.2"/>
+
+${state.outfit==='Reserved for Harrell'?`
 <circle cx="140" cy="211" r="3" fill="#e8b9c2"/>
 <circle cx="160" cy="211" r="3" fill="#e8b9c2"/>
 <circle cx="140" cy="229" r="3" fill="#e8b9c2"/>
 <circle cx="160" cy="229" r="3" fill="#e8b9c2"/>
+`:`<circle cx="160" cy="226" r="2" fill="#d8dfeb"/>`}
     
     
     <path d="M177 169 L190 169 L184 181Z" fill="#fff"/>`;
