@@ -116,12 +116,20 @@ function renderControls(){
  } else if(tab==='pose'){
   const poses=['Classic stance','One hand waving','Hands on hips','Hands together'];
   out+=`<div class="section"><h3>MINIFIGURE POSE</h3><div class="grid">${poses.map(x=>card(x,state.pose===x)).join('')}</div></div>`;
- } else if(tab==='props'){
-  out+=`<div class="section"><h3>PROPS</h3><div class="grid">${['#HarrellTookTheShance','#London','#Bali'].map(x=>card(x,state.props.includes(x))).join('')}</div><small class="hint">Choose one or more wedding hashtags to display beneath your minifigure.</small></div>`;
- } else {
-  if(state.gender==='male')out+=`<div class="section"><h3>NECKWEAR</h3><div class="grid">${options.tie.map(x=>card(x,state.tie===x)).join('')}</div></div>`;
+ 
+  } else if(tab==='props'){
+  out+=`<div class="section"><h3>PROPS</h3><div class="grid">${['#HarrellTookTheShance','#London','#Bali'].map(x=>card(x,state.props.includes(x))).join('')}</div><small class="hint">Choose up to three wordings to display beneath your minifigure.</small></div>`;
+
+ } else if(tab==='tie'){
+  if(state.gender==='male'){
+   out+=`<div class="section"><h3>NECKWEAR</h3><div class="grid">${options.tie.map(x=>card(x,state.tie===x)).join('')}</div></div>`;
+  }
+
+ } else if(tab==='details'){
   const accessoryOptions=state.gender==='male'?['Glasses','Watch','Gift box','Balinese paper parasol','Boutonniere','Round pin']:['Glasses','Gift box','Balinese paper parasol','Open fan','Hair clip','Earrings','Bouquet'];
   out+=`<div class="section"><h3>ACCESSORIES · PICK UP TO 3</h3><div class="grid">${accessoryOptions.map(x=>card(x,state.accessories.includes(x))).join('')}</div><small class="hint">Choose up to three accessories. Tap again to remove one.</small></div>`;
+  
+  
   if(state.accessories.includes('Glasses'))out+=`<div class="section"><h3>GLASSES STYLE</h3><div class="grid">${['Original','White heart · dark lenses','Long rectangle · dark lenses','Olive oval · clear lenses'].map((x,i)=>card(x,state.glassesStyle===x)).join('')}</div></div>`;
   if(state.gender==='male'&&state.accessories.includes('Watch'))out+=`<div class="section"><h3>WATCH STYLE</h3><div class="grid">${['Brown leather · black oval-square','Black leather · round'].map(x=>card(x,state.watchStyle===x)).join('')}</div></div>`;
   if(state.accessories.includes('Gift box'))out+=`<div class="section"><h3>GIFT BOX COLOUR</h3><div class="grid">${['White box · baby blue ribbon','Black box · cream ribbon','Blue box · white ribbon'].map((x,i)=>card(x,state.giftStyle===i)).join('')}</div></div>`;
