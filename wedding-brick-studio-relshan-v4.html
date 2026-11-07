@@ -228,7 +228,8 @@ function draw(){
   hairShape=back+bunShape+crown+halfUp+fringe+babyHair+faceFraming;
  }
  let face='';
- if(state.face==='Smile')face=`<path d="M132 113 Q150 130 168 113" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
+ 
+  if(state.face==='Smug')face=`<path d="M133 116 L150 130 L167 116" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
  
   if(state.face==='Playful tongue')face=`
 <path d="M130 124 Q150 146 170 124"
