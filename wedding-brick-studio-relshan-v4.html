@@ -553,8 +553,49 @@ stroke-linecap="round"/>
  const head=`<rect x="102" y="55" width="96" height="100" rx="30" fill="${skin}" stroke="#263750" stroke-width="3"/>${eyes}${face}${glasses}`;
  document.getElementById('figure').innerHTML=`<ellipse cx="150" cy="347" rx="77" ry="10" fill="#dbe6f2"/>${parasolLayer}<g>${legs}${arms}${torso}${tie}<rect x="140" y="145" width="20" height="17" rx="5" fill="${skin}" stroke="#263750" stroke-width="2"/>${head}${hairShape}${extra}${propLayer}</g>`;
 }
-document.querySelectorAll('[data-gender]').forEach(b=>b.onclick=()=>{state.gender=b.dataset.gender;state.outfit=state.gender==='male'?'Full suit':'Blouse + A-line skirt';state.color=state.gender==='male'?'navy':'blush pink';state.hair=state.gender==='male'?'Side part':'Smooth full-front waves';state.babyHair=false;state.tie='Necktie';state.accessories=[];state.glassesStyle='Original';state.watchStyle='Brown leather · black oval-square';state.giftStyle=0;state.pose='Classic stance';state.props=[];document.querySelectorAll('[data-gender]').forEach(x=>x.classList.toggle('active',x===b));renderControls();draw();});
-document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));renderControls();});
+ 
+ document.querySelectorAll('[data-gender]').forEach(b=>{
+ b.onclick=()=>{
+  state.gender=b.dataset.gender;
+
+  state.outfit=state.gender==='male'
+   ?'Full suit'
+   :'Blouse + A-line skirt';
+
+  state.color=state.gender==='male'
+   ?'navy'
+   :'blush pink';
+
+  state.hair=state.gender==='male'
+   ?'Side part'
+   :'Smooth full-front waves';
+
+  state.babyHair=false;
+  state.tie='Necktie';
+  state.belt='Plain';
+  state.accessories=[];
+  state.glassesStyle='Original';
+  state.watchStyle='Brown leather · black oval-square';
+  state.giftStyle=0;
+  state.pose='Classic stance';
+  state.props=[];
+
+  document.querySelectorAll('[data-gender]').forEach(x=>{
+   x.classList.toggle('active',x===b);
+  });
+
+  document.querySelector('[data-tab="tie"]').textContent=
+   state.gender==='female'?'Dress Belt':'Tie';
+
+  renderControls();
+  draw();
+ };
+});
+
+document
+
+ 
+ document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));renderControls();});
 document.getElementById('random').onclick=()=>{let pick=a=>a[Math.floor(Math.random()*a.length)];state.hair=pick(options.hair[state.gender]);state.babyHair=Math.random()<.35;state.face=pick(options.face);state.outfit=pick(options.outfit[state.gender]);state.color=pick(palettes[state.gender])[0].toLowerCase();state.hairColor=pick(options.hairColors)[1];state.accessories=[];let pool=state.gender==='male'?['Glasses','Watch','Gift box','Balinese paper parasol','Boutonniere','Round pin']:['Glasses','Gift box','Balinese paper parasol','Open fan','Hair clip','Earrings','Bouquet'];while(state.accessories.length<2&&Math.random()<.9){let a=pick(pool);if(!state.accessories.includes(a))state.accessories.push(a);}state.tie=pick(options.tie);renderControls();draw();};
 document.getElementById('download').onclick=()=>{
  const svg=document.getElementById('figure').cloneNode(true);svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
