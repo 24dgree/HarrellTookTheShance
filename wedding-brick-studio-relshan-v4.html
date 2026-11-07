@@ -168,7 +168,7 @@ function renderControls(){
    out+=`<div class="section"><h3>NECKWEAR</h3><div class="grid">${options.tie.map(x=>card(x,state.tie===x)).join('')}</div></div>`;
   }
 
- } else if(tab==='details'){
+ } else if(tab==='accessories'){
   const accessoryOptions=state.gender==='male'?['Glasses','Watch','Gift box','Balinese paper parasol','Boutonniere','Round pin']:['Glasses','Gift box','Balinese paper parasol','Open fan','Hair clip','Earrings','Bouquet'];
   out+=`<div class="section"><h3>ACCESSORIES · PICK UP TO 3</h3><div class="grid">${accessoryOptions.map(x=>card(x,state.accessories.includes(x))).join('')}</div><small class="hint">Choose up to three accessories. Tap again to remove one.</small></div>`;
   
