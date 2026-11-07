@@ -20,8 +20,33 @@ h1{font-family:Georgia,serif;font-weight:500;letter-spacing:1px;font-size:clamp(
 .previewtop{display:flex;justify-content:space-between;align-items:center}
 .label{font-size:10px;letter-spacing:2px;font-weight:800;color:#8294ad}
 .pill{font-size:10px;color:#58769d;background:#edf4fd;padding:7px 10px;border-radius:30px;font-weight:700}
-.stage{margin:12px auto 10px;background:radial-gradient(ellipse at 50% 42%,#fff 0%,#f8fbff 56%,#eaf2fc 100%);border:1px solid #e5edf7;border-radius:20px;min-height:380px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-#figure{width:min(100%,310px);height:370px;display:block}
+
+ .stage{
+  position:relative;
+}
+
+.stage:before{
+  content:"#HarrellTookTheShance";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) rotate(-90deg);
+  font-family:Georgia,serif;
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:2px;
+  color:#dce7f5;
+  white-space:nowrap;
+  z-index:0;
+  pointer-events:none;
+}
+
+#figure{
+  position:relative;
+  z-index:1;
+}
+ 
+ #figure{width:min(100%,310px);height:370px;display:block}
 .namebox{text-align:center;margin:0 0 12px}
 .namebox input{border:0;border-bottom:1px solid #d8e3f0;background:transparent;text-align:center;font:600 15px inherit;color:var(--ink);width:70%;padding:8px;outline:none}
 .actions{display:flex;gap:9px}
