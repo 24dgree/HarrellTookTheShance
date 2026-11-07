@@ -435,15 +435,23 @@ function draw(){
   legs=`<path d="M105 255 H150 V333 H112 Q105 333 105 325Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M150 255 H195 V325 Q195 333 188 333 H150Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M106 320 H150 M150 320 H194" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>`;
   
   
-
-
-  
-   // A fitted waistcoat sits inside the torso silhouette; it narrows at the waist instead of floating over it.
-   torso=`<path d="M105 155 L137 155 L150 176 L163 155 L195 155 Q207 161 210 180 L197 258 H103 L90 180 Q93 161 105 155Z" fill="#f7f7f4" stroke="${outline}" stroke-width="3"/>
-    <path d="M116 158 L145 171 L150 250 L107 250 L101 181Z" fill="${c}" stroke="${outline}" stroke-width="2.2"/><path d="M184 158 L155 171 L150 250 L193 250 L199 181Z" fill="${c}" stroke="${outline}" stroke-width="2.2"/>
+   if(jacket){
+    torso=`<path d="M105 155 L137 155 L150 178 L163 155 L195 155 Q207 161 210 180 L197 258 H103 L90 180 Q93 161 105 155Z" fill="${c}" stroke="${outline}" stroke-width="3"/>
+    <path d="M137 155 L150 178 L139 216 L116 163Z" fill="#fff" stroke="#cbd3df" stroke-width="1.2"/>
+    <path d="M163 155 L150 178 L161 216 L184 163Z" fill="#fff" stroke="#cbd3df" stroke-width="1.2"/>
+    <path d="M150 179 V252" stroke="#d8dfeb" stroke-width="1.5"/>
+    <circle cx="160" cy="226" r="2" fill="#d8dfeb"/>
+    <path d="M177 169 L190 169 L184 181Z" fill="#fff"/>`;
+   }else{
+    torso=`<path d="M105 155 L137 155 L150 176 L163 155 L195 155 Q207 161 210 180 L197 258 H103 L90 180 Q93 161 105 155Z" fill="#f7f7f4" stroke="${outline}" stroke-width="3"/>
+    <path d="M116 158 L145 171 L150 250 L107 250 L101 181Z" fill="${c}" stroke="${outline}" stroke-width="2.2"/>
+    <path d="M184 158 L155 171 L150 250 L193 250 L199 181Z" fill="${c}" stroke="${outline}" stroke-width="2.2"/>
     <path d="M116 158 L145 171 L150 188 L136 180Z M184 158 L155 171 L150 188 L164 180Z" fill="${c}" stroke="${outline}" stroke-width="1.5"/>
     <path d="M150 190 V242" stroke="#d7dce4" stroke-width="1.2"/>${[202,216,230].map(y=>`<circle cx="158" cy="${y}" r="1.8" fill="#e8edf4"/>`).join('')}`;
+   }
+
   
+ 
  
   if(state.tie==='Bowtie')tie=`<path d="M145 165 L132 158 L132 174 L145 169Z M155 165 L168 158 L168 174 L155 169Z" fill="#263c5b" stroke="${outline}" stroke-width="1.2"/><circle cx="150" cy="166" r="3" fill="#d8e0eb"/>`;
   
