@@ -250,8 +250,10 @@ function renderControls(){
      state.tie='Necktie';
     }
 
-   }else if(v==='Necktie'||v==='Bowtie'||v==='No tie'){
-    state.tie=v;
+   }else if(v==='Plain'||v==='Ribbon'||v==='Bow'){
+ state.belt=v;
+}else if(v==='Necktie'||v==='Bowtie'||v==='No tie'){
+ state.tie=v;
 
    }else if([
     'Original',
