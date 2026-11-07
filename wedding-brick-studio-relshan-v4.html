@@ -533,9 +533,11 @@ arms=`
  </g>`;
 
   
-  if(state.outfit==='Blouse + A-line skirt'){
-   torso=`<path d="M112 214 Q150 224 188 214 Q211 258 225 329 Q150 346 75 329 Q89 258 112 214Z" fill="#20232b" stroke="${outline}" stroke-width="3"/><path d="M119 157 L181 157 L190 213 Q150 226 110 213Z" fill="${c}" stroke="${outline}" stroke-width="2.5"/><path d="M150 171 V214" stroke="#ffffff" stroke-opacity=".24" stroke-width="1.5"/>`;
-   legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="#20232b" stroke="${outline}" stroke-width="2"/>`;
+    if(state.outfit==='Reserved for Shannika'){
+    torso=`<path d="M112 214 Q150 224 188 214 Q211 258 225 329 Q150 346 75 329 Q89 258 112 214Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M119 157 L181 157 L190 213 Q150 226 110 213Z" fill="#20232b" stroke="${outline}" stroke-width="2.5"/><path d="M150 171 V214" stroke="#ffffff" stroke-opacity=".24" stroke-width="1.5"/>`;
+    legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="#20232b" stroke="${outline}" stroke-width="2"/>`;
+  
+  
   } else {
   const neckline=state.outfit==='Off-shoulder fitted gown'?`<path d="M111 173 Q150 193 189 173" fill="none" stroke="${c}" stroke-width="11" stroke-linecap="round"/>`:state.outfit==='One-shoulder gown'?`<path d="M115 158 L183 158 L190 177 Q157 194 113 177Z" fill="${c}"/>`:'';
   const skirtStart=state.outfit==='Mermaid gown'?`<path d="M111 215 Q150 224 189 215 L190 286 Q205 309 220 329 Q150 345 80 329 Q95 309 110 286Z"`:state.outfit==='Tulle ball gown'?`<path d="M112 214 Q150 225 188 214 Q215 252 239 329 Q150 348 61 329 Q85 252 112 214Z`:`<path d="M112 214 Q150 225 188 214 Q210 254 225 329 Q150 346 75 329 Q90 254 112 214Z`;
