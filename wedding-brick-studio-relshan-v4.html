@@ -165,10 +165,24 @@ function renderControls(){
   </div>`;
 
  
- } else if(tab==='tie'){
-  if(state.gender==='male'){
-   out+=`<div class="section"><h3>NECKWEAR</h3><div class="grid">${options.tie.map(x=>card(x,state.tie===x)).join('')}</div></div>`;
-  }
+} else if(tab==='tie'){
+ if(state.gender==='male'){
+  out+=`<div class="section">
+   <h3>NECKWEAR</h3>
+   <div class="grid">
+    ${options.tie.map(x=>card(x,state.tie===x)).join('')}
+   </div>
+  </div>`;
+ }else{
+  const beltOptions=['Plain','Ribbon','Bow'];
+  out+=`<div class="section">
+   <h3>DRESS BELT</h3>
+   <div class="grid">
+    ${beltOptions.map(x=>card(x,state.belt===x)).join('')}
+   </div>
+   <small class="hint">Belt colour automatically matches your dress.</small>
+  </div>`;
+ }
 
  } else if(tab==='accessories'){
   const accessoryOptions=state.gender==='male'?['Glasses','Watch','Gift box','Balinese paper parasol','Boutonniere','Round pin']:['Glasses','Gift box','Balinese paper parasol','Open fan','Hair clip','Earrings','Bouquet'];
