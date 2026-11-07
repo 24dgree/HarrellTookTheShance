@@ -374,7 +374,11 @@ function renderControls(){
 function draw(){
  const male=state.gender==='male', skin=state.skin, hair=state.hairColor;
  const colorMap={navy:'#182c4d',black:'#20232b',white:'#f4f4f1',blue:'#a9c9e9','baby blue':'#b9d5f0','blush pink':'#e8b9c2','soft olive':'#cbd3a5',cream:'#e9dfcc'};
- const c=colorMap[state.color]||'#182c4d';
+ 
+ const c=state.outfit==='Reserved for Harrell'
+ ? '#20232b'
+ : (colorMap[state.color]||'#182c4d');
+ 
  const outline='#263750';
  let torso='',legs='',arms='',tie='',extra='';
  if(male){
