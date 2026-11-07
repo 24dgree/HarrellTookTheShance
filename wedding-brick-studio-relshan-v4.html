@@ -158,9 +158,97 @@ function renderControls(){
   
    
  
- }
+    }
+ 
  root.innerHTML=out;
- root.querySelectorAll('[data-choice]').forEach(b=>b.onclick=()=>{let v=b.dataset.choice;if(tab==='hair'){if(v==='Baby hair')state.babyHair=!state.babyHair;else state.hair=v;}else if(tab==='face')state.face=v;else if(tab==='outfit'){state.outfit=v;if(v.toLowerCase().includes('bowtie'))state.tie='Bowtie';else if(v.toLowerCase().includes('necktie'))state.tie='Necktie';}else if(v==='Necktie'||v==='Bowtie'||v==='No tie')state.tie=v;else if(['Original','White heart · dark lenses','Long rectangle · dark lenses','Olive oval · clear lenses'].includes(v))state.glassesStyle=v;else if(['Brown leather · black oval-square','Black leather · round'].includes(v))state.watchStyle=v;else if(['White box · baby blue ribbon','Black box · cream ribbon','Blue box · white ribbon'].includes(v))state.giftStyle=['White box · baby blue ribbon','Black box · cream ribbon','Blue box · white ribbon'].indexOf(v);else if(['Classic stance','One hand waving','Hands on hips','Hands together'].includes(v))state.pose=v;else if(['#HarrellTookTheShance','#London','#Bali'].includes(v)){state.props=state.props.includes(v)?state.props.filter(x=>x!==v):[...state.props,v];}else{if(state.accessories.includes(v))state.accessories=state.accessories.filter(x=>x!==v);else if(state.accessories.length<3)state.accessories.push(v);}renderControls();draw();});
+ 
+ root.querySelectorAll('[data-choice]').forEach(b=>{
+  b.onclick=()=>{
+   let v=b.dataset.choice;
+
+   if(tab==='hair'){
+    if(v==='Baby hair'){
+     state.babyHair=!state.babyHair;
+    }else{
+     state.hair=v;
+    }
+
+   }else if(tab==='face'){
+    state.face=v;
+
+   }else if(tab==='outfit'){
+    state.outfit=v;
+
+    if(v.toLowerCase().includes('bowtie')){
+     state.tie='Bowtie';
+    }else if(v.toLowerCase().includes('necktie')){
+     state.tie='Necktie';
+    }
+
+   }else if(v==='Necktie'||v==='Bowtie'||v==='No tie'){
+    state.tie=v;
+
+   }else if([
+    'Original',
+    'White heart · dark lenses',
+    'Long rectangle · dark lenses',
+    'Olive oval · clear lenses'
+   ].includes(v)){
+    state.glassesStyle=v;
+
+   }else if([
+    'Brown leather · black oval-square',
+    'Black leather · round'
+   ].includes(v)){
+    state.watchStyle=v;
+
+   }else if([
+    'White box · baby blue ribbon',
+    'Black box · cream ribbon',
+    'Blue box · white ribbon'
+   ].includes(v)){
+    state.giftStyle=[
+     'White box · baby blue ribbon',
+     'Black box · cream ribbon',
+     'Blue box · white ribbon'
+    ].indexOf(v);
+
+   }else if([
+    'Classic stance',
+    'One hand waving',
+    'Hands on hips',
+    'Hands together'
+   ].includes(v)){
+    state.pose=v;
+
+   }else if([
+    '#London',
+    '#261226',
+    '#HappyWeekend',
+    '#Bali',
+    '#080127',
+    '#TGIF'
+   ].includes(v)){
+    if(state.props.includes(v)){
+     state.props=state.props.filter(x=>x!==v);
+    }else if(state.props.length<3){
+     state.props.push(v);
+    }
+
+   }else{
+    if(state.accessories.includes(v)){
+     state.accessories=state.accessories.filter(x=>x!==v);
+    }else if(state.accessories.length<3){
+     state.accessories.push(v);
+    }
+   }
+
+   renderControls();
+   draw();
+  };
+ });
+ 
+ 
  root.querySelectorAll('[data-color]').forEach(b=>b.onclick=()=>{state.color=b.dataset.color;renderControls();draw()});
  root.querySelectorAll('[data-haircolor]').forEach(b=>b.onclick=()=>{state.hairColor=b.dataset.haircolor;renderControls();draw()});
  root.querySelectorAll('[data-skin]').forEach(b=>b.onclick=()=>{state.skin=b.dataset.skin;renderControls();draw()});
