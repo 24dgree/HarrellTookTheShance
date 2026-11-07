@@ -385,15 +385,52 @@ function draw(){
   const vest=state.outfit.startsWith('Fitted vest')||state.outfit.startsWith('Vest');
   const jacket=!vest;
   const sleeveColor=jacket?c:'#f7f7f4';
+  
   // Arms are drawn behind the torso. Shirt/jacket sleeves follow the shoulder line and end at the wrist.
-  arms=`<g stroke-linecap="round" stroke-linejoin="round">
-   <path d="M105 169 Q96 174 91 190 L84 232" fill="none" stroke="${outline}" stroke-width="25"/>
-   <path d="M105 169 Q96 174 91 190 L84 232" fill="none" stroke="${sleeveColor}" stroke-width="19"/>
-   <path d="M195 169 Q204 174 209 190 L216 232" fill="none" stroke="${outline}" stroke-width="25"/>
-   <path d="M195 169 Q204 174 209 190 L216 232" fill="none" stroke="${sleeveColor}" stroke-width="19"/>
-   <path d="M84 232 L82 248 M216 232 L218 248" fill="none" stroke="${outline}" stroke-width="22"/>
-   <path d="M84 233 L82 247 M216 233 L218 247" fill="none" stroke="${skin}" stroke-width="15"/>
-  </g>`;
+  
+  arms=`
+ ${state.outfit==='Reserved for Harrell'?`
+ <path
+  d="M184 207
+  Q218 220 207 246
+  Q195 266 151 265
+  Q105 266 91 246
+  Q78 228 108 207"
+  fill="none"
+  stroke="#c99ba4"
+  stroke-width="10"
+  stroke-linecap="round"
+ />
+ <path
+  d="M184 207
+  Q218 220 207 246
+  Q195 266 151 265
+  Q105 266 91 246
+  Q78 228 108 207"
+  fill="none"
+  stroke="#e8b9c2"
+  stroke-width="7"
+  stroke-linecap="round"
+ />`
+ :''}
+
+ <g stroke-linecap="round" stroke-linejoin="round">
+  <path d="M105 169 Q96 174 91 190 L84 232"
+   fill="none" stroke="${outline}" stroke-width="25"/>
+  <path d="M105 169 Q96 174 91 190 L84 232"
+   fill="none" stroke="${sleeveColor}" stroke-width="19"/>
+
+  <path d="M195 169 Q204 174 209 190 L216 232"
+   fill="none" stroke="${outline}" stroke-width="25"/>
+  <path d="M195 169 Q204 174 209 190 L216 232"
+   fill="none" stroke="${sleeveColor}" stroke-width="19"/>
+
+  <path d="M84 232 L82 248 M216 232 L218 248"
+   fill="none" stroke="${outline}" stroke-width="22"/>
+  <path d="M84 233 L82 247 M216 233 L218 247"
+   fill="none" stroke="${skin}" stroke-width="15"/>
+ </g>`;
+  
   legs=`<path d="M105 255 H150 V333 H112 Q105 333 105 325Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M150 255 H195 V325 Q195 333 188 333 H150Z" fill="${c}" stroke="${outline}" stroke-width="3"/><path d="M106 320 H150 M150 320 H194" stroke="#ffffff" stroke-opacity=".35" stroke-width="2"/>`;
   if(jacket){
    torso=`<path d="M105 155 L137 155 L150 178 L163 155 L195 155 Q207 161 210 180 L197 258 H103 L90 180 Q93 161 105 155Z" fill="${c}" stroke="${outline}" stroke-width="3"/>
