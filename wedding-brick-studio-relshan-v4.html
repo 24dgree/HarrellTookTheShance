@@ -1081,7 +1081,15 @@ fill="none" stroke="#f6b3ba" stroke-width="1.2"/>`;
  if(state.face==='Neutral')face=`<path d="M137 119 H163" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
  if(state.face==='Wink')face=`<path d="M140 124 Q151 135 163 124" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
  if(state.face==='Blush')face=`<path d="M133 116 Q150 130 167 116" fill="none" stroke="#563b34" stroke-width="3"/><ellipse cx="121" cy="119" rx="8" ry="4" fill="#e99c91" opacity=".65"/><ellipse cx="179" cy="119" rx="8" ry="4" fill="#e99c91" opacity=".65"/>`;
- if(state.face==='Mustache')face=`<path d="M150 119 Q143 111 135 116 Q129 120 132 125 Q140 128 150 121 Q160 128 168 125 Q171 120 165 116 Q157 111 150 119Z" fill="${hair}" stroke="#2b211d" stroke-width="1.2"/><path d="M137 125 Q150 132 163 125" fill="none" stroke="#563b34" stroke-width="2" stroke-linecap="round"/>`;
+ 
+ if(state.face==='Cute pout'&&!male)face=`
+<path d="M139 120 Q145 114 150 121 Q155 114 161 120 Q157 130 150 128 Q143 130 139 120Z"
+fill="none" stroke="#563b34" stroke-width="2.5"
+stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="121" cy="120" rx="8" ry="4.5" fill="#e99c91" opacity=".7"/>
+<ellipse cx="179" cy="120" rx="8" ry="4.5" fill="#e99c91" opacity=".7"/>`;
+ 
+ 
  const has=name=>state.accessories.includes(name);
  let glasses='';
  if(has('Glasses')){
