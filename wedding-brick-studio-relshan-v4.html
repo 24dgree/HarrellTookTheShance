@@ -201,8 +201,9 @@ function renderControls(){
   out+=`<div class="section"><h3>HAIR COLOUR</h3><div class="swatches">${options.hairColors.map(([n,c])=>`<button class="swatch ${state.hairColor===c?'selected':''}" title="${n}" data-haircolor="${c}" style="background:${c}"></button>`).join('')}</div></div>`;
  } else if(tab==='face'){
   
-  const faceOptions=male?options.face:options.face.map(x=>x==='Mustache'?'Cute pout':x);
-out+=`<div class="section"><h3>FACIAL EXPRESSION</h3><div class="grid">${faceOptions.map(x=>card(x,state.face===x)).join('')}</div></div>`;
+  const faceOptions=state.gender==='male'?options.face:options.face.map(x=>x==='Mustache'?'Cute pout':x);
+
+  out+=`<div class="section"><h3>FACIAL EXPRESSION</h3><div class="grid">${faceOptions.map(x=>card(x,state.face===x)).join('')}</div></div>`;
   
   out+=`<div class="section"><h3>SKIN TONE</h3><div class="swatches">${options.skins.map(([n,c])=>`<button class="swatch ${state.skin===c?'selected':''}" title="${n}" data-skin="${c}" style="background:${c}"></button>`).join('')}</div></div>`;
  } else if(tab==='outfit'){
