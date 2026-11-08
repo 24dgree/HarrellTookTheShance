@@ -663,36 +663,37 @@ arms=`
   const capBase=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q184 87 170 82 Q150 75 130 82 Q116 87 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`;
 
 if(h==='Slick back'){
- 
  maleHair=`
-<!-- Full swept-back slick hairstyle -->
-<path
- d="M103 101
- C98 79 99 54 113 39
- C124 25 140 23 150 31
- C163 21 181 27 192 42
- C204 58 202 82 198 101
- C187 91 177 83 164 78
- C151 73 137 76 125 83
- C116 88 109 95 103 101Z"
- fill="${hair}"
- stroke="#202b3c"
- stroke-width="3"
-/>
+ <!-- Classic short base with swept-up slick back -->
+ <path
+  d="M103 99
+  Q98 75 105 57
+  C111 40 126 34 139 40
+  C147 25 164 23 176 34
+  C189 42 197 58 198 99
+  Q185 88 174 84
+  Q158 77 146 80
+  Q135 83 126 88
+  Q114 91 103 99Z"
+  fill="${hair}"
+  stroke="#202b3c"
+  stroke-width="3"
+ />
 
-<!-- Backward swept hair texture -->
-<path
- d="M111 58
- Q128 35 150 38
- Q174 34 190 57"
- fill="none"
- stroke="#ffffff"
- stroke-opacity=".17"
- stroke-width="2"
- stroke-linecap="round"
-/>
-`;
+ <!-- Swept-back direction -->
+ <path
+  d="M111 70
+  Q126 43 148 39
+  Q170 35 187 59"
+  fill="none"
+  stroke="#ffffff"
+  stroke-opacity=".18"
+  stroke-width="2"
+  stroke-linecap="round"
+ />
+ `;
 
+ 
 }else if(h==='Middle part'){
  maleHair=`
  <!-- Wider, fuller middle-part silhouette -->
