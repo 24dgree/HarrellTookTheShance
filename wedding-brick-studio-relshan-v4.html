@@ -722,65 +722,71 @@ Q215 66 208 101
  <path d="M116 79 Q128 65 140 73 M151 70 Q164 61 177 77" fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2"/>`;
 
 }else if(h==='Comma hair'){
-  maleHair=`
-  <!-- Double comma fringe with side-part direction -->
+ maleHair=`
+ <!-- Soft voluminous comma hairstyle -->
+ <path
+  d="M92 103
+  Q87 83 91 62
+  Q93 48 104 43
+  Q111 34 123 37
+  Q137 29 150 40
+  Q163 29 177 37
+  Q189 34 196 43
+  Q207 48 209 62
+  Q213 83 208 103
+
+  Q201 96 195 91
+  Q188 85 181 87
+  Q170 89 160 82
+  Q154 78 150 83
+  Q146 78 140 82
+  Q130 89 119 87
+  Q112 85 105 92
+  Q98 97 92 103Z"
+  fill="${hair}"
+  stroke="#202b3c"
+  stroke-width="3"
+ />
+
+ <!-- Left soft comma fringe -->
+ <path
+  d="M105 76
+  Q117 62 132 68
+  Q145 73 146 87
+  Q146 94 139 99
+  Q138 88 128 87
+  Q116 87 110 96
+  Q105 89 105 76Z"
+  fill="${hair}"
+  stroke="#202b3c"
+  stroke-width="2"
+ />
+
+ <!-- Right soft comma fringe -->
+ <path
+  d="M151 73
+  Q165 61 180 70
+  Q192 78 188 91
+  Q185 97 178 100
+  Q177 89 167 87
+  Q158 85 151 96
+  Q147 84 151 73Z"
+  fill="${hair}"
+  stroke="#202b3c"
+  stroke-width="2"
+ />
+
+ <path
+  d="M112 68 Q126 59 138 73
+  M160 67 Q174 60 184 77"
+  fill="none"
+  stroke="#ffffff"
+  stroke-opacity=".18"
+  stroke-width="2"
+ />
+`;
+
   
-<path
- d="M92 103
- Q85 66 92 51
- Q97 40 109 39
- Q119 29 135 36
- Q145 39 150 51
- Q155 39 165 36
- Q181 29 191 39
- Q203 40 208 51
- Q215 66 208 103
- Q195 88 181 81
- Q166 73 155 81
- Q151 85 150 96
- Q145 85 135 81
- Q120 73 105 88
- Q99 94 92 103
- Z"
- fill="${hair}"
- stroke="#202b3c"
- stroke-width="3"
-/>
-
-  <!-- Left forward comma tip -->
-  <path
-   d="M112 79
-   Q127 63 143 73
-   Q151 78 150 94
-   Q144 86 136 87
-   Q127 89 122 98
-   Q115 91 112 79Z"
-   fill="${hair}"
-   stroke="#202b3c"
-   stroke-width="2"
-  />
-
-  <!-- Right forward comma tip -->
-  <path
-   d="M151 76
-   Q168 62 185 78
-   Q181 89 174 97
-   Q168 87 159 87
-   Q154 88 150 96
-   Q148 84 151 76Z"
-   fill="${hair}"
-   stroke="#202b3c"
-   stroke-width="2"
-  />
-
-  <path
-   d="M119 77 Q132 67 143 78
-   M160 75 Q172 68 181 81"
-   fill="none"
-   stroke="#ffffff"
-   stroke-opacity=".18"
-   stroke-width="2"
-  />`;
 
 }else if(h==='Classic short'){
  maleHair=`<path d="M103 99 Q98 57 111 48 Q122 36 139 43 Q151 32 166 42 Q184 38 193 56 Q201 73 198 99 Q185 88 174 84 Q158 77 146 80 Q135 83 126 88 Q114 91 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>
