@@ -975,13 +975,23 @@ fill="${hair}" stroke="#202b3c" stroke-width="2"/>`
   if(h==='Loose curls')back=`<g fill="${hair}" stroke="#202b3c" stroke-width="2"><circle cx="108" cy="112" r="12"/><circle cx="110" cy="137" r="12"/><circle cx="113" cy="160" r="12"/><circle cx="192" cy="112" r="12"/><circle cx="190" cy="137" r="12"/><circle cx="187" cy="160" r="12"/><path d="M103 89 Q150 25 197 89 L190 115 Q150 83 110 115Z"/></g>`;
 
   
-  const crown=[
+  const crown=h==='Soft Hollywood waves'?
+`<path
+d="M102 99 Q97 42 150 41 Q203 42 198 99
+Q184 91 173 87
+Q162 84 150 87
+Q138 84 127 87
+Q116 91 102 99Z"
+fill="${hair}"
+stroke="#202b3c"
+stroke-width="3"/>`
+:[
   'Smooth full-front waves',
   'Elegant centre-part waves',
   'Long sleek straight',
-  'Soft Hollywood waves',
   'Half-up waves'
 ].includes(h)?
+   
 `<path
 d="M102 99 Q97 42 150 41 Q203 42 198 99 Q184 84 169 78 Q150 70 132 77 Q116 83 102 99Z"
 fill="${hair}"
