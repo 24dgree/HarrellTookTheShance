@@ -991,12 +991,20 @@ stroke-width="3"/>`;
   const fringe='';
   const babyHair=state.babyHair?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M150 45 Q139 58 129 76 Q124 82 118 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q161 58 171 76 Q176 82 182 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q147 50 145 55 M150 45 Q153 50 155 55" stroke="${hair}" stroke-width="3.2"/></g>`:'';
   
-  const faceFraming=[
-  'Smooth full-front waves',
-  'Elegant centre-part waves',
-  'Soft Hollywood waves',
-  'Long sleek straight',
-  'Half-up waves'
+  const faceFraming=h==='Soft Hollywood waves'?`
+<g fill="${hair}" stroke="#202b3c" stroke-width="2.5" stroke-linejoin="round">
+<path d="M108 76 Q96 80 97 101 Q91 116 101 132 Q107 143 98 157 Q87 174 94 190 Q99 207 114 205 Q130 203 132 187 Q135 173 124 156 Q116 140 122 124 Q130 106 119 87 Q114 79 108 76Z"/>
+<path d="M192 76 Q204 80 203 101 Q209 116 199 132 Q193 143 202 157 Q213 174 206 190 Q201 207 186 205 Q170 203 168 187 Q165 173 176 156 Q184 140 178 124 Q170 106 181 87 Q186 79 192 76Z"/>
+</g>
+<g fill="none" stroke="#ffffff" stroke-opacity=".2" stroke-width="2.2">
+<path d="M105 101 Q99 125 111 145 Q116 158 106 179"/>
+<path d="M195 101 Q201 125 189 145 Q184 158 194 179"/>
+</g>`
+:[
+'Smooth full-front waves',
+'Elegant centre-part waves',
+'Long sleek straight',
+'Half-up waves'
 ].includes(h)?`<g fill="${hair}" stroke="#202b3c" stroke-width="2">
 <path d="M108 76 Q99 80 99 96 Q98 111 108 121 Q113 108 120 99 Q126 89 120 78Z"/>
 <path d="M192 76 Q201 80 201 96 Q202 111 192 121 Q187 108 180 99 Q174 89 180 78Z"/>
@@ -1006,6 +1014,7 @@ stroke-width="3"/>`;
 <g fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2">
 <path d="M108 93 Q102 116 111 136 M192 93 Q198 116 189 136"/>
 </g>`:'';
+  
  
   hairShape=back+bunShape+crown+halfUp+fringe+babyHair+faceFraming+(h==='Elegant updo'?`
 <g fill="none" stroke="#202b3c" stroke-width="2.2" stroke-linecap="round" opacity=".7">
