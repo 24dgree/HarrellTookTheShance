@@ -663,42 +663,35 @@ arms=`
   const capBase=`<path d="M103 99 Q98 43 150 41 Q198 40 198 99 Q184 87 170 82 Q150 75 130 82 Q116 87 103 99Z" fill="${hair}" stroke="#202b3c" stroke-width="3"/>`;
 
 if(h==='Slick back'){
- maleHair=`
- <!-- Voluminous swept-back crown -->
- <path
-  d="M103 99
-  C97 79 96 57 108 43
-  C118 29 136 25 150 36
-  C163 25 183 31 192 46
-  C202 61 201 82 198 99
-  Q183 86 170 80
-  Q148 69 128 79
-  Q113 86 103 99Z"
-  fill="${hair}"
-  stroke="#202b3c"
-  stroke-width="3"
- />
  
- <!-- Swept-back texture -->
- <path
-  d="M112 65
-  Q128 39 151 42
-  Q169 40 186 61"
-  fill="none"
-  stroke="#ffffff"
-  stroke-opacity=".2"
-  stroke-width="2.2"
-  stroke-linecap="round"
- />
- <path
-  d="M124 73 Q145 52 174 68"
-  fill="none"
-  stroke="#ffffff"
-  stroke-opacity=".14"
-  stroke-width="2"
-  stroke-linecap="round"
- />
- `;
+ maleHair=`
+<!-- Full swept-back slick hairstyle -->
+<path
+ d="M103 101
+ C98 79 99 54 113 39
+ C124 25 140 23 150 31
+ C163 21 181 27 192 42
+ C204 58 202 82 198 101
+ C187 91 177 83 164 78
+ C151 73 137 76 125 83
+ C116 88 109 95 103 101Z"
+ fill="${hair}"
+ stroke="#202b3c"
+ stroke-width="3"
+/>
+
+<!-- Backward swept hair texture -->
+<path
+ d="M111 58
+ Q128 35 150 38
+ Q174 34 190 57"
+ fill="none"
+ stroke="#ffffff"
+ stroke-opacity=".17"
+ stroke-width="2"
+ stroke-linecap="round"
+/>
+`;
 
 }else if(h==='Middle part'){
  maleHair=`
