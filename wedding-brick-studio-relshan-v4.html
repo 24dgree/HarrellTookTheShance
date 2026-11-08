@@ -1151,10 +1151,12 @@ stroke-linecap="round"/>
  
  const parasolHeld=state.accessories.includes('Balinese paper parasol');
 const bouquetHeld=state.accessories.includes('Bouquet');
+const giftHeld=state.accessories.includes('Gift box');
+const fanHeld=state.accessories.includes('Open fan');
 
 const poseName=parasolHeld
  ?'Holding parasol'
- :bouquetHeld
+ :bouquetHeld&&!giftHeld&&!fanHeld
   ?'Hands together'
   :state.pose;
  
