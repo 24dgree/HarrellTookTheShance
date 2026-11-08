@@ -1159,7 +1159,7 @@ stroke-linecap="round"/>
  const propLayer=state.props.length?`<g>${state.props.map((tag,i)=>{const x=state.props.length===1?150:state.props.length===2?98+i*104:52+i*98;const w=tag==='#HarrellTookTheShance'?92:76;return `<g><rect x="${x-w/2}" y="286" width="${w}" height="24" rx="7" fill="#ffffff" stroke="#b9cde5" stroke-width="1.5"/><text x="${x}" y="301" text-anchor="middle" font-size="${tag==='#HarrellTookTheShance'?6.3:8}" font-weight="700" fill="#385474">${tag}</text></g>`}).join('')}</g>`:'';
  const head=`<rect x="102" y="55" width="96" height="100" rx="30" fill="${skin}" stroke="#263750" stroke-width="3"/>${eyes}${face}${glasses}`;
  
-document.getElementById('figure').innerHTML=`<ellipse cx="150" cy="347" rx="77" ry="10" fill="#dbe6f2"/>${parasolLayer}<g>${legs}${arms}${torso}${tie}<rect x="140" y="145" width="20" height="17" rx="5" fill="${skin}" stroke="#263750" stroke-width="2"/>${hairBack}${head}${hairShape}${extra}${propLayer}</g>`;
+document.getElementById('figure').innerHTML=`<ellipse cx="150" cy="347" rx="77" ry="10" fill="#dbe6f2"/>${parasolLayer}<g>${legs}${poseName==='Hands together'?torso+arms:arms+torso}${tie}<rect x="140" y="145" width="20" height="17" rx="5" fill="${skin}" stroke="#263750" stroke-width="2"/>${hairBack}${head}${hairShape}${extra}${propLayer}</g>`;
 
 }
  
