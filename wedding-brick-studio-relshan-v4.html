@@ -926,30 +926,13 @@ d="M103 101
   
   
 
- if(h==='Elegant centre-part waves'||h==='Half-up waves'){
-  <path d="
-  M105 78
-  Q88 84 87 108
-  Q78 127 87 145
-  Q77 163 86 181
-  Q94 199 111 199
-  Q126 198 130 181
-  Q134 165 124 148
-  Q115 130 121 108
-  L122 88Z
+ if(h==='Soft Hollywood waves'){
+  back=`<path d="M104 86 Q91 115 97 171 L118 184 L124 91Z M196 86 Q209 115 203 171 L182 184 L176 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
+}
 
-  M195 78
-  Q212 84 213 108
-  Q222 127 213 145
-  Q223 163 214 181
-  Q206 199 189 199
-  Q174 198 170 181
-  Q166 165 176 148
-  Q185 130 179 108
-  L178 88Z"
-  fill="${hair}" stroke="#202b3c" stroke-width="2.5"/>`
-  :`<path d="M105 87 Q94 112 108 130 Q96 148 112 170 L126 166 L122 91Z M195 87 Q206 112 192 130 Q204 148 188 170 L174 166 L178 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
- } 
+if(h==='Elegant centre-part waves'||h==='Half-up waves'){
+  back=`<path d="M105 87 Q94 112 108 130 Q96 148 112 170 L126 166 L122 91Z M195 87 Q206 112 192 130 Q204 148 188 170 L174 166 L178 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
+}
   
   if(h==='Loose curls')back=`<g fill="${hair}" stroke="#202b3c" stroke-width="2"><circle cx="108" cy="112" r="12"/><circle cx="110" cy="137" r="12"/><circle cx="113" cy="160" r="12"/><circle cx="192" cy="112" r="12"/><circle cx="190" cy="137" r="12"/><circle cx="187" cy="160" r="12"/><path d="M103 89 Q150 25 197 89 L190 115 Q150 83 110 115Z"/></g>`;
 
