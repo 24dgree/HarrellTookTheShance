@@ -1095,7 +1095,20 @@ fill="none" stroke="#563b34" stroke-width="2.5"
 stroke-linecap="round" stroke-linejoin="round"/>
 <ellipse cx="121" cy="120" rx="8" ry="4.5" fill="#e99c91" opacity=".7"/>
 <ellipse cx="179" cy="120" rx="8" ry="4.5" fill="#e99c91" opacity=".7"/>`;
- 
+
+ if(state.face==='Mustache'&&male)face=`
+<path
+ d="M150 122
+ Q145 116 138 119
+ Q132 122 138 127
+ Q145 130 150 124
+ Q155 130 162 127
+ Q168 122 162 119
+ Q155 116 150 122Z"
+ fill="#3b2a23"
+ stroke="#563b34"
+ stroke-width="1.2"
+ stroke-linejoin="round"/>`;
  
  const has=name=>state.accessories.includes(name);
  let glasses='';
