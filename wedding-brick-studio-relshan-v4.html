@@ -1002,7 +1002,12 @@ stroke-width="3"/>`;
 <path d="M108 93 Q102 116 111 136 M192 93 Q198 116 189 136"/>
 </g>`:'';
  
-  hairShape=back+bunShape+crown+halfUp+fringe+babyHair+faceFraming;
+  hairShape=back+bunShape+crown+halfUp+fringe+babyHair+faceFraming+(h==='Elegant updo'?`
+<g fill="none" stroke="#202b3c" stroke-width="2.2" stroke-linecap="round" opacity=".7">
+ <path d="M147 101 Q143 108 137 114"/>
+ <path d="M153 101 Q157 108 163 114"/>
+</g>`:'');
+  
  }
  let face='';
  
