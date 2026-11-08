@@ -200,7 +200,10 @@ function renderControls(){
   out+=`<div class="section"><h3>HAIR DETAIL</h3><div class="grid">${card('Baby hair',state.babyHair)}</div><small class="hint">Baby hair mengikuti lengkung rambut di mahkota, menyatu dengan helaian rambut dan tidak menyentuh dahi.</small></div>`;
   out+=`<div class="section"><h3>HAIR COLOUR</h3><div class="swatches">${options.hairColors.map(([n,c])=>`<button class="swatch ${state.hairColor===c?'selected':''}" title="${n}" data-haircolor="${c}" style="background:${c}"></button>`).join('')}</div></div>`;
  } else if(tab==='face'){
-  out+=`<div class="section"><h3>FACIAL EXPRESSION</h3><div class="grid">${options.face.map(x=>card(x,state.face===x)).join('')}</div></div>`;
+  
+  const faceOptions=male?options.face:options.face.map(x=>x==='Mustache'?'Cute pout':x);
+out+=`<div class="section"><h3>FACIAL EXPRESSION</h3><div class="grid">${faceOptions.map(x=>card(x,state.face===x)).join('')}</div></div>`;
+  
   out+=`<div class="section"><h3>SKIN TONE</h3><div class="swatches">${options.skins.map(([n,c])=>`<button class="swatch ${state.skin===c?'selected':''}" title="${n}" data-skin="${c}" style="background:${c}"></button>`).join('')}</div></div>`;
  } else if(tab==='outfit'){
   out+=`<div class="section"><h3>${state.gender==='male'?'FORMAL MENSWEAR':'FORMAL DRESSES'}</h3><div class="grid">${options.outfit[state.gender].map(x=>card(x,state.outfit===x)).join('')}</div></div>`;
