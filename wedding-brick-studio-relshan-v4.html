@@ -948,7 +948,30 @@ d="M103 101
   const long=['Elegant centre-part waves','Long sleek straight','Soft Hollywood waves','Loose curls','Half-up waves'].includes(h);
   let back='';
   if(h==='Long sleek straight')back=`<path d="M104 86 Q97 115 105 171 L122 174 L124 91Z M196 86 Q203 115 195 171 L178 174 L176 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
-  if(h==='Elegant centre-part waves'||h==='Soft Hollywood waves'||h==='Half-up waves')back=`<path d="M105 87 Q94 112 108 130 Q96 148 112 170 L126 166 L122 91Z M195 87 Q206 112 192 130 Q204 148 188 170 L174 166 L178 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
+  
+  if(h==='Elegant centre-part waves'||h==='Soft Hollywood waves'||h==='Half-up waves')back=h==='Soft Hollywood waves'?`
+<path d="
+M105 82
+Q88 91 88 119
+Q78 135 87 151
+Q77 169 94 181
+Q111 190 124 174
+Q137 160 125 143
+Q117 128 123 109
+L122 91Z
+M195 82
+Q212 91 212 119
+Q222 135 213 151
+Q223 169 206 181
+Q189 190 176 174
+Q163 160 175 143
+Q183 128 177 109
+L178 91Z"
+fill="${hair}" stroke="#202b3c" stroke-width="2"/>`
+:`<path d="M105 87 Q94 112 108 130 Q96 148 112 170 L126 166 L122 91Z M195 87 Q206 112 192 130 Q204 148 188 170 L174 166 L178 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
+
+  
+  
   if(h==='Loose curls')back=`<g fill="${hair}" stroke="#202b3c" stroke-width="2"><circle cx="108" cy="112" r="12"/><circle cx="110" cy="137" r="12"/><circle cx="113" cy="160" r="12"/><circle cx="192" cy="112" r="12"/><circle cx="190" cy="137" r="12"/><circle cx="187" cy="160" r="12"/><path d="M103 89 Q150 25 197 89 L190 115 Q150 83 110 115Z"/></g>`;
 
   
