@@ -1134,8 +1134,17 @@ stroke-linecap="round"/>
  
  const eyes=state.face==='Wink'?`<ellipse cx="132" cy="105" rx="4" ry="5" fill="#263750"/><path d="M160 106 Q168 100 174 106" fill="none" stroke="#263750" stroke-width="3" stroke-linecap="round"/>`:`<ellipse cx="132" cy="105" rx="4" ry="5" fill="#263750"/><ellipse cx="168" cy="105" rx="4" ry="5" fill="#263750"/>`;
  // Pose arms are drawn in the arm layer (behind the torso), not stacked over the finished figure.
+ 
  const parasolHeld=state.accessories.includes('Balinese paper parasol');
- const poseName=parasolHeld?'Holding parasol':state.pose;
+const bouquetHeld=state.accessories.includes('Bouquet');
+
+const poseName=parasolHeld
+ ?'Holding parasol'
+ :bouquetHeld
+  ?'Hands together'
+  :state.pose;
+ 
+ 
  const sleeveTone=male?((state.outfit.startsWith('Fitted vest')||state.outfit.startsWith('Vest'))?'#f7f7f4':c):(state.outfit==='Long-sleeve gown'?c:skin);
  const armPath=(d,hand=false)=>`<path d="${d}" fill="none" stroke="${outline}" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${sleeveTone}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>`;
  const leftArm=armPath('M105 169 Q96 174 91 190 L84 232')+`<path d="M84 232 L82 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/><path d="M84 233 L82 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>`;
