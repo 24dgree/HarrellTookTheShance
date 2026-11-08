@@ -752,35 +752,40 @@ Q215 66 208 101
 
   
 }else if(h==='Wavy'){
- maleHair=`<path d="M92 101
-Q85 66 101 49
-Q108 39 119 38
-Q128 26 145 32
-Q160 37 166 49
-Q174 39 184 39
-Q198 43 203 58
+ maleHair=`
+ <!-- Slicked-back crown -->
+ <path d="
+ M103 101
+ Q96 67 103 51
+ Q109 35 128 34
+ Q140 27 150 36
+ Q160 27 174 34
+ Q193 35 199 51
+ Q205 67 198 101
+ Q193 91 187 85
+ Q183 101 179 111
+ L174 91
+ Q150 77 126 91
+ L121 111
+ Q117 101 113 85
+ Q107 91 103 101Z"
+ fill="${hair}"
+ stroke="#202b3c"
+ stroke-width="3"/>
 
-Q215 75 208 101
-Q204 94 199 91
-Q195 87 190 91
-Q186 95 181 87
-Q178 84 176 83
-
-Q169 77 161 82
-Q153 87 147 80
-Q137 74 128 83
-Q121 91 116 87
-Q110 84 103 99Z"
-
-fill="${hair}"
-stroke="#202b3c"
-stroke-width="3"/>
-
-<path d="M116 79 Q128 65 140 73 M158 48 Q174 38 190 52"
-fill="none"
-stroke="#ffffff"
-stroke-opacity=".18"
-stroke-width="2"/>`;
+ <!-- Swept-back texture -->
+ <path d="
+ M112 65 Q128 43 147 46
+ M153 46 Q175 41 189 65
+ M120 77 Q139 56 150 56
+ M180 77 Q161 56 150 56"
+ fill="none"
+ stroke="#ffffff"
+ stroke-opacity=".2"
+ stroke-width="2.2"
+ stroke-linecap="round"/>`;
+ 
+ 
 
 }else if(h==='Comma hair'){
  maleHair=`
