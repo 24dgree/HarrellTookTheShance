@@ -1374,7 +1374,9 @@ stroke-linecap="round"/>
 </g>`;
  
  
- const eyes=state.face==='Wink'?`<ellipse cx="132" cy="105" rx="4" ry="5" fill="#263750"/><path d="M160 106 Q168 100 174 106" fill="none" stroke="#263750" stroke-width="3" stroke-linecap="round"/>`:`<ellipse cx="132" cy="105" rx="4" ry="5" fill="#263750"/><ellipse cx="168" cy="105" rx="4" ry="5" fill="#263750"/>`;
+ const eyeColor='#563b34';
+const eyes=state.face==='Wink'?`<ellipse cx="132" cy="105" rx="4" ry="5" fill="${eyeColor}"/><path d="M160 106 Q168 100 174 106" fill="none" stroke="${eyeColor}" stroke-width="3" stroke-linecap="round"/>`:`<ellipse cx="132" cy="105" rx="4" ry="5" fill="${eyeColor}"/><ellipse cx="168" cy="105" rx="4" ry="5" fill="${eyeColor}"/>`;
+
  // Pose arms are drawn in the arm layer (behind the torso), not stacked over the finished figure.
  
  const parasolHeld=state.accessories.includes('Balinese paper parasol');
