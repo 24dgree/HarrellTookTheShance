@@ -1368,9 +1368,6 @@ ${hairBack}${head}${hairShape}${extra}${propLayer}
   draw();
  };
 });
-
-document
-
  
  document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));renderControls();});
 document.getElementById('random').onclick=()=>{let pick=a=>a[Math.floor(Math.random()*a.length)];state.hair=pick(options.hair[state.gender]);state.babyHair=Math.random()<.35;state.face=pick(options.face);state.outfit=pick(options.outfit[state.gender]);state.color=pick(palettes[state.gender])[0].toLowerCase();state.hairColor=pick(options.hairColors)[1];state.accessories=[];let pool=state.gender==='male'?['Glasses','Watch','Gift box','Balinese paper parasol','Boutonniere','Round pin']:['Glasses','Gift box','Balinese paper parasol','Open fan','Hair clip','Earrings','Bouquet'];while(state.accessories.length<2&&Math.random()<.9){let a=pick(pool);if(!state.accessories.includes(a))state.accessories.push(a);}state.tie=pick(options.tie);renderControls();draw();};
