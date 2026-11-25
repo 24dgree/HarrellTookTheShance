@@ -1439,50 +1439,81 @@ let leftPose=leftArm;
  const propLayer=state.props.length?`<g>${state.props.map((tag,i)=>{const x=state.props.length===1?150:state.props.length===2?98+i*104:52+i*98;const w=tag==='#HarrellTookTheShance'?92:76;return `<g><rect x="${x-w/2}" y="286" width="${w}" height="24" rx="7" fill="#ffffff" stroke="#b9cde5" stroke-width="1.5"/><text x="${x}" y="301" text-anchor="middle" font-size="${tag==='#HarrellTookTheShance'?6.3:8}" font-weight="700" fill="#385474">${tag}</text></g>`}).join('')}</g>`:'';
  const head=`<rect x="102" y="55" width="96" height="100" rx="30" fill="${skin}" stroke="#263750" stroke-width="3"/>${eyes}${face}${glasses}`;
 const backgroundLayer = state.background === "St Paul's, London" ? `
+
 <g>
   <rect width="300" height="360" fill="#dce5e6"/>
-  <path d="M0 180 Q75 165 150 180 T300 175 V360 H0Z" fill="#c5d0c9"/>
-  
-  <!-- London buildings -->
-  <path d="M0 125 H48 V275 H0Z M252 115 H300 V275 H252Z"
-    fill="#b9b9ad"/>
-  <path d="M8 140 H40 M8 160 H40 M260 135 H292 M260 155 H292"
-    stroke="#e9e4d8" stroke-width="4"/>
 
-  <!-- St Paul's Cathedral -->
-  <path d="M83 180 V135 Q95 118 110 135 V180Z"
-    fill="#e8e1d1" stroke="#aaa99e" stroke-width="2"/>
-  <path d="M110 180 V116 Q150 100 190 116 V180Z"
-    fill="#e9e3d5" stroke="#aaa99e" stroke-width="2"/>
-  <path d="M110 116 Q150 91 190 116"
-    fill="none" stroke="#a9a99e" stroke-width="3"/>
-  <path d="M120 116 Q120 73 150 57 Q180 73 180 116Z"
-    fill="#b9c5bd" stroke="#8e9d95" stroke-width="2"/>
-  <path d="M132 79 Q150 55 168 79"
-    fill="none" stroke="#e8e2d5" stroke-width="3"/>
-  <path d="M143 57 V43 H157 V57 M150 43 V30"
-    fill="none" stroke="#8e9d95" stroke-width="3"/>
-  <path d="M80 180 V150 H220 V180"
-    fill="#e8e1d1" stroke="#aaa99e" stroke-width="2"/>
-  <path d="M92 150 V180 M108 150 V180 M192 150 V180 M208 150 V180"
-    stroke="#b3ad9f" stroke-width="3"/>
+  <!-- Distant London skyline -->
+  <path d="M0 125 L25 115 L45 123 L65 108 L85 120
+    L105 110 L125 120 L145 112 L165 122
+    L190 108 L215 120 L240 110 L265 122 L300 112
+    V275 H0Z" fill="#c4c9bd"/>
+
+  <!-- Classic London townhouse -->
+  <path d="M75 125 L150 95 L225 125 V280 H75Z"
+    fill="#d8d0bd" stroke="#aaa99e" stroke-width="2"/>
+
+  <path d="M68 125 L150 91 L232 125"
+    fill="none" stroke="#a9a497" stroke-width="4"/>
+
+  <g fill="#aeb9b5" stroke="#b0a99b" stroke-width="2">
+    <rect x="91" y="145" width="24" height="38"/>
+    <rect x="137" y="145" width="26" height="38"/>
+    <rect x="185" y="145" width="24" height="38"/>
+    <rect x="91" y="205" width="24" height="38"/>
+    <rect x="185" y="205" width="24" height="38"/>
+  </g>
+
+  <g fill="#e9e2d4">
+    <path d="M96 145 H110 V151 H96Z"/>
+    <path d="M142 145 H158 V151 H142Z"/>
+    <path d="M190 145 H204 V151 H190Z"/>
+  </g>
+
+  <!-- Chimneys -->
+  <path d="M91 110 V88 H105 V115
+    M190 112 V90 H204 V117"
+    fill="#b6b4a8" stroke="#99988f" stroke-width="2"/>
+
+  <!-- Street and pavement -->
   <path d="M0 275 H300 V360 H0Z" fill="#aeb5ad"/>
-  <path d="M0 300 H300" stroke="#e8e2d5" stroke-width="3"/>
+  <path d="M0 293 H300" stroke="#e8e2d5" stroke-width="3"/>
+  <path d="M0 330 H300" stroke="#c8c7ba" stroke-width="2"/>
 
-  <!-- Red London bus -->
+  <!-- Red London telephone box -->
+  <g transform="translate(12 188)">
+    <path d="M4 8 L9 0 H47 L52 8 V91 H4Z"
+      fill="#a94d4b" stroke="#763c3b" stroke-width="2.5"/>
+    <path d="M9 13 H47 V83 H9Z"
+      fill="#e5e2d5" stroke="#763c3b" stroke-width="2"/>
+    <path d="M9 31 H47 M9 49 H47 M9 67 H47"
+      stroke="#a94d4b" stroke-width="3"/>
+    <path d="M18 13 V83 M38 13 V83"
+      stroke="#b6aaa0" stroke-width="1.5"/>
+    <rect x="15" y="4" width="26" height="5" fill="#e5e2d5"/>
+  </g>
+
+  <!-- Taller red double-decker bus -->
   <g>
-    <rect x="218" y="245" width="70" height="55" rx="7"
-      fill="#a94d4b" stroke="#763c3b" stroke-width="2"/>
-    <rect x="224" y="251" width="58" height="19" rx="2"
-      fill="#dce4df"/>
-    <path d="M253 251 V270" stroke="#a3aaa5" stroke-width="2"/>
-    <rect x="224" y="275" width="58" height="15" rx="2"
-      fill="#dce4df"/>
-    <circle cx="233" cy="300" r="5" fill="#444746"/>
-    <circle cx="274" cy="300" r="5" fill="#444746"/>
+    <rect x="224" y="204" width="68" height="91" rx="7"
+      fill="#a94d4b" stroke="#763c3b" stroke-width="2.5"/>
+
+    <rect x="230" y="211" width="56" height="29" rx="2"
+      fill="#dce5df"/>
+    <rect x="230" y="246" width="56" height="29" rx="2"
+      fill="#dce5df"/>
+
+    <path d="M258 211 V240 M258 246 V275"
+      stroke="#a3aaa5" stroke-width="2"/>
+
+    <rect x="230" y="280" width="56" height="8" fill="#873f3d"/>
+    <circle cx="238" cy="297" r="6" fill="#444746"/>
+    <circle cx="278" cy="297" r="6" fill="#444746"/>
   </g>
 </g>
 ` : `
+
+ 
 <g>
   <!-- Bali sunset sky -->
   <rect width="300" height="360" fill="#e8b9c2"/>
