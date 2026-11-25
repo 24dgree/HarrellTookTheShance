@@ -1401,23 +1401,40 @@ const puffLeft=`
  stroke="${skin}" stroke-width="15" stroke-linecap="round"/>
 `;
 
+const puffLeft=`
+<path
+ d="M110 169
+ C94 161 79 174 80 190
+ C80 204 89 215 103 216
+ C115 215 119 184 110 169Z"
+ fill="${c}"
+ stroke="${outline}"
+ stroke-width="2.5"/>
+
+<ellipse
+ cx="99" cy="207"
+ rx="10" ry="13"
+ fill="${skin}"
+ stroke="${outline}"
+ stroke-width="2.5"/>
+`;
+
 const puffRight=`
-<path d="
- M190 169
+<path
+ d="M190 169
  C206 161 221 174 220 190
- C220 204 211 213 199 214
- C187 214 182 187 190 169Z"
- fill="${c}" stroke="${outline}" stroke-width="2.5"/>
+ C220 204 211 215 197 216
+ C185 215 181 184 190 169Z"
+ fill="${c}"
+ stroke="${outline}"
+ stroke-width="2.5"/>
 
-<path d="M195 207 Q202 215 206 224"
- fill="none" stroke="${outline}" stroke-width="24"/>
-<path d="M195 207 Q202 215 206 224"
- fill="none" stroke="${c}" stroke-width="18"/>
-
-<path d="M206 224 L208 240"
- stroke="${outline}" stroke-width="22" stroke-linecap="round"/>
-<path d="M206 225 L208 239"
- stroke="${skin}" stroke-width="15" stroke-linecap="round"/>
+<ellipse
+ cx="201" cy="207"
+ rx="10" ry="13"
+ fill="${skin}"
+ stroke="${outline}"
+ stroke-width="2.5"/>
 `;
  
 
