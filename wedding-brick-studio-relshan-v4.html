@@ -1331,20 +1331,26 @@ const poseName=parasolHeld
  
  
  const sleeveTone=male?((state.outfit.startsWith('Fitted vest')||state.outfit.startsWith('Vest'))?'#f7f7f4':c):(state.outfit==='Long-sleeve gown'?c:skin);
+ 
  const armPath=(d,hand=false)=>`<path d="${d}" fill="none" stroke="${outline}" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${sleeveTone}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>`;
- const leftArm=armPath('M105 169 Q96 174 91 190 L84 232')+`<path d="M84 232 L82 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/><path d="M84 233 L82 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>`;
- let rightArm='';
- if(poseName==='One hand waving'){
-  rightArm=armPath('M195 169 Q212 158 218 140 L220 119')+`<path d="M220 119 L222 108" stroke="${outline}" stroke-width="19" stroke-linecap="round"/><ellipse cx="223" cy="104" rx="8" ry="10" fill="${skin}" stroke="${outline}" stroke-width="2.5"/>`;
- }else if(poseName==='Hands on hips'){
-  rightArm=armPath('M195 169 Q211 183 204 199 L184 211')+`<ellipse cx="182" cy="212" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
- }else if(poseName==='Hands together'){
-  rightArm=armPath('M195 169 Q190 194 166 211')+`<ellipse cx="163" cy="214" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
- }else if(parasolHeld){
-  rightArm=armPath('M195 169 Q211 157 215 139 L214 122')+`<ellipse cx="214" cy="119" rx="8" ry="9" fill="${skin}" stroke="${outline}" stroke-width="2.4"/>`;
- }else{
-  rightArm=armPath('M195 169 Q204 174 209 190 L216 232')+`<path d="M216 232 L218 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/><path d="M216 233 L218 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>`;
- }
+
+const leftArm=armPath('M110 169 Q101 174 96 190 L89 232')+`<path d="M89 232 L87 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/><path d="M89 233 L87 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>`;
+
+let rightArm='';
+
+if(poseName==='One hand waving'){
+  rightArm=armPath('M190 169 Q207 158 213 140 L215 119')+`<path d="M215 119 L217 108" stroke="${outline}" stroke-width="19" stroke-linecap="round"/><ellipse cx="218" cy="104" rx="8" ry="10" fill="${skin}" stroke="${outline}" stroke-width="2.5"/>`;
+}else if(poseName==='Hands on hips'){
+  rightArm=armPath('M190 169 Q206 183 199 199 L179 211')+`<ellipse cx="177" cy="212" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
+}else if(poseName==='Hands together'){
+  rightArm=armPath('M190 169 Q185 194 161 211')+`<ellipse cx="158" cy="214" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
+}else if(parasolHeld){
+  rightArm=armPath('M190 169 Q206 157 210 139 L209 122')+`<ellipse cx="209" cy="119" rx="8" ry="9" fill="${skin}" stroke="${outline}" stroke-width="2.4"/>`;
+}else{
+  rightArm=armPath('M190 169 Q199 174 204 190 L211 232')+`<path d="M211 232 L213 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/><path d="M211 233 L213 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>`;
+}
+
+ 
  let leftPose=leftArm;
  if(poseName==='Hands on hips')leftPose=armPath('M105 169 Q89 183 96 200 L116 211')+`<ellipse cx="118" cy="212" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
  if(poseName==='Hands together')leftPose=armPath('M105 169 Q110 194 134 211')+`<ellipse cx="137" cy="214" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
