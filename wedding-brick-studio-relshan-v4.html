@@ -253,9 +253,12 @@ function renderControls(){
   out+=`<div class="section">
     <h3>CHOOSE YOUR BACKGROUND</h3>
     <div class="grid">
-      ${["St Paul's, London",'Bali at Dusk'].map(x=>
-        `<button class="choice ${state.background===x?'selected':''}" data-background="${x}">
-          <strong>${x}</strong>
+      ${[
+        {label:'Blue Cityscape',value:"St Paul's, London"},
+        {label:'Blush Paradise',value:'Bali at Dusk'}
+      ].map(x=>
+        `<button class="choice ${state.background===x.value?'selected':''}" data-background="${x.value}">
+          <strong>${x.label}</strong>
         </button>`
       ).join('')}
     </div>
