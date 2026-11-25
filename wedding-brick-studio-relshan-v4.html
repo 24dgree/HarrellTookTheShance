@@ -1423,7 +1423,9 @@ if(poseName==='One hand waving'){
 let leftPose=isLongSleeve?puffLeft:leftArm;
  if(poseName==='Hands on hips')leftPose=armPath('M105 169 Q89 183 96 200 L116 211')+`<ellipse cx="118" cy="212" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
  if(poseName==='Hands together')leftPose=armPath('M105 169 Q110 194 134 211')+`<ellipse cx="137" cy="214" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
- arms=`<g stroke-linecap="round" stroke-linejoin="round">${leftPose}${rightArm}</g>`;
+ 
+ arms=`<g stroke-linecap="round" stroke-linejoin="round">${leftPose}${isLongSleeve&&poseName!=='One hand waving'&&poseName!=='Hands on hips'&&poseName!=='Hands together'&&!parasolHeld?puffRight:rightArm}</g>`;
+ 
  const parasolLayer=parasolHeld?`<g><path d="M66 111 Q69 27 140 14 Q150 11 160 14 Q231 27 234 111 Q214 93 194 101 Q173 88 150 101 Q127 88 106 101 Q86 93 66 111Z" fill="#f2eee3" stroke="#a99e89" stroke-width="2.5"/><path d="M66 111 Q150 77 234 111 M150 14 V110 M101 33 L127 102 M199 33 L173 102 M77 68 L116 100 M223 68 L184 100" fill="none" stroke="#c9c0ad" stroke-width="1.8"/><path d="M150 14 Q177 58 214 119" fill="none" stroke="#8b755a" stroke-width="3" stroke-linecap="round"/></g>`:'';
  const propLayer=state.props.length?`<g>${state.props.map((tag,i)=>{const x=state.props.length===1?150:state.props.length===2?98+i*104:52+i*98;const w=tag==='#HarrellTookTheShance'?92:76;return `<g><rect x="${x-w/2}" y="286" width="${w}" height="24" rx="7" fill="#ffffff" stroke="#b9cde5" stroke-width="1.5"/><text x="${x}" y="301" text-anchor="middle" font-size="${tag==='#HarrellTookTheShance'?6.3:8}" font-weight="700" fill="#385474">${tag}</text></g>`}).join('')}</g>`:'';
  const head=`<rect x="102" y="55" width="96" height="100" rx="30" fill="${skin}" stroke="#263750" stroke-width="3"/>${eyes}${face}${glasses}`;
