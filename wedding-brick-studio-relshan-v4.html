@@ -286,11 +286,11 @@ function renderControls(){
       <button class="swatch ${state.accessoryColor==='#ffffff'?'selected':''}" title="White" data-acccolor="#ffffff" style="background:#fff"></button>
       <button class="swatch ${state.accessoryColor==='#17191e'?'selected':''}" title="Black" data-acccolor="#17191e" style="background:#17191e"></button>
     </div>
-  </div>`;
-                      }
-    
- 
- root.innerHTML=out;
+      </div>`;
+                       }
+  }
+
+  root.innerHTML=out;
  
  root.querySelectorAll('[data-choice]').forEach(b=>{
   b.onclick=()=>{
