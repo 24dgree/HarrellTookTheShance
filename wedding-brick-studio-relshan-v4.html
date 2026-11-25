@@ -452,35 +452,36 @@ function draw(){
  :''}
 
 <g stroke-linecap="round" stroke-linejoin="round">
-  ${longSleeve?`
+    ${longSleeve?`
   <path d="M105 169
-   Q82 171 87 194
-   Q89 211 105 215
-   Q115 216 119 202
-   L84 232"
-   fill="none" stroke="${outline}" stroke-width="25"/>
+   C91 166 80 176 81 192
+   C81 207 89 216 102 216
+   C112 216 118 207 119 196
+   C117 181 113 172 105 169 Z"
+   fill="${c}" stroke="${outline}" stroke-width="2.5"/>
 
-  <path d="M105 169
-   Q82 171 87 194
-   Q89 211 105 215
-   Q115 216 119 202
-   L84 232"
-   fill="none" stroke="${c}" stroke-width="19"/>
+  <path d="M112 207 Q101 220 84 232"
+   fill="none" stroke="${outline}" stroke-width="24"/>
+
+  <path d="M112 207 Q101 220 84 232"
+   fill="none" stroke="${c}" stroke-width="18"/>
 
   <path d="M195 169
-   Q218 171 213 194
-   Q211 211 195 215
-   Q185 216 181 202
-   L216 232"
-   fill="none" stroke="${outline}" stroke-width="25"/>
+   C209 166 220 176 219 192
+   C219 207 211 216 198 216
+   C188 216 182 207 181 196
+   C183 181 187 172 195 169 Z"
+   fill="${c}" stroke="${outline}" stroke-width="2.5"/>
 
-  <path d="M195 169
-   Q218 171 213 194
-   Q211 211 195 215
-   Q185 216 181 202
-   L216 232"
-   fill="none" stroke="${c}" stroke-width="19"/>
+  <path d="M188 207 Q199 220 216 232"
+   fill="none" stroke="${outline}" stroke-width="24"/>
+
+  <path d="M188 207 Q199 220 216 232"
+   fill="none" stroke="${c}" stroke-width="18"/>
   `:`
+  
+
+  
   <path d="M105 169 Q96 174 91 190 L84 232"
    fill="none" stroke="${outline}" stroke-width="25"/>
   <path d="M105 169 Q96 174 91 190 L84 232"
