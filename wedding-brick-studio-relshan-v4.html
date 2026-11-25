@@ -1619,6 +1619,7 @@ document.getElementById('random').onclick=()=>{let pick=a=>a[Math.floor(Math.ran
  button.textContent='PREPARING...';
 
  const svg=document.getElementById('figure').cloneNode(true);
+  svg.querySelector('#watermark')?.remove();
 
  svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
 
