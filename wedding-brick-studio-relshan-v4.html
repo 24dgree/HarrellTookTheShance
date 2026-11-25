@@ -661,7 +661,21 @@ arms=`
 <path d="M119 158 Q132 174 150 169 Q168 174 181 158" fill="none" stroke="${c}" stroke-opacity=".82" stroke-width="2"/>
 <path d="M150 174 L150 214" stroke="#ffffff" stroke-opacity=".28" stroke-width="1.5"/>`;
   
-     torso=`${skirtStart} fill="${c}" stroke="${outline}" stroke-width="3"/>${cape}${bodice}${neckline}
+     torso=`
+<path
+ d="M140 155
+ Q126 155 116 162
+ L106 169
+ Q109 185 119 198
+ Q150 211 181 198
+ Q191 185 194 169
+ L184 162
+ Q174 155 160 155Z"
+ fill="${skin}"
+ stroke="${outline}"
+ stroke-width="2.5"
+/>
+${skirtStart} fill="${c}" stroke="${outline}" stroke-width="3"/>${cape}${bodice}${neckline}
    
    ${state.outfit==='A-line satin gown'?`
 <path d="M150 224 Q150 274 150 329" stroke="#ffffff" stroke-opacity=".55" stroke-width="2.5" fill="none"/>
