@@ -1764,6 +1764,13 @@ document.getElementById('random').onclick=()=>{let pick=a=>a[Math.floor(Math.ran
  img.src=svgURL;
 };
  
-renderControls();draw();
+renderControls();
+
+try {
+  draw();
+} catch(error) {
+  alert(error.name + ': ' + error.message);
+  console.error(error);
+ }
 </script>
 </body></html>
