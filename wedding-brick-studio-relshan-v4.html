@@ -1500,45 +1500,104 @@ const backgroundLayer = state.background === "St Paul's, London" ? `
   <circle cx="276" cy="293" r="5" fill="#444746"/>
   </g>
 </g>
-` : `
 
- 
+` : state.background === 'Bali at Dusk' ? `
+
 <g>
-  <!-- Bali sunset sky -->
-  <rect width="300" height="360" fill="#e8b9c2"/>
-  <path d="M0 110 Q75 75 150 105 T300 95 V210 H0Z"
-    fill="#f2c9bd"/>
-  <circle cx="150" cy="112" r="35" fill="#f5dfbd"/>
-  <path d="M0 180 Q75 165 150 180 T300 175 V270 H0Z"
-    fill="#719c9c"/>
-  <path d="M0 205 Q75 190 150 205 T300 200"
-    fill="none" stroke="#a9c5bd" stroke-width="4"/>
-  <path d="M0 240 Q75 225 150 240 T300 235"
-    fill="none" stroke="#b9d1c7" stroke-width="3"/>
+  <!-- BLUSH PARADISE: Floral Ocean Wedding Backdrop -->
 
-  <!-- Beach -->
-  <path d="M0 265 Q75 245 150 265 T300 255 V360 H0Z"
-    fill="#e8d7bd"/>
-  <path d="M0 290 Q75 280 150 292 T300 285"
-    fill="none" stroke="#f5e8d5" stroke-width="4"/>
+  <rect width="300" height="360" fill="#e9e9e4"/>
 
-  <!-- Tropical flowers -->
-  <g fill="#f5dce0" stroke="#d99eaa" stroke-width="1.5">
-    <circle cx="28" cy="170" r="9"/>
-    <circle cx="42" cy="160" r="9"/>
-    <circle cx="42" cy="176" r="9"/>
-    <circle cx="28" cy="184" r="9"/>
-    <circle cx="35" cy="172" r="5" fill="#e9c27e"/>
-    <circle cx="260" cy="190" r="9"/>
-    <circle cx="274" cy="180" r="9"/>
-    <circle cx="274" cy="196" r="9"/>
-    <circle cx="260" cy="204" r="9"/>
-    <circle cx="267" cy="188" r="5" fill="#e9c27e"/>
+  <rect width="300" height="175" fill="#e8edf0"/>
+  <path d="M0 125 Q75 113 150 126 T300 120
+    V245 H0Z" fill="#a8c5ce"/>
+
+  <path d="M0 155 Q75 148 150 158 T300 151"
+    fill="none" stroke="#dce7e5" stroke-width="2"/>
+
+  <!-- Reflective circular wedding aisle -->
+  <path d="M0 360 L48 263 Q150 232 252 263 L300 360Z"
+    fill="#d9e1df"/>
+
+  <path d="M48 263 Q150 244 252 263"
+    fill="none" stroke="#ffffff" stroke-width="5"/>
+
+  <path d="M75 360 Q105 294 150 267 Q195 294 225 360"
+    fill="#edf0eb" stroke="#ffffff" stroke-width="2"/>
+
+  <path d="M150 269 L150 360"
+    stroke="#ffffff" stroke-width="2" opacity=".7"/>
+
+  <!-- Floating round floral canopy -->
+  <g fill="#f3d4df" stroke="#e8b7c8" stroke-width="1">
+    <circle cx="48" cy="66" r="24"/>
+    <circle cx="72" cy="55" r="27"/>
+    <circle cx="98" cy="68" r="25"/>
+    <circle cx="111" cy="43" r="24"/>
+    <circle cx="140" cy="35" r="30"/>
+    <circle cx="169" cy="46" r="25"/>
+    <circle cx="193" cy="61" r="25"/>
+    <circle cx="205" cy="35" r="24"/>
+    <circle cx="232" cy="43" r="28"/>
+    <circle cx="258" cy="58" r="25"/>
   </g>
-  <path d="M35 190 Q20 225 12 250 M267 205 Q285 225 292 250"
-    fill="none" stroke="#82977c" stroke-width="4"/>
+
+  <!-- White and blush flower details -->
+  <g fill="#fff8f3">
+    <circle cx="57" cy="52" r="5"/>
+    <circle cx="83" cy="69" r="5"/>
+    <circle cx="119" cy="37" r="5"/>
+    <circle cx="148" cy="52" r="5"/>
+    <circle cx="177" cy="34" r="5"/>
+    <circle cx="218" cy="49" r="5"/>
+    <circle cx="248" cy="69" r="5"/>
+  </g>
+
+  <!-- Hanging floral strings -->
+  <g fill="none" stroke="#eee4dc" stroke-width="1.5">
+    <path d="M50 86 Q48 135 42 190"/>
+    <path d="M75 82 Q78 142 75 205"/>
+    <path d="M112 66 Q109 133 112 180"/>
+    <path d="M145 65 Q150 140 145 196"/>
+    <path d="M180 73 Q184 138 181 190"/>
+    <path d="M220 80 Q218 140 222 205"/>
+    <path d="M250 82 Q253 132 258 185"/>
+  </g>
+
+  <!-- Hanging flower accents -->
+  <g fill="#f3c6d5">
+    <circle cx="42" cy="190" r="5"/>
+    <circle cx="75" cy="205" r="5"/>
+    <circle cx="112" cy="180" r="5"/>
+    <circle cx="145" cy="196" r="5"/>
+    <circle cx="181" cy="190" r="5"/>
+    <circle cx="222" cy="205" r="5"/>
+    <circle cx="258" cy="185" r="5"/>
+  </g>
+
+  <!-- Floral borders along the aisle -->
+  <g fill="#f1d1dc">
+    <circle cx="13" cy="286" r="13"/>
+    <circle cx="34" cy="278" r="12"/>
+    <circle cx="22" cy="307" r="13"/>
+    <circle cx="45" cy="301" r="11"/>
+    <circle cx="287" cy="286" r="13"/>
+    <circle cx="266" cy="278" r="12"/>
+    <circle cx="278" cy="307" r="13"/>
+    <circle cx="255" cy="301" r="11"/>
+  </g>
+
+  <g fill="#fff8f3">
+    <circle cx="13" cy="286" r="4"/>
+    <circle cx="34" cy="278" r="4"/>
+    <circle cx="22" cy="307" r="4"/>
+    <circle cx="287" cy="286" r="4"/>
+    <circle cx="266" cy="278" r="4"/>
+    <circle cx="278" cy="307" r="4"/>
+  </g>
 </g>
 `;
+
  
 document.getElementById('figure').innerHTML=`
 ${backgroundLayer}
