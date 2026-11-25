@@ -715,6 +715,22 @@ ${state.outfit==='Mermaid gown'?`<path d="M119 175 L130 151 M181 175 L170 151" f
 />
 
 ${skirtStart} fill="${c}" stroke="${outline}" stroke-width="3"/>${cape}${bodice}${neckline}
+
+${state.outfit==='Long-sleeve fitted gown'?`
+<path
+ d="
+ M150 224
+ C143 250 119 270 82 278
+ M150 224
+ C157 250 181 270 218 278
+ "
+ fill="none"
+ stroke="#ffffff"
+ stroke-opacity=".42"
+ stroke-width="2.5"
+ stroke-linecap="round"
+/>
+`:''}
    
    ${state.outfit==='A-line satin gown'?`
 <path d="M119 238 Q110 280 96 318 M181 238 Q190 280 204 318" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.5" fill="none"/>
