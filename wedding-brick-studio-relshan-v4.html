@@ -658,12 +658,10 @@ arms=`
   const skirtStart=state.outfit==='Mermaid gown'?`<path d="M111 215 Q150 224 189 215 L190 286 Q205 309 220 329 Q150 345 80 329 Q95 309 110 286Z"`:state.outfit==='Tulle ball gown'?`<path d="M112 214 Q150 225 188 214 Q215 252 239 329 Q150 348 61 329 Q85 252 112 214Z`:`<path d="M112 214 Q150 225 188 214 Q210 254 225 329 Q150 346 75 329 Q90 254 112 214Z`;
   const cape=state.outfit==='Sheer cape gown'?`<path d="M112 164 Q150 177 188 164 L211 318 Q150 334 89 318Z" fill="#ffffff" fill-opacity=".10" stroke="#d9dce2" stroke-opacity=".55" stroke-width="1.2"/>`:'';
   
-     const bodice=state.outfit==='Mermaid gown'?
+     const bodice=['Mermaid gown','Sweetheart strapless gown','Tulle ball gown'].includes(state.outfit)?
 
 `<path d="M119 175 Q150 159 181 175 L190 213 Q150 228 110 213Z" fill="${c}" stroke="${outline}" stroke-width="2.5"/>
-
-<path d="M119 175 L130 151 M181 175 L170 151" fill="none" stroke="${c}" stroke-width="3.5" stroke-linecap="round"/>
-
+${state.outfit==='Mermaid gown'?`<path d="M119 175 L130 151 M181 175 L170 151" fill="none" stroke="${c}" stroke-width="3.5" stroke-linecap="round"/>`:''}
 <path d="M119 175 Q150 159 181 175" fill="none" stroke="${outline}" stroke-width="2"/>
 <path d="M150 183 L150 214" stroke="#ffffff" stroke-opacity=".25" stroke-width="1.5"/>`
 
@@ -672,7 +670,8 @@ arms=`
 `<path d="M119 157 Q132 165 150 159 Q168 165 181 157 L190 213 Q150 228 110 213Z" fill="${c}" stroke="${outline}" stroke-width="2.5"/>
 <path d="M119 158 Q132 174 150 169 Q168 174 181 158" fill="none" stroke="${c}" stroke-opacity=".82" stroke-width="2"/>
 <path d="M150 174 L150 214" stroke="#ffffff" stroke-opacity=".28" stroke-width="1.5"/>`;
-     
+
+
      
      torso=`
 <path
