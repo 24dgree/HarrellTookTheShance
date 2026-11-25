@@ -405,6 +405,14 @@ function renderControls(){
    draw();
   };
  });
+
+ root.querySelectorAll('[data-background]').forEach(b=>{
+  b.onclick=()=>{
+    state.background=b.dataset.background;
+    renderControls();
+    draw();
+  };
+});
  
  
  root.querySelectorAll('[data-color]').forEach(b=>b.onclick=()=>{state.color=b.dataset.color;renderControls();draw()});
