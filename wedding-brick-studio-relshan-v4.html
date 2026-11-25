@@ -1420,7 +1420,7 @@ if(poseName==='One hand waving'){
 }
 
  
- let leftPose=leftArm;
+let leftPose=isLongSleeve?puffLeft:leftArm;
  if(poseName==='Hands on hips')leftPose=armPath('M105 169 Q89 183 96 200 L116 211')+`<ellipse cx="118" cy="212" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
  if(poseName==='Hands together')leftPose=armPath('M105 169 Q110 194 134 211')+`<ellipse cx="137" cy="214" rx="8" ry="7" fill="${skin}" stroke="${outline}" stroke-width="2.2"/>`;
  arms=`<g stroke-linecap="round" stroke-linejoin="round">${leftPose}${rightArm}</g>`;
