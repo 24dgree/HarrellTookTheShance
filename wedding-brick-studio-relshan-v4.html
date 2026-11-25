@@ -657,7 +657,17 @@ arms=`
 `<path d="M119 157 L181 157 L190 213 Q150 228 110 213Z" fill="${c}" stroke="${outline}" stroke-width="2.5"/><path d="M119 157 L181 157" fill="none" stroke="${outline}" stroke-width="2.5"/><path d="M132 163 L126 211 M168 163 L174 211" stroke="#ffffff" stroke-opacity=".28" stroke-width="1.5"/><path d="M150 159 L150 214" stroke="#ffffff" stroke-opacity=".28" stroke-width="1.5"/>`;
   
      torso=`${skirtStart} fill="${c}" stroke="${outline}" stroke-width="3"/>${cape}${bodice}${neckline}
-   ${['A-line satin gown','Sweetheart strapless gown','Sheer cape gown'].includes(state.outfit)?`<path d="M150 224 Q150 274 150 329 M105 267 Q150 280 195 267" stroke="#ffffff" stroke-opacity=".36" stroke-width="2" fill="none"/>`:''}
+   
+   ${state.outfit==='A-line satin gown'?`
+<path d="M150 224 Q150 274 150 329" stroke="#ffffff" stroke-opacity=".55" stroke-width="2.5" fill="none"/>
+<path d="M105 267 Q150 280 195 267" stroke="#ffffff" stroke-opacity=".42" stroke-width="2" fill="none"/>
+<path d="M119 238 Q110 280 96 318 M181 238 Q190 280 204 318" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.5" fill="none"/>
+`:state.outfit==='Sweetheart strapless gown'?`
+<path d="M150 229 V329 M112 270 Q150 284 188 270" stroke="#ffffff" stroke-opacity=".22" stroke-width="1.5" fill="none"/>
+`:state.outfit==='Sheer cape gown'?`
+<path d="M150 224 V329" stroke="#ffffff" stroke-opacity=".3" stroke-width="1.5" fill="none"/>
+`:''}
+   
    ${state.outfit==='Mermaid gown'?`<path d="M109 278 Q150 291 191 278 M91 310 Q150 327 209 310" stroke="#ffffff" stroke-opacity=".38" stroke-width="2" fill="none"/>`:''}
    ${state.outfit==='Tulle ball gown'?`<path d="M94 255 Q150 275 206 255 M78 294 Q150 316 222 294" stroke="#ffffff" stroke-opacity=".32" stroke-width="2" fill="none"/>`:''}`;
   legs=`<path d="M111 319 Q150 333 189 319 L185 340 H115Z" fill="${c}" stroke="${outline}" stroke-width="2"/>`;
