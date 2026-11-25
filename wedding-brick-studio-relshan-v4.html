@@ -1768,12 +1768,6 @@ document.getElementById('random').onclick=()=>{let pick=a=>a[Math.floor(Math.ran
 };
  
 renderControls();
-
-try {
-  draw();
-} catch(error) {
-  alert(error.name + ': ' + error.message);
-  console.error(error);
- }
+draw();
 </script>
 </body></html>
