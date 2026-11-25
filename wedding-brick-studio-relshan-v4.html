@@ -423,6 +423,8 @@ function draw(){
   
   // Arms are drawn behind the torso. Shirt/jacket sleeves follow the shoulder line and end at the wrist.
 
+  const longSleeve=state.outfit==='Long-sleeve fitted gown';
+  
   arms=`
  ${state.outfit==='Reserved for Harrell'?`
  <path
