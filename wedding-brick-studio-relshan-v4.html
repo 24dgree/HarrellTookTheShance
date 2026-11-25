@@ -273,11 +273,23 @@ function renderControls(){
   if(state.gender==='male'&&state.accessories.includes('Round pin'))out+=`<div class="section"><h3>PIN COLOUR</h3><div class="swatches"><button class="swatch ${state.pinColor==='#ffffff'?'selected':''}" title="White" data-pin="#ffffff" style="background:#fff"></button><button class="swatch ${state.pinColor==='#b9d5f0'?'selected':''}" title="Baby blue" data-pin="#b9d5f0" style="background:#b9d5f0"></button></div></div>`;
   if(state.gender==='female'&&state.accessories.includes('Open fan'))out+=`<div class="section"><h3>FAN COLOUR</h3><div class="swatches">${[['Brown','#805037'],['Baby blue','#b9d5f0'],['White','#f8f7f2']].map(([n,c])=>`<button class="swatch ${state.fanColor===c?'selected':''}" title="${n}" data-fan="${c}" style="background:${c}"></button>`).join('')}</div></div>`;
   if(state.gender==='female'&&state.accessories.includes('Earrings'))out+=`<div class="section"><h3>EARRING COLOUR</h3><div class="swatches"><button class="swatch ${state.earringColor==='#ffffff'?'selected':''}" title="Pearl white" data-earring="#ffffff" style="background:#fff"></button><button class="swatch ${state.earringColor==='#d6b36c'?'selected':''}" title="Gold" data-earring="#d6b36c" style="background:#d6b36c"></button></div></div>`;
-  if(state.accessories.includes('Hair clip'))out+=`<div class="section"><h3>HAIR CLIP COLOUR</h3><div class="swatches"><button class="swatch ${state.accessoryColor==='#ffffff'?'selected':''}" title="White" data-acccolor="#ffffff" style="background:#fff"></button><button class="swatch ${state.accessoryColor==='#17191e'?'selected':''}" title="Black" data-acccolor="#17191e" style="background:#17191e"></button></div></div>`;
-  
-   
- 
-    }
+  if(state.accessories.includes('Hair clip')){
+  out+=`<div class="section">
+    <h3>HAIR CLIP SHAPE</h3>
+    <div class="grid">
+      ${['Double Stripe','Flower','Scattered Stars'].map(x=>card(x,state.hairClipStyle===x)).join('')}
+    </div>
+  </div>`;
+
+  out+=`<div class="section">
+    <h3>HAIR CLIP COLOUR</h3>
+    <div class="swatches">
+      <button class="swatch ${state.accessoryColor==='#ffffff'?'selected':''}" title="White" data-acccolor="#ffffff" style="background:#fff"></button>
+      <button class="swatch ${state.accessoryColor==='#17191e'?'selected':''}" title="Black" data-acccolor="#17191e" style="background:#17191e"></button>
+    </div>
+  </div>`;
+                      }
+    
  
  root.innerHTML=out;
  
