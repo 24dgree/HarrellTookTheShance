@@ -1330,7 +1330,8 @@ const poseName=parasolHeld
   :state.pose;
  
  
- const sleeveTone=male?((state.outfit.startsWith('Fitted vest')||state.outfit.startsWith('Vest'))?'#f7f7f4':c):(state.outfit==='Long-sleeve gown'?c:skin);
+ const sleeveTone=male?((state.outfit.startsWith('Fitted vest')||state.outfit.startsWith('Vest'))?'#f7f7f4':c):(state.outfit==='Long-sleeve fitted gown'?c:skin);
+ 
  
  const armPath=(d,hand=false)=>`<path d="${d}" fill="none" stroke="${outline}" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${sleeveTone}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>`;
 
