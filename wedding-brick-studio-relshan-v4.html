@@ -1542,6 +1542,19 @@ const backgroundLayer = state.background === "St Paul's, London" ? `
  
 document.getElementById('figure').innerHTML=`
 ${backgroundLayer}
+
+<text id="watermark"
+  x="150" y="190"
+  text-anchor="middle"
+  font-family="Georgia,serif"
+  font-size="11"
+  font-weight="700"
+  letter-spacing="1.5"
+  fill="#ffffff"
+  opacity="0.45">
+  #HarrellTookTheShance
+</text>
+
 <ellipse cx="150" cy="347" rx="77" ry="10" fill="#dbe6f2"/>
 
 ${parasolLayer}
