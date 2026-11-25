@@ -1380,7 +1380,30 @@ const poseName=parasolHeld
  
  const armPath=(d,hand=false)=>`<path d="${d}" fill="none" stroke="${outline}" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/><path d="${d}" fill="none" stroke="${sleeveTone}" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>`;
 
-const leftArm=armPath('M110 169 Q101 174 96 190 L89 232')+`<path d="M89 232 L87 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/><path d="M89 233 L87 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>`;
+const isLongSleeve= !male&&state.outfit==='Long-sleeve fitted gown';
+
+const puffLeft=`
+<path d="M110 169 C94 161 79 174 80 191 C80 207 91 219 104 215 C116 211 119 185 110 169Z"
+ fill="${c}" stroke="${outline}" stroke-width="2.5"/>
+<path d="M105 211 Q97 222 89 232"
+ fill="none" stroke="${outline}" stroke-width="24" stroke-linecap="round"/>
+<path d="M105 211 Q97 222 89 232"
+ fill="none" stroke="${c}" stroke-width="18" stroke-linecap="round"/>
+<path d="M89 232 L87 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/>
+<path d="M89 233 L87 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>
+`;
+
+const puffRight=`
+<path d="M190 169 C206 161 221 174 220 191 C220 207 209 219 196 215 C184 211 181 185 190 169Z"
+ fill="${c}" stroke="${outline}" stroke-width="2.5"/>
+<path d="M195 211 Q203 222 211 232"
+ fill="none" stroke="${outline}" stroke-width="24" stroke-linecap="round"/>
+<path d="M195 211 Q203 222 211 232"
+ fill="none" stroke="${c}" stroke-width="18" stroke-linecap="round"/>
+<path d="M211 232 L213 248" stroke="${outline}" stroke-width="22" stroke-linecap="round"/>
+<path d="M211 233 L213 247" stroke="${skin}" stroke-width="15" stroke-linecap="round"/>
+`;
+ 
 
 let rightArm='';
 
