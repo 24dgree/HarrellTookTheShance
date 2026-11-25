@@ -1438,6 +1438,87 @@ let leftPose=leftArm;
  const parasolLayer=parasolHeld?`<g><path d="M66 111 Q69 27 140 14 Q150 11 160 14 Q231 27 234 111 Q214 93 194 101 Q173 88 150 101 Q127 88 106 101 Q86 93 66 111Z" fill="#f2eee3" stroke="#a99e89" stroke-width="2.5"/><path d="M66 111 Q150 77 234 111 M150 14 V110 M101 33 L127 102 M199 33 L173 102 M77 68 L116 100 M223 68 L184 100" fill="none" stroke="#c9c0ad" stroke-width="1.8"/><path d="M150 14 Q177 58 214 119" fill="none" stroke="#8b755a" stroke-width="3" stroke-linecap="round"/></g>`:'';
  const propLayer=state.props.length?`<g>${state.props.map((tag,i)=>{const x=state.props.length===1?150:state.props.length===2?98+i*104:52+i*98;const w=tag==='#HarrellTookTheShance'?92:76;return `<g><rect x="${x-w/2}" y="286" width="${w}" height="24" rx="7" fill="#ffffff" stroke="#b9cde5" stroke-width="1.5"/><text x="${x}" y="301" text-anchor="middle" font-size="${tag==='#HarrellTookTheShance'?6.3:8}" font-weight="700" fill="#385474">${tag}</text></g>`}).join('')}</g>`:'';
  const head=`<rect x="102" y="55" width="96" height="100" rx="30" fill="${skin}" stroke="#263750" stroke-width="3"/>${eyes}${face}${glasses}`;
+const backgroundLayer = state.background === "St Paul's, London" ? `
+<g>
+  <rect width="300" height="360" fill="#dce5e6"/>
+  <path d="M0 180 Q75 165 150 180 T300 175 V360 H0Z" fill="#c5d0c9"/>
+  
+  <!-- London buildings -->
+  <path d="M0 125 H48 V275 H0Z M252 115 H300 V275 H252Z"
+    fill="#b9b9ad"/>
+  <path d="M8 140 H40 M8 160 H40 M260 135 H292 M260 155 H292"
+    stroke="#e9e4d8" stroke-width="4"/>
+
+  <!-- St Paul's Cathedral -->
+  <path d="M83 180 V135 Q95 118 110 135 V180Z"
+    fill="#e8e1d1" stroke="#aaa99e" stroke-width="2"/>
+  <path d="M110 180 V116 Q150 100 190 116 V180Z"
+    fill="#e9e3d5" stroke="#aaa99e" stroke-width="2"/>
+  <path d="M110 116 Q150 91 190 116"
+    fill="none" stroke="#a9a99e" stroke-width="3"/>
+  <path d="M120 116 Q120 73 150 57 Q180 73 180 116Z"
+    fill="#b9c5bd" stroke="#8e9d95" stroke-width="2"/>
+  <path d="M132 79 Q150 55 168 79"
+    fill="none" stroke="#e8e2d5" stroke-width="3"/>
+  <path d="M143 57 V43 H157 V57 M150 43 V30"
+    fill="none" stroke="#8e9d95" stroke-width="3"/>
+  <path d="M80 180 V150 H220 V180"
+    fill="#e8e1d1" stroke="#aaa99e" stroke-width="2"/>
+  <path d="M92 150 V180 M108 150 V180 M192 150 V180 M208 150 V180"
+    stroke="#b3ad9f" stroke-width="3"/>
+  <path d="M0 275 H300 V360 H0Z" fill="#aeb5ad"/>
+  <path d="M0 300 H300" stroke="#e8e2d5" stroke-width="3"/>
+
+  <!-- Red London bus -->
+  <g>
+    <rect x="218" y="245" width="70" height="55" rx="7"
+      fill="#a94d4b" stroke="#763c3b" stroke-width="2"/>
+    <rect x="224" y="251" width="58" height="19" rx="2"
+      fill="#dce4df"/>
+    <path d="M253 251 V270" stroke="#a3aaa5" stroke-width="2"/>
+    <rect x="224" y="275" width="58" height="15" rx="2"
+      fill="#dce4df"/>
+    <circle cx="233" cy="300" r="5" fill="#444746"/>
+    <circle cx="274" cy="300" r="5" fill="#444746"/>
+  </g>
+</g>
+` : `
+<g>
+  <!-- Bali sunset sky -->
+  <rect width="300" height="360" fill="#e8b9c2"/>
+  <path d="M0 110 Q75 75 150 105 T300 95 V210 H0Z"
+    fill="#f2c9bd"/>
+  <circle cx="150" cy="112" r="35" fill="#f5dfbd"/>
+  <path d="M0 180 Q75 165 150 180 T300 175 V270 H0Z"
+    fill="#719c9c"/>
+  <path d="M0 205 Q75 190 150 205 T300 200"
+    fill="none" stroke="#a9c5bd" stroke-width="4"/>
+  <path d="M0 240 Q75 225 150 240 T300 235"
+    fill="none" stroke="#b9d1c7" stroke-width="3"/>
+
+  <!-- Beach -->
+  <path d="M0 265 Q75 245 150 265 T300 255 V360 H0Z"
+    fill="#e8d7bd"/>
+  <path d="M0 290 Q75 280 150 292 T300 285"
+    fill="none" stroke="#f5e8d5" stroke-width="4"/>
+
+  <!-- Tropical flowers -->
+  <g fill="#f5dce0" stroke="#d99eaa" stroke-width="1.5">
+    <circle cx="28" cy="170" r="9"/>
+    <circle cx="42" cy="160" r="9"/>
+    <circle cx="42" cy="176" r="9"/>
+    <circle cx="28" cy="184" r="9"/>
+    <circle cx="35" cy="172" r="5" fill="#e9c27e"/>
+    <circle cx="260" cy="190" r="9"/>
+    <circle cx="274" cy="180" r="9"/>
+    <circle cx="274" cy="196" r="9"/>
+    <circle cx="260" cy="204" r="9"/>
+    <circle cx="267" cy="188" r="5" fill="#e9c27e"/>
+  </g>
+  <path d="M35 190 Q20 225 12 250 M267 205 Q285 225 292 250"
+    fill="none" stroke="#82977c" stroke-width="4"/>
+</g>
+`;
  
 document.getElementById('figure').innerHTML=`
 <ellipse cx="150" cy="347" rx="77" ry="10" fill="#dbe6f2"/>
