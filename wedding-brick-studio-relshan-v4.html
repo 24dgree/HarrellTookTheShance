@@ -1600,9 +1600,12 @@ const backgroundLayer = state.background === "St Paul's, London" ? `
 </g>
 `;
 
+
 document.getElementById('figure').innerHTML=`
+${backgroundLayer}
 
 <text id="watermark"
+
   x="150" y="190"
   text-anchor="middle"
   font-family="Georgia,serif"
