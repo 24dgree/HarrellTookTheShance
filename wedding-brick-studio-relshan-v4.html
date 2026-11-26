@@ -1246,17 +1246,17 @@ h === 'Smooth full-front waves' ? `
   >
     <rect width="300" height="370" fill="white"/>
 
-    <!-- Raised and widened curved W face opening -->
+    <!-- Raised W-shaped face opening -->
     <path d="
-      M106 101
-      C117 106 123 116 135 112
-      C143 109 146 94 150 90
-      C154 94 157 109 165 112
-      C177 116 183 106 194 101
+      M106 97
+      C117 102 123 112 135 108
+      C143 105 146 90 150 86
+      C154 90 157 105 165 108
+      C177 112 183 102 194 97
       C195 121 194 139 181 153
       Q171 169 150 169
       Q129 169 119 153
-      C106 139 105 121 106 101Z"
+      C106 139 105 121 106 97Z"
       fill="black"
     />
   </mask>
@@ -1300,7 +1300,7 @@ h === 'Smooth full-front waves' ? `
     stroke="none"
   />
 
-  <!-- Complete hair outlines -->
+  <!-- Hair outer and curl outlines -->
   <g
     fill="none"
     stroke="#202b3c"
@@ -1309,7 +1309,6 @@ h === 'Smooth full-front waves' ? `
     stroke-linejoin="round"
   >
 
-    <!-- Left outer contour -->
     <path d="
     M150 41
     C113 39 98 61 101 99
@@ -1321,7 +1320,6 @@ h === 'Smooth full-front waves' ? `
     C98 190 105 202 120 202
     C136 202 143 190 137 177"/>
 
-    <!-- Right outer contour -->
     <path d="
     M150 41
     C187 39 202 61 199 99
@@ -1334,21 +1332,9 @@ h === 'Smooth full-front waves' ? `
     C164 202 157 190 163 177"/>
 
     <!-- Inner curl contours -->
-    <path d="
-    M150 120
-    C145 137 143 160 137 177"/>
+    <path d="M150 120 C145 137 143 160 137 177"/>
+    <path d="M150 120 C155 137 157 160 163 177"/>
 
-    <path d="
-    M150 120
-    C155 137 157 160 163 177"/>
-
-    <!-- W-shaped fringe outline -->
-    <path d="
-    M106 101
-    C117 106 123 116 135 112
-    C143 109 146 94 150 90
-    C154 94 157 109 165 112
-    C177 116 183 106 194 101"/>
   </g>
 
   <!-- Hair highlights -->
@@ -1365,6 +1351,39 @@ h === 'Smooth full-front waves' ? `
   </g>
 
 </g>
+
+<!-- Face-framing outlines and W-shaped fringe -->
+<g
+  fill="none"
+  stroke="#202b3c"
+  stroke-width="2.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+
+  <!-- W-shaped fringe outline -->
+  <path d="
+  M106 97
+  C117 102 123 112 135 108
+  C143 105 146 90 150 86
+  C154 90 157 105 165 108
+  C177 112 183 102 194 97"/>
+
+  <!-- Left face-framing outline -->
+  <path d="
+  M106 97
+  C105 121 106 139 119 153
+  Q129 169 137 177"/>
+
+  <!-- Right face-framing outline -->
+  <path d="
+  M194 97
+  C195 121 194 139 181 153
+  Q171 169 163 177"/>
+
+</g>
+
+ </g>
     
 
 
