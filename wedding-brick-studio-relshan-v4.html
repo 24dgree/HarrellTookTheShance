@@ -1230,44 +1230,43 @@ const fringe='';
   
   const babyHair=state.babyHair?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M150 45 Q139 58 129 76 Q124 82 118 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q161 58 171 76 Q176 82 182 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q147 50 145 55 M150 45 Q153 50 155 55" stroke="${hair}" stroke-width="3.2"/></g>`:'';
   
- const faceFraming =
+const faceFraming =
 h === 'Smooth full-front waves' ? `
 
-<!-- One-piece Cinderella curtain bangs with long curls -->
+<!-- Full connected Cinderella waves -->
 <path
-  d="
-  M108 76
-
-  C96 84 94 105 98 124
-  C101 139 104 146 97 160
-  C91 172 91 182 101 186
-  C110 191 120 183 122 174
-  C124 165 117 156 115 146
-
-  C112 134 116 120 124 108
-  Q133 96 145 91
-  Q150 88 155 91
-  Q167 96 176 108
-  C184 120 188 134 185 146
-
-  C183 156 176 165 178 174
-  C180 183 190 191 199 186
-  C209 182 209 172 203 160
-  C196 146 199 139 202 124
-  C206 105 204 84 192 76
-
-  Q177 85 165 76
-  Q157 70 150 81
-  Q143 70 135 76
-  Q120 85 108 76
-  Z"
   fill="${hair}"
+  fill-rule="evenodd"
   stroke="#202b3c"
   stroke-width="2.5"
   stroke-linejoin="round"
+  d="
+  M150 41
+  C115 41 101 62 102 96
+  C100 119 103 139 97 158
+  C91 175 94 186 106 188
+  C119 190 128 179 124 165
+  C120 151 116 137 119 122
+  C121 111 127 99 138 96
+  Q145 94 150 102
+  Q155 94 162 96
+  C173 99 179 111 181 122
+  C184 137 180 151 176 165
+  C172 179 181 190 194 188
+  C206 186 209 175 203 158
+  C197 139 200 119 198 96
+  C199 62 185 41 150 41Z
+
+  M150 89
+  C132 89 119 101 113 119
+  C109 133 113 149 121 164
+  C127 176 137 180 150 180
+  C163 180 173 176 179 164
+  C187 149 191 133 187 119
+  C181 101 168 89 150 89Z
+  "
 />
 
-<!-- Curved hair highlights -->
 <g
   fill="none"
   stroke="#ffffff"
@@ -1275,10 +1274,9 @@ h === 'Smooth full-front waves' ? `
   stroke-width="2"
   stroke-linecap="round"
 >
-  <path d="M104 96 Q99 126 111 148 Q117 162 106 177"/>
-  <path d="M196 96 Q201 126 189 148 Q183 162 194 177"/>
-  <path d="M116 83 Q132 88 145 78"/>
-  <path d="M184 83 Q168 88 155 78"/>
+  <path d="M112 62 Q103 105 110 139 Q115 158 104 176"/>
+  <path d="M188 62 Q197 105 190 139 Q185 158 196 176"/>
+  <path d="M119 76 Q135 66 150 80 Q165 66 181 76"/>
 </g>
 
 
