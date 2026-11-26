@@ -1257,7 +1257,28 @@ hairShape=bunShape+crown+halfUp+fringe+babyHair+faceFraming+(h==='Elegant updo'?
  const mouthColor='#17191e';
 let face='';
  
-  if(state.face==='Smug')face=`<path d="M140 117 L150 124 L160 117" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
+  if(state.face==='Smug')face=`
+  <path
+    d="M140 124 L150 135 L160 124"
+    fill="none"
+    stroke="#563b34"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <ellipse
+    cx="121" cy="119"
+    rx="8" ry="4"
+    fill="#e99c91"
+    opacity=".65"
+  />
+  <ellipse
+    cx="179" cy="119"
+    rx="8" ry="4"
+    fill="#e99c91"
+    opacity=".65"
+  />
+`;
  
   if(state.face==='Playful tongue')face=`
 <path d="M130 124 Q150 146 170 124"
