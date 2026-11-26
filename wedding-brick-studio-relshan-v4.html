@@ -1391,7 +1391,40 @@ let face='';
  const has=name=>state.accessories.includes(name);
  let glasses='';
  if(has('Glasses')){
-  if(state.glassesStyle==='White heart · dark lenses')glasses=`<g stroke="#ffffff" stroke-width="2.8" stroke-linejoin="round"><path d="M118 105 C112 95 126 93 132 102 C138 93 152 95 146 106 L132 120Z" fill="#17191e"/><path d="M154 105 C148 95 162 93 168 102 C174 93 188 95 182 106 L168 120Z" fill="#17191e"/><path d="M146 106 H154" fill="none"/></g>`;
+  
+  if(state.glassesStyle==='White heart · dark lenses')glasses=`
+<g
+  stroke="#ffffff"
+  stroke-width="2.8"
+  stroke-linejoin="round"
+>
+  <path
+    d="M118 105
+       C112 95 126 93 132 102
+       C138 93 152 95 146 106
+       L132 120Z"
+    fill="#17191e"
+  />
+
+  <path
+    d="M154 105
+       C148 95 162 93 168 102
+       C174 93 188 95 182 106
+       L168 120Z"
+    fill="#17191e"
+  />
+
+  <path
+    d="M146 106 H154"
+    fill="none"
+  />
+
+  <path
+    d="M118 105 L109 102
+       M182 105 L191 102"
+    fill="none"
+  />
+</g>`;
   
   else if(state.glassesStyle==='Long rectangle · dark lenses')glasses=`
 <g
