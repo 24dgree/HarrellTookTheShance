@@ -1676,34 +1676,59 @@ const backgroundLayer = state.background === "St Paul's, London" ? `
   <circle cx="276" cy="293" r="5" fill="#444746"/>
   </g>
 </g>
-
-`: state.background === 'Bali at Dusk' ? `
+`
+: state.background === 'Bali at Dusk' ? `
 
 <g>
-  <!-- BLUSH PARADISE: Dusky Floral Wedding Backdrop -->
+  <!-- BLUSH PARADISE: Classical Evening Wedding Backdrop -->
 
   <defs>
     <linearGradient id="blushParadiseSky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#493746"/>
-      <stop offset="55%" stop-color="#65485a"/>
-      <stop offset="100%" stop-color="#765064"/>
+      <stop offset="0%" stop-color="#77777a"/>
+      <stop offset="55%" stop-color="#8d8585"/>
+      <stop offset="100%" stop-color="#a9a0a0"/>
     </linearGradient>
   </defs>
 
   <rect width="300" height="360" fill="#e9e9e4"/>
 
-  <!-- Dusky blush sky -->
+  <!-- Dark blush-gray evening sky -->
   <rect width="300" height="260" fill="url(#blushParadiseSky)"/>
+
+  <!-- Classical pillars on the outer sides -->
+  <g stroke="#8e8580" stroke-width="1">
+
+    <!-- Left pillar -->
+    <rect x="10" y="112" width="21" height="145"
+      fill="#c2b9b0"/>
+    <rect x="7" y="105" width="27" height="9"
+      fill="#d5cbc1"/>
+    <rect x="8" y="250" width="25" height="9"
+      fill="#d5cbc1"/>
+    <path d="M14 116 V250 M27 116 V250"
+      fill="none" stroke="#ddd4ca" stroke-width="1.5"/>
+
+    <!-- Right pillar -->
+    <rect x="269" y="112" width="21" height="145"
+      fill="#c2b9b0"/>
+    <rect x="266" y="105" width="27" height="9"
+      fill="#d5cbc1"/>
+    <rect x="267" y="250" width="25" height="9"
+      fill="#d5cbc1"/>
+    <path d="M273 116 V250 M286 116 V250"
+      fill="none" stroke="#ddd4ca" stroke-width="1.5"/>
+
+  </g>
 
   <!-- Reflective circular wedding aisle -->
   <path d="M0 360 L48 263 Q150 232 252 263 L300 360Z"
-    fill="#cec5cb"/>
+    fill="#cbd2cf"/>
 
   <path d="M48 263 Q150 244 252 263"
-    fill="none" stroke="#e8dfe4" stroke-width="5"/>
+    fill="none" stroke="#e7e9e5" stroke-width="5"/>
 
   <path d="M75 360 Q105 294 150 267 Q195 294 225 360"
-    fill="#e2dbe0" stroke="#eee7eb" stroke-width="2"/>
+    fill="#e2e6e1" stroke="#eee7eb" stroke-width="2"/>
 
   <path d="M150 269 L150 360"
     stroke="#eee7eb" stroke-width="2" opacity=".7"/>
@@ -1775,8 +1800,10 @@ const backgroundLayer = state.background === "St Paul's, London" ? `
     <circle cx="266" cy="278" r="4"/>
     <circle cx="278" cy="307" r="4"/>
   </g>
+
 </g>
-` : '';
+` : ''; 
+
 
 document.getElementById('figure').innerHTML=`
 ${backgroundLayer}
