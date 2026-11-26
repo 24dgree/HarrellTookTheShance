@@ -1288,7 +1288,26 @@ fill="#e97886" stroke="#8e4d58" stroke-width="1.2"/>
 <path d="M159 141 Q164 138 168 133"
 fill="none" stroke="#f6b3ba" stroke-width="1.2"/>`;
  
- if(state.face==='Neutral')face=`<path d="M137 119 H163" stroke="#563b34" stroke-width="3" stroke-linecap="round"/>`;
+ if(state.face==='Neutral')face=`
+  <path
+    d="M137 135 H163"
+    stroke="#563b34"
+    stroke-width="3"
+    stroke-linecap="round"
+  />
+  <ellipse
+    cx="121" cy="119"
+    rx="8" ry="4"
+    fill="#e99c91"
+    opacity=".65"
+  />
+  <ellipse
+    cx="179" cy="119"
+    rx="8" ry="4"
+    fill="#e99c91"
+    opacity=".65"
+  />
+`;
  
   if(state.face==='Wink')face=`<path d="M140 124 Q151 135 163 124" fill="none" stroke="#563b34" stroke-width="3" stroke-linecap="round"/><ellipse cx="121" cy="119" rx="8" ry="4" fill="#e99c91" opacity=".65"/><ellipse cx="179" cy="119" rx="8" ry="4" fill="#e99c91" opacity=".65"/>`;
  
