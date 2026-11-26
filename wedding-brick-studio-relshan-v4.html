@@ -1677,32 +1677,36 @@ const backgroundLayer = state.background === "St Paul's, London" ? `
   </g>
 </g>
 
-` : state.background === 'Bali at Dusk' ? `
+: state.background === 'Bali at Dusk' ? `
 
 <g>
-  <!-- BLUSH PARADISE: Floral Ocean Wedding Backdrop -->
+  <!-- BLUSH PARADISE: Dusky Floral Wedding Backdrop -->
+
+  <defs>
+    <linearGradient id="blushParadiseSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#493746"/>
+      <stop offset="55%" stop-color="#65485a"/>
+      <stop offset="100%" stop-color="#765064"/>
+    </linearGradient>
+  </defs>
 
   <rect width="300" height="360" fill="#e9e9e4"/>
 
-  <rect width="300" height="175" fill="#e8edf0"/>
-  <path d="M0 125 Q75 113 150 126 T300 120
-    V245 H0Z" fill="#a8c5ce"/>
-
-  <path d="M0 155 Q75 148 150 158 T300 151"
-    fill="none" stroke="#dce7e5" stroke-width="2"/>
+  <!-- Dusky blush sky -->
+  <rect width="300" height="260" fill="url(#blushParadiseSky)"/>
 
   <!-- Reflective circular wedding aisle -->
   <path d="M0 360 L48 263 Q150 232 252 263 L300 360Z"
-    fill="#d9e1df"/>
+    fill="#cec5cb"/>
 
   <path d="M48 263 Q150 244 252 263"
-    fill="none" stroke="#ffffff" stroke-width="5"/>
+    fill="none" stroke="#e8dfe4" stroke-width="5"/>
 
   <path d="M75 360 Q105 294 150 267 Q195 294 225 360"
-    fill="#edf0eb" stroke="#ffffff" stroke-width="2"/>
+    fill="#e2dbe0" stroke="#eee7eb" stroke-width="2"/>
 
   <path d="M150 269 L150 360"
-    stroke="#ffffff" stroke-width="2" opacity=".7"/>
+    stroke="#eee7eb" stroke-width="2" opacity=".7"/>
 
   <!-- Floating round floral canopy -->
   <g fill="#f3d4df" stroke="#e8b7c8" stroke-width="1">
@@ -1770,7 +1774,7 @@ const backgroundLayer = state.background === "St Paul's, London" ? `
     <circle cx="287" cy="286" r="4"/>
     <circle cx="266" cy="278" r="4"/>
     <circle cx="278" cy="307" r="4"/>
-            </g>
+  </g>
 </g>
 ` : '';
 
