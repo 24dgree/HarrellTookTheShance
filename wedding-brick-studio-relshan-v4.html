@@ -1393,7 +1393,22 @@ let face='';
  if(has('Glasses')){
   if(state.glassesStyle==='White heart · dark lenses')glasses=`<g stroke="#ffffff" stroke-width="2.8" stroke-linejoin="round"><path d="M118 105 C112 95 126 93 132 102 C138 93 152 95 146 106 L132 120Z" fill="#17191e"/><path d="M154 105 C148 95 162 93 168 102 C174 93 188 95 182 106 L168 120Z" fill="#17191e"/><path d="M146 106 H154" fill="none"/></g>`;
   else if(state.glassesStyle==='Long rectangle · dark lenses')glasses=`<g stroke="#ffffff" stroke-width="2.8" fill="#17191e"><rect x="116" y="100" width="31" height="17" rx="3"/><rect x="153" y="100" width="31" height="17" rx="3"/><path d="M147 106 H153" fill="none"/></g>`;
-  else if(state.glassesStyle==='Olive oval · clear lenses')glasses=`<g stroke="#8b9362" stroke-width="2.8" fill="#b8c28b" fill-opacity=".18"><ellipse cx="132" cy="108" rx="14" ry="10"/><ellipse cx="168" cy="108" rx="14" ry="10"/><path d="M146 106 Q150 103 154 106 M118 105 L111 102 M182 105 L189 102" fill="none"/></g>`;
+  
+  else if(state.glassesStyle==='Olive oval · clear lenses')glasses=`
+<g
+  stroke="#8b9362"
+  stroke-width="2.8"
+  fill="#b8c28b"
+  fill-opacity=".35"
+>
+  <ellipse cx="132" cy="108" rx="14" ry="10"/>
+  <ellipse cx="168" cy="108" rx="14" ry="10"/>
+  <path
+    d="M146 106 Q150 103 154 106 M118 105 L111 102 M182 105 L189 102"
+    fill="none"
+  />
+</g>`;
+  
   else glasses=`<g fill="#17191e" fill-opacity=".88" stroke="#27384d" stroke-width="3"><rect x="119" y="99" width="25" height="19" rx="5"/><rect x="156" y="99" width="25" height="19" rx="5"/><path d="M144 107 H156 M119 105 L111 102 M181 105 L189 102" fill="none"/></g>`;
  }
  if(has('Boutonniere')&&male)extra+=`<circle cx="181" cy="190" r="5" fill="#f5f1e9" stroke="#78906b" stroke-width="2"/><path d="M181 195 L177 204" stroke="#78906b" stroke-width="2"/>`;
