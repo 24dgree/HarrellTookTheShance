@@ -1233,44 +1233,47 @@ const fringe='';
   const faceFraming =
 h === 'Smooth full-front waves' ? `
 
+<!-- Smooth full-front waves: connected side volume -->
 <g
   fill="${hair}"
   stroke="#202b3c"
   stroke-width="2"
   stroke-linejoin="round"
-  stroke-linecap="round"
 >
 
-  <!-- Left soft front wave -->
+  <!-- Left flowing hair mass -->
   <path
     d="
     M108 76
-    C99 82 97 95 100 108
-    C102 121 109 131 106 143
-    C103 154 96 163 99 171
-    C102 180 111 180 117 174
-    C123 168 121 159 118 151
-    C114 141 116 132 121 122
-    C127 108 125 93 119 83
-    C116 78 112 76 108 76Z"
+    Q96 79 94 96
+    Q91 115 101 132
+    Q106 143 101 155
+    Q94 169 101 177
+    Q108 184 117 176
+    Q125 167 119 154
+    Q114 143 119 130
+    Q126 111 122 94
+    Q120 81 108 76Z"
   />
 
-  <!-- Right soft front wave -->
+  <!-- Right flowing hair mass -->
   <path
     d="
     M192 76
-    C201 82 203 95 200 108
-    C198 121 191 131 194 143
-    C197 154 204 163 201 171
-    C198 180 189 180 183 174
-    C177 168 179 159 182 151
-    C186 141 184 132 179 122
-    C173 108 175 93 181 83
-    C184 78 188 76 192 76Z"
+    Q204 79 206 96
+    Q209 115 199 132
+    Q194 143 199 155
+    Q206 169 199 177
+    Q192 184 183 176
+    Q175 167 181 154
+    Q186 143 181 130
+    Q174 111 178 94
+    Q180 81 192 76Z"
   />
 
 </g>
 
+<!-- Soft flowing highlights -->
 <g
   fill="none"
   stroke="#ffffff"
@@ -1278,8 +1281,8 @@ h === 'Smooth full-front waves' ? `
   stroke-width="2"
   stroke-linecap="round"
 >
-  <path d="M108 91 Q103 111 113 130 Q117 142 111 154"/>
-  <path d="M192 91 Q197 111 187 130 Q183 142 189 154"/>
+  <path d="M104 91 Q98 116 111 137 Q116 149 108 164"/>
+  <path d="M196 91 Q202 116 189 137 Q184 149 192 164"/>
 </g>
 
 ` : h === 'Half-up waves' ? `
