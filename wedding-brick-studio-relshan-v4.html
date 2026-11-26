@@ -1233,50 +1233,89 @@ const fringe='';
 const faceFraming =
 h === 'Smooth full-front waves' ? `
 
-<!-- Full connected Cinderella waves -->
-<path
-  fill="${hair}"
-  fill-rule="evenodd"
-  stroke="#202b3c"
-  stroke-width="2.5"
-  stroke-linejoin="round"
-  d="
-  M150 41
-  C115 41 101 62 102 96
-  C100 119 103 139 97 158
-  C91 175 94 186 106 188
-  C119 190 128 179 124 165
-  C120 151 116 137 119 122
-  C121 111 127 99 138 96
-  Q145 94 150 102
-  Q155 94 162 96
-  C173 99 179 111 181 122
-  C184 137 180 151 176 165
-  C172 179 181 190 194 188
-  C206 186 209 175 203 158
-  C197 139 200 119 198 96
-  C199 62 185 41 150 41Z
+<!-- One connected Cinderella hairstyle -->
+<defs>
+  <mask
+    id="smoothWaveFaceOpening"
+    maskUnits="userSpaceOnUse"
+    x="0"
+    y="0"
+    width="300"
+    height="370"
+  >
+    <rect
+      x="0"
+      y="0"
+      width="300"
+      height="370"
+      fill="white"
+    />
 
-  M150 89
-  C132 89 119 101 113 119
-  C109 133 113 149 121 164
-  C127 176 137 180 150 180
-  C163 180 173 176 179 164
-  C187 149 191 133 187 119
-  C181 101 168 89 150 89Z
-  "
-/>
+    <!-- Open face area with Cinderella curtain bangs -->
+    <path
+      d="
+      M110 99
+      C120 87 136 85 150 98
+      C164 85 180 87 190 99
 
-<g
-  fill="none"
-  stroke="#ffffff"
-  stroke-opacity=".2"
-  stroke-width="2"
-  stroke-linecap="round"
->
-  <path d="M112 62 Q103 105 110 139 Q115 158 104 176"/>
-  <path d="M188 62 Q197 105 190 139 Q185 158 196 176"/>
-  <path d="M119 76 Q135 66 150 80 Q165 66 181 76"/>
+      C191 119 190 139 181 153
+      Q171 169 150 169
+      Q129 169 119 153
+      C110 139 109 119 110 99Z"
+      fill="black"
+    />
+  </mask>
+</defs>
+
+<g mask="url(#smoothWaveFaceOpening)">
+
+  <!-- One continuous outer hair silhouette -->
+  <path
+    d="
+    M150 41
+
+    C113 39 98 61 101 99
+    C99 124 102 145 95 163
+
+    C89 179 94 191 108 191
+    C122 191 132 180 126 165
+    C121 152 117 143 118 130
+
+    C115 151 112 165 105 177
+    C98 190 105 202 120 202
+    C136 202 143 190 137 177
+
+    L163 177
+
+    C157 190 164 202 180 202
+    C195 202 202 190 195 177
+    C188 165 185 151 182 130
+
+    C183 143 179 152 174 165
+    C168 180 178 191 192 191
+    C206 191 211 179 205 163
+
+    C198 145 201 124 199 99
+    C202 61 187 39 150 41Z"
+    fill="${hair}"
+    stroke="#202b3c"
+    stroke-width="2.5"
+    stroke-linejoin="round"
+  />
+
+  <!-- Flowing hair highlights -->
+  <g
+    fill="none"
+    stroke="#ffffff"
+    stroke-opacity=".2"
+    stroke-width="2"
+    stroke-linecap="round"
+  >
+    <path d="M111 64 Q102 105 108 139 Q111 159 101 177"/>
+    <path d="M189 64 Q198 105 192 139 Q189 159 199 177"/>
+    <path d="M120 77 Q137 68 150 82 Q163 68 180 77"/>
+  </g>
+
 </g>
 
 
