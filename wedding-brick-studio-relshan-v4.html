@@ -1230,18 +1230,72 @@ const fringe='';
   
   const babyHair=state.babyHair?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M150 45 Q139 58 129 76 Q124 82 118 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q161 58 171 76 Q176 82 182 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q147 50 145 55 M150 45 Q153 50 155 55" stroke="${hair}" stroke-width="3.2"/></g>`:'';
   
-  const faceFraming=
-['Smooth full-front waves',
-'Half-up waves'
-].includes(h)?`<g fill="${hair}" stroke="#202b3c" stroke-width="2">
-<path d="M108 76 Q99 80 99 96 Q98 111 108 121 Q113 108 120 99 Q126 89 120 78Z"/>
-<path d="M192 76 Q201 80 201 96 Q202 111 192 121 Q187 108 180 99 Q174 89 180 78Z"/>
-<path d="M108 76 Q96 96 102 119 Q108 137 96 153 Q91 168 103 177 Q116 181 121 164 Q113 149 120 133 Q127 112 120 91Z"/>
-<path d="M192 76 Q204 96 198 119 Q192 137 204 153 Q209 168 197 177 Q184 181 179 164 Q187 149 180 133 Q173 112 180 91Z"/>
+  const faceFraming =
+h === 'Smooth full-front waves' ? `
+
+<g
+  fill="${hair}"
+  stroke="#202b3c"
+  stroke-width="2"
+  stroke-linejoin="round"
+  stroke-linecap="round"
+>
+
+  <!-- Left soft front wave -->
+  <path
+    d="
+    M108 76
+    C99 82 97 95 100 108
+    C102 121 109 131 106 143
+    C103 154 96 163 99 171
+    C102 180 111 180 117 174
+    C123 168 121 159 118 151
+    C114 141 116 132 121 122
+    C127 108 125 93 119 83
+    C116 78 112 76 108 76Z"
+  />
+
+  <!-- Right soft front wave -->
+  <path
+    d="
+    M192 76
+    C201 82 203 95 200 108
+    C198 121 191 131 194 143
+    C197 154 204 163 201 171
+    C198 180 189 180 183 174
+    C177 168 179 159 182 151
+    C186 141 184 132 179 122
+    C173 108 175 93 181 83
+    C184 78 188 76 192 76Z"
+  />
+
 </g>
+
+<g
+  fill="none"
+  stroke="#ffffff"
+  stroke-opacity=".2"
+  stroke-width="2"
+  stroke-linecap="round"
+>
+  <path d="M108 91 Q103 111 113 130 Q117 142 111 154"/>
+  <path d="M192 91 Q197 111 187 130 Q183 142 189 154"/>
+</g>
+
+` : h === 'Half-up waves' ? `
+
+<g fill="${hair}" stroke="#202b3c" stroke-width="2">
+  <path d="M108 76 Q99 80 99 96 Q98 111 108 121 Q113 108 120 99 Q126 89 120 78Z"/>
+  <path d="M192 76 Q201 80 201 96 Q202 111 192 121 Q187 108 180 99 Q174 89 180 78Z"/>
+  <path d="M108 76 Q96 96 102 119 Q108 137 96 153 Q91 168 103 177 Q116 181 121 164 Q113 149 120 133 Q127 112 120 91Z"/>
+  <path d="M192 76 Q204 96 198 119 Q192 137 204 153 Q209 168 197 177 Q184 181 179 164 Q187 149 180 133 Q173 112 180 91Z"/>
+</g>
+
 <g fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2">
-<path d="M108 93 Q102 116 111 136 M192 93 Q198 116 189 136"/>
-</g>`:'';
+  <path d="M108 93 Q102 116 111 136 M192 93 Q198 116 189 136"/>
+</g>
+
+` : '';
   
  
   hairBack=back;
