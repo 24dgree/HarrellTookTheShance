@@ -1230,29 +1230,33 @@ const fringe='';
   
   const babyHair=state.babyHair?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M150 45 Q139 58 129 76 Q124 82 118 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q161 58 171 76 Q176 82 182 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q147 50 145 55 M150 45 Q153 50 155 55" stroke="${hair}" stroke-width="3.2"/></g>`:'';
   
-const faceFraming =
+
+    const faceFraming =
 h === 'Smooth full-front waves' ? `
 <!-- Cinderella full-front waves -->
+
 <defs>
   <mask
     id="smoothWaveFaceOpening"
     maskUnits="userSpaceOnUse"
-    x="0" y="0"
-    width="300" height="370"
+    x="0"
+    y="0"
+    width="300"
+    height="370"
   >
-    <rect x="0" y="0" width="300" height="370" fill="white"/>
+    <rect width="300" height="370" fill="white"/>
 
-    <!-- Raised W-shaped face opening -->
+    <!-- Raised and widened curved W face opening -->
     <path d="
-      M110 82
-      C120 86 126 97 136 94
-      C144 91 146 76 150 72
-      C154 76 156 91 164 94
-      C174 97 180 86 190 82
-      C191 119 190 139 181 153
+      M106 101
+      C117 106 123 116 135 112
+      C143 109 146 94 150 90
+      C154 94 157 109 165 112
+      C177 116 183 106 194 101
+      C195 121 194 139 181 153
       Q171 169 150 169
       Q129 169 119 153
-      C110 139 109 119 110 82Z"
+      C106 139 105 121 106 101Z"
       fill="black"
     />
   </mask>
@@ -1296,7 +1300,7 @@ h === 'Smooth full-front waves' ? `
     stroke="none"
   />
 
-  <!-- Outer outlines -->
+  <!-- Complete hair outlines -->
   <g
     fill="none"
     stroke="#202b3c"
@@ -1304,6 +1308,8 @@ h === 'Smooth full-front waves' ? `
     stroke-linecap="round"
     stroke-linejoin="round"
   >
+
+    <!-- Left outer contour -->
     <path d="
     M150 41
     C113 39 98 61 101 99
@@ -1315,6 +1321,7 @@ h === 'Smooth full-front waves' ? `
     C98 190 105 202 120 202
     C136 202 143 190 137 177"/>
 
+    <!-- Right outer contour -->
     <path d="
     M150 41
     C187 39 202 61 199 99
@@ -1325,6 +1332,23 @@ h === 'Smooth full-front waves' ? `
     C185 151 188 165 195 177
     C202 190 195 202 180 202
     C164 202 157 190 163 177"/>
+
+    <!-- Inner curl contours -->
+    <path d="
+    M150 120
+    C145 137 143 160 137 177"/>
+
+    <path d="
+    M150 120
+    C155 137 157 160 163 177"/>
+
+    <!-- W-shaped fringe outline -->
+    <path d="
+    M106 101
+    C117 106 123 116 135 112
+    C143 109 146 94 150 90
+    C154 94 157 109 165 112
+    C177 116 183 106 194 101"/>
   </g>
 
   <!-- Hair highlights -->
