@@ -1232,45 +1232,18 @@ const fringe='';
   
 const faceFraming =
 h === 'Smooth full-front waves' ? `
-
-<!-- One connected Cinderella hairstyle -->
+<!-- Cinderella full-front waves -->
 <defs>
   <mask
     id="smoothWaveFaceOpening"
     maskUnits="userSpaceOnUse"
-    x="0"
-    y="0"
-    width="300"
-    height="370"
+    x="0" y="0"
+    width="300" height="370"
   >
-    <rect
-      x="0"
-      y="0"
-      width="300"
-      height="370"
-      fill="white"
-    />
+    <rect x="0" y="0" width="300" height="370" fill="white"/>
 
-    <!-- Open face area with Cinderella curtain bangs -->
+    <!-- Curved W-shaped face opening -->
     <path d="
-M110 99
-C120 91 132 83 143 88
-C147 90 149 96 150 101
-C151 96 153 90 157 88
-C168 83 180 91 190 99
-
-C191 119 190 139 181 153
-Q171 169 150 169
-Q129 169 119 153
-C110 139 109 119 110 99Z"
-fill="black"/>
-  </mask>
-  
-<defs>
-  <mask id="smoothWaveFaceOpening">
-    <rect width="300" height="360" fill="white"/>
-    <path
-      d="
       M110 99
       C120 104 126 114 136 110
       C144 107 146 92 150 88
@@ -1287,7 +1260,7 @@ fill="black"/>
 
 <g mask="url(#smoothWaveFaceOpening)">
 
-  <!-- Left hair fill -->
+  <!-- Left hair -->
   <path
     d="
     M150 41
@@ -1305,7 +1278,7 @@ fill="black"/>
     stroke="none"
   />
 
-  <!-- Right hair fill -->
+  <!-- Right hair -->
   <path
     d="
     M150 41
@@ -1323,7 +1296,7 @@ fill="black"/>
     stroke="none"
   />
 
-  <!-- Outer outlines only -->
+  <!-- Outer outlines -->
   <g
     fill="none"
     stroke="#202b3c"
@@ -1354,7 +1327,7 @@ fill="black"/>
     C164 202 157 190 163 177"/>
   </g>
 
-  <!-- Flowing hair highlights -->
+  <!-- Highlights -->
   <g
     fill="none"
     stroke="#ffffff"
@@ -1368,6 +1341,19 @@ fill="black"/>
   </g>
 
 </g>
+
+` : h === 'Half-up waves' ? `
+<g fill="${hair}" stroke="#202b3c" stroke-width="2">
+  <path d="M108 76 Q99 80 99 96 Q98 111 108 121 Q113 108 120 99 Q126 89 120 78Z"/>
+  <path d="M192 76 Q201 80 201 96 Q202 111 192 121 Q187 108 180 99 Q174 89 180 78Z"/>
+  <path d="M108 76 Q96 96 102 119 Q108 137 96 153 Q91 168 103 177 Q116 181 121 164 Q113 149 120 133 Q127 112 120 91Z"/>
+  <path d="M192 76 Q204 96 198 119 Q192 137 204 153 Q209 168 197 177 Q184 181 179 164 Q187 149 180 133 Q173 112 180 91Z"/>
+</g>
+<g fill="none" stroke="#ffffff" stroke-opacity=".18" stroke-width="2">
+  <path d="M108 93 Q102 116 111 136 M192 93 Q198 116 189 136"/>
+</g>
+` : '';
+    
 
 
 
