@@ -1230,50 +1230,38 @@ const fringe='';
   
   const babyHair=state.babyHair?`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M150 45 Q139 58 129 76 Q124 82 118 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q161 58 171 76 Q176 82 182 84" stroke="#211915" stroke-opacity=".58" stroke-width="2.8"/><path d="M150 45 Q147 50 145 55 M150 45 Q153 50 155 55" stroke="${hair}" stroke-width="3.2"/></g>`:'';
   
-  const faceFraming =
+ const faceFraming =
 h === 'Smooth full-front waves' ? `
 
-<!-- Smooth full-front waves: connected side volume -->
-<g
+<!-- One-piece full-front hairstyle -->
+<path
+  d="
+  M150 41
+  Q97 42 102 99
+
+  C96 119 96 143 91 162
+  Q87 178 100 185
+  Q114 192 123 179
+  Q131 168 124 152
+  Q117 136 124 120
+  Q132 105 143 107
+  Q149 108 150 118
+  Q151 108 157 107
+  Q168 105 176 120
+  Q183 136 176 152
+  Q169 168 177 179
+  Q186 192 200 185
+  Q213 178 209 162
+  C204 143 204 119 198 99
+
+  Q203 42 150 41Z"
   fill="${hair}"
   stroke="#202b3c"
-  stroke-width="2"
+  stroke-width="2.5"
   stroke-linejoin="round"
->
+/>
 
-  <!-- Left flowing hair mass -->
-  <path
-    d="
-    M108 76
-    Q96 79 94 96
-    Q91 115 101 132
-    Q106 143 101 155
-    Q94 169 101 177
-    Q108 184 117 176
-    Q125 167 119 154
-    Q114 143 119 130
-    Q126 111 122 94
-    Q120 81 108 76Z"
-  />
-
-  <!-- Right flowing hair mass -->
-  <path
-    d="
-    M192 76
-    Q204 79 206 96
-    Q209 115 199 132
-    Q194 143 199 155
-    Q206 169 199 177
-    Q192 184 183 176
-    Q175 167 181 154
-    Q186 143 181 130
-    Q174 111 178 94
-    Q180 81 192 76Z"
-  />
-
-</g>
-
-<!-- Soft flowing highlights -->
+<!-- Soft wave highlights -->
 <g
   fill="none"
   stroke="#ffffff"
@@ -1281,9 +1269,12 @@ h === 'Smooth full-front waves' ? `
   stroke-width="2"
   stroke-linecap="round"
 >
-  <path d="M104 91 Q98 116 111 137 Q116 149 108 164"/>
-  <path d="M196 91 Q202 116 189 137 Q184 149 192 164"/>
+  <path d="M112 66 Q104 103 106 132 Q109 151 101 170"/>
+  <path d="M188 66 Q196 103 194 132 Q191 151 199 170"/>
+  <path d="M139 51 Q147 45 155 51"/>
 </g>
+
+
 
 ` : h === 'Half-up waves' ? `
 
