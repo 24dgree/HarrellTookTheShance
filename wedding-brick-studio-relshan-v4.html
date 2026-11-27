@@ -1257,20 +1257,56 @@ if(h==='Ponytail'){
   `;
  }
   
-  
   if(h==='Loose curls'){
   back=`
   <g fill="${hair}" stroke="#202b3c" stroke-width="2">
+    <!-- Left curls -->
     <circle cx="108" cy="112" r="12"/>
     <circle cx="110" cy="137" r="12"/>
     <circle cx="113" cy="160" r="12"/>
+    <circle cx="116" cy="181" r="11"/>
+
+    <!-- Right curls -->
     <circle cx="192" cy="112" r="12"/>
     <circle cx="190" cy="137" r="12"/>
     <circle cx="187" cy="160" r="12"/>
+    <circle cx="184" cy="181" r="11"/>
 
-    <path d="M103 89 Q150 25 197 89 L190 115 Q150 83 110 115Z"/>
+    <!-- Upper hair -->
+    <path d="
+      M103 89
+      Q150 25 197 89
+      L190 115
+      Q150 83 110 115Z"/>
+
+    <!-- Gathered low ponytail -->
+    <path d="
+      M116 174
+      Q122 188 137 192
+      Q145 195 150 195
+      Q155 195 163 192
+      Q178 188 184 174
+      Q181 193 170 204
+      Q160 214 150 216
+      Q140 214 130 204
+      Q119 193 116 174Z"/>
   </g>
 
+  <!-- Flower hair tie -->
+  <g
+    transform="translate(150 199)"
+    stroke="#202b3c"
+    stroke-width="1.3"
+  >
+    <ellipse cx="0" cy="-5" rx="3.5" ry="5" fill="#e8b9c2"/>
+    <ellipse cx="5" cy="-1" rx="3.5" ry="5" fill="#e8b9c2" transform="rotate(72 5 -1)"/>
+    <ellipse cx="3" cy="5" rx="3.5" ry="5" fill="#e8b9c2" transform="rotate(144 3 5)"/>
+    <ellipse cx="-3" cy="5" rx="3.5" ry="5" fill="#e8b9c2" transform="rotate(216 -3 5)"/>
+    <ellipse cx="-5" cy="-1" rx="3.5" ry="5" fill="#e8b9c2" transform="rotate(288 -5 -1)"/>
+    <circle cx="0" cy="0" r="2.2" fill="#f5d78e"/>
+  </g>
+
+  <!-- Hair highlights -->
   <g
     fill="none"
     stroke="#ffffff"
@@ -1282,14 +1318,22 @@ if(h==='Ponytail'){
     <path d="M102 106 Q106 101 111 106"/>
     <path d="M104 131 Q109 126 114 131"/>
     <path d="M107 154 Q112 149 117 154"/>
+    <path d="M110 176 Q115 171 120 176"/>
 
     <!-- Right curl highlights -->
     <path d="M189 106 Q194 101 198 106"/>
     <path d="M186 131 Q191 126 196 131"/>
     <path d="M183 154 Q188 149 193 154"/>
+    <path d="M180 176 Q185 171 190 176"/>
+
+    <!-- Gathered hair highlights -->
+<path d="M132 199 Q138 207 145 210"/>
+<path d="M168 199 Q162 207 155 210"/>
+    
   </g>
   `;
- }
+  }
+  
 
   
   const crown=h==='Long sleek straight'?
