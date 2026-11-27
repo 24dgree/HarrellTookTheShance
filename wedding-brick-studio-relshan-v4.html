@@ -1245,7 +1245,38 @@ if(h==='Ponytail'){
  }
   
   
-  if(h==='Loose curls')back=`<g fill="${hair}" stroke="#202b3c" stroke-width="2"><circle cx="108" cy="112" r="12"/><circle cx="110" cy="137" r="12"/><circle cx="113" cy="160" r="12"/><circle cx="192" cy="112" r="12"/><circle cx="190" cy="137" r="12"/><circle cx="187" cy="160" r="12"/><path d="M103 89 Q150 25 197 89 L190 115 Q150 83 110 115Z"/></g>`;
+  if(h==='Loose curls'){
+  back=`
+  <g fill="${hair}" stroke="#202b3c" stroke-width="2">
+    <circle cx="108" cy="112" r="12"/>
+    <circle cx="110" cy="137" r="12"/>
+    <circle cx="113" cy="160" r="12"/>
+    <circle cx="192" cy="112" r="12"/>
+    <circle cx="190" cy="137" r="12"/>
+    <circle cx="187" cy="160" r="12"/>
+
+    <path d="M103 89 Q150 25 197 89 L190 115 Q150 83 110 115Z"/>
+  </g>
+
+  <g
+    fill="none"
+    stroke="#ffffff"
+    stroke-opacity=".2"
+    stroke-width="1.8"
+    stroke-linecap="round"
+  >
+    <!-- Left curl highlights -->
+    <path d="M102 106 Q106 101 111 106"/>
+    <path d="M104 131 Q109 126 114 131"/>
+    <path d="M107 154 Q112 149 117 154"/>
+
+    <!-- Right curl highlights -->
+    <path d="M189 106 Q194 101 198 106"/>
+    <path d="M186 131 Q191 126 196 131"/>
+    <path d="M183 154 Q188 149 193 154"/>
+  </g>
+  `;
+ }
 
   
   const crown=h==='Long sleek straight'?
