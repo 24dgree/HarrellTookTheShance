@@ -290,13 +290,30 @@ function renderControls(){
     </div>
   </div>`;
 
-  out+=`<div class="section">
+    out+=`<div class="section">
     <h3>HAIR CLIP COLOUR</h3>
     <div class="swatches">
-      <button class="swatch ${state.accessoryColor==='#ffffff'?'selected':''}" title="White" data-acccolor="#ffffff" style="background:#fff"></button>
-      <button class="swatch ${state.accessoryColor==='#17191e'?'selected':''}" title="Black" data-acccolor="#17191e" style="background:#17191e"></button>
+      <button class="swatch ${state.accessoryColor==='#ffffff'?'selected':''}"
+        title="White" data-acccolor="#ffffff"
+        style="background:#fff"></button>
+
+      <button class="swatch ${state.accessoryColor==='#17191e'?'selected':''}"
+        title="Black" data-acccolor="#17191e"
+        style="background:#17191e"></button>
+
+      <button class="swatch ${state.accessoryColor==='#b9d5f0'?'selected':''}"
+        title="Baby blue" data-acccolor="#b9d5f0"
+        style="background:#b9d5f0"></button>
+
+      <button class="swatch ${state.accessoryColor==='#cbd3a5'?'selected':''}"
+        title="Soft olive" data-acccolor="#cbd3a5"
+        style="background:#cbd3a5"></button>
+
+      <button class="swatch ${state.accessoryColor==='#e8b9c2'?'selected':''}"
+        title="Blush pink" data-acccolor="#e8b9c2"
+        style="background:#e8b9c2"></button>
     </div>
-      </div>`;
+  </div>`;
                        }
   }
 
