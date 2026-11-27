@@ -1237,9 +1237,9 @@ if(h==='Elegant centre-part waves'){
  }
 
 
-
 if(h==='Ponytail'){
   back=`
+  <!-- Ponytail -->
   <path
     d="
     M169 73
@@ -1260,6 +1260,50 @@ if(h==='Ponytail'){
     stroke-linejoin="round"
   />
 
+  <!-- Large Hello Kitty bow -->
+  <g
+    transform="translate(177 82)"
+    fill="${state.accessoryColor||'#e8b9c2'}"
+    stroke="#202b3c"
+    stroke-width="2"
+    stroke-linejoin="round"
+  >
+    <!-- Left bow loop -->
+    <path d="
+      M-3 -1
+      C-13 -17 -31 -19 -32 -8
+      C-34 3 -23 12 -5 6
+      Z"/>
+
+    <!-- Right bow loop -->
+    <path d="
+      M3 -1
+      C13 -17 31 -19 32 -8
+      C34 3 23 12 5 6
+      Z"/>
+
+    <!-- Centre knot -->
+    <path d="
+      M-5 -5
+      Q0 -10 5 -5
+      L6 5
+      Q0 11 -6 5Z"
+    />
+
+    <!-- Soft bow highlights -->
+    <g
+      fill="none"
+      stroke="#ffffff"
+      stroke-opacity=".3"
+      stroke-width="1.6"
+      stroke-linecap="round"
+    >
+      <path d="M-26 -9 Q-20 -15 -12 -9"/>
+      <path d="M26 -9 Q20 -15 12 -9"/>
+    </g>
+  </g>
+
+  <!-- Ponytail highlights -->
   <g
     fill="none"
     stroke="#ffffff"
@@ -1267,12 +1311,12 @@ if(h==='Ponytail'){
     stroke-width="1.9"
     stroke-linecap="round"
   >
-    <!-- Flowing ponytail highlights -->
     <path d="M197 31 Q218 21 232 43 Q244 62 247 83"/>
     <path d="M211 52 Q230 55 239 76"/>
   </g>
   `;
- }
+   }
+
   
   if(h==='Loose curls'){
   back=`
