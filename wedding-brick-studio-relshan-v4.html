@@ -1174,10 +1174,11 @@ if(h==='Voluminous blowout'){
   `;
 }  
 
-
+  
 
 if(h==='Elegant centre-part waves'){
-  back=`<path d="
+  back=`
+  <path d="
   M150 41
   Q105 35 91 61
   Q75 78 78 108
@@ -1196,8 +1197,29 @@ if(h==='Elegant centre-part waves'){
   Q232 130 222 108
   Q225 78 209 61
   Q195 35 150 41Z"
-  fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
-}
+  fill="${hair}"
+  stroke="#202b3c"
+  stroke-width="2"/>
+
+  <g
+    fill="none"
+    stroke="#ffffff"
+    stroke-opacity=".18"
+    stroke-width="2"
+    stroke-linecap="round"
+  >
+    <!-- Long flowing wave highlights -->
+    <path d="M88 91 Q81 117 91 137 Q96 151 88 166"/>
+    <path d="M212 91 Q219 117 209 137 Q204 151 212 166"/>
+
+    <!-- Short inner wave highlights -->
+    <path d="M108 111 Q103 128 111 143"/>
+    <path d="M192 111 Q197 128 189 143"/>
+  </g>
+  `;
+ }
+
+
 
 if(h==='Ponytail'){
   back=`
