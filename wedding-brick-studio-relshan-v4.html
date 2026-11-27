@@ -1097,7 +1097,24 @@ Q194 83 188 84
   const long=['Elegant centre-part waves','Long sleek straight','Voluminous blowout','Loose curls','Ponytail'].includes(h);
   let back='';
   
-  if(h==='Long sleek straight')back=`<path d="M104 86 Q97 115 102 174 Q100 187 108 193 L126 195 L124 91Z M196 86 Q203 115 198 174 Q200 187 192 193 L174 195 L176 91Z" fill="${hair}" stroke="#202b3c" stroke-width="2"/>`;
+  if(h==='Long sleek straight')back=`
+  <path
+    d="M104 86 Q97 115 102 174 Q100 187 108 193 L126 195 L124 91Z M196 86 Q203 115 198 174 Q200 187 192 193 L174 195 L176 91Z"
+    fill="${hair}"
+    stroke="#202b3c"
+    stroke-width="2"
+  />
+  <g
+    fill="none"
+    stroke="#ffffff"
+    stroke-opacity=".22"
+    stroke-width="2"
+    stroke-linecap="round"
+  >
+    <path d="M109 119 L107 177"/>
+    <path d="M191 119 L193 177"/>
+  </g>
+`;
   
   
 if(h==='Voluminous blowout'){
