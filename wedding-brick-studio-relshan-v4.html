@@ -2192,7 +2192,9 @@ ${backgroundLayer}
 <ellipse cx="150" cy="347" rx="77" ry="10" fill="#dbe6f2"/>
 
 ${parasolLayer}
+
 <g>
+${hairBack}
 ${legs}
 ${!male&&poseName==='Hands together'
   ?torso+tie+arms
@@ -2200,8 +2202,10 @@ ${!male&&poseName==='Hands together'
     ?torso+arms+tie
     :arms+torso+tie}
 <rect x="140" y="145" width="20" height="17" rx="5" fill="${skin}" stroke="#263750" stroke-width="2"/>
-${hairBack}${head}${hairShape}${extra}${propLayer}
-</g>`;
+${head}${hairShape}${extra}${propLayer}
+</g>
+
+`;
 
 }
  
