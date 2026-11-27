@@ -552,7 +552,18 @@ function draw(){
    }
 
   
- 
+    torso=`
+   <path
+    d="M126 155
+    Q150 149 174 155
+    Q180 165 181 175
+    Q150 182 119 175
+    Q120 165 126 155
+    Z"
+    fill="${skin}"
+   />
+   ${torso}
+   `;
  
   if(state.tie==='Bowtie')tie=`<path d="M145 165 L132 158 L132 174 L145 169Z M155 165 L168 158 L168 174 L155 169Z" fill="#263c5b" stroke="${outline}" stroke-width="1.2"/><circle cx="150" cy="166" r="3" fill="#d8e0eb"/>`;
   
